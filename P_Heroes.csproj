@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B36DFC1-F735-4E93-849F-CF37B3291F91}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>P_Heroes</RootNamespace>
+    <AssemblyName>P_Heroes</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arme.cs" />
+    <Compile Include="Compagnie.cs" />
+    <Compile Include="EcranChargement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EcranChargement.Designer.cs">
+      <DependentUpon>EcranChargement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Heros.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectionPerso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectionPerso.Designer.cs">
+      <DependentUpon>SelectionPerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenue.cs" />
+    <EmbeddedResource Include="EcranChargement.resx">
+      <DependentUpon>EcranChargement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SelectionPerso.resx">
+      <DependentUpon>SelectionPerso.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\MusicSeigneurAnneaux.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\EcranChargementwebp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\EcranChargement.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\arbalete.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\arc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\bouclier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\cuir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\dague.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\epee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\hache.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\Hero1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\Hero2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\Hero3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\lance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\metal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\Orc_Warriors_Armor_Shield.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\OrcArcherCuir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressources\tissu.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
