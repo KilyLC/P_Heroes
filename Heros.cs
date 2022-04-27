@@ -12,7 +12,7 @@ namespace P_Heroes
         private Tenue _tenue;
         private int _nvVie;
         private int _vitesseAttaque;
-        private int _agilite;
+        private int _agilite;      
         private Arme _arme1;
         private Arme _arme2;
         private Compagnie _compagnie;

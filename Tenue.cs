@@ -16,18 +16,19 @@ namespace P_Heroes
         public int NvDefense { get => _nvDefense; set => _nvDefense = value; }
         public int Poids { get => _poids; set => _poids = value; }
 
+
         //tenue 1 
-        private static readonly string TENUE1 = "tissu";
-        private static readonly int POIDS_TENUE1 = 10;
-        private static readonly int NIV_DEFENSE_1 = 20;
+        const string TENUE1 = "tissu";
+        const int POIDS_TENUE1 = 10;
+        const int NIV_DEFENSE_1 = 20;
         //tenue 2 
-        private static readonly string TENUE2 = "cuir";
-        private static readonly int POIDS_TENUE2 = 30;
-        private static readonly int NIV_DEFENSE_2 = 40;
+        const string TENUE2 = "cuir";
+        const int POIDS_TENUE2 = 30;
+        const int NIV_DEFENSE_2 = 40;
         //tenue 3
-        private static readonly string TENUE3 = "metal";
-        private static readonly int POIDS_TENUE3 = 70;
-        private static readonly int NIV_DEFENSE_3 = 40;
+        const string TENUE3 = "metal";
+        const int POIDS_TENUE3 = 70;
+        const int NIV_DEFENSE_3 = 40;
 
         public Tenue(string nomTenue)
         {
@@ -48,10 +49,6 @@ namespace P_Heroes
                 NomTenue = TENUE3;
                 Poids = POIDS_TENUE3;
                 NvDefense = NIV_DEFENSE_3;
-            }
-            else
-            {
-                throw new Exception("Tenue invalide");
             }
         }
     }

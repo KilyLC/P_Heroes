@@ -10,32 +10,9 @@ namespace P_Heroes
     {
         public SelectionPerso()
         {
-
-
-
+            Compagnie compagnie = new Compagnie("s");
+            compagnie.InitListeArmes();
             InitializeComponent();
-        }
-
-
-        private void SelectionPerso_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void SelectionPerso_Load(object sender, EventArgs e)
-        {
-            List<string> listeArmes = new List<string>();
-            listeArmes.Add("epee");
-            listeArmes.Add("lance");
-            listeArmes.Add("dague");
-            listeArmes.Add("arc");
-            listeArmes.Add("bouclier");
-            listeArmes.Add("hache");
-            foreach (string nomArme in listeArmes)
-            {
-                Arme arme = new Arme();
-                arme.InitListeArmes(nomArme);
-            }
         }
 
         private void pbxPerso1_Paint(object sender, PaintEventArgs e)
@@ -51,37 +28,6 @@ namespace P_Heroes
         private void pbxPerso3_Paint(object sender, PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, pbxPerso3.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
-        }
-
-        private void pbxPerso1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void pbxEpee_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void pbxArc_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void pbxDague_Click(object sender, EventArgs e)
-        {
-        }
-       
-
-        private void pbxBouclier_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void pbxLance_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
-
-        private void pbxHache_Click(object sender, EventArgs e)
-        {
         }
 
         private void pbxTissu_Click(object sender, EventArgs e)
@@ -111,7 +57,6 @@ namespace P_Heroes
             pbxMetal.Visible = true;
             pbxTissu.Visible = true;
         }
-
 
         private void btnOk1_Click(object sender, EventArgs e)
         {
@@ -182,9 +127,7 @@ namespace P_Heroes
         {
             Arme arme = new Arme();
             Tenue tenue = new Tenue("metal");
-
             Heros hero1 = Extension.TraitementHeros(arme, tenue);
-
         }
 
         private void btnJouer_Click(object sender, EventArgs e)
