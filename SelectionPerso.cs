@@ -10,8 +10,6 @@ namespace P_Heroes
     {
         public SelectionPerso()
         {
-            Compagnie compagnie = new Compagnie("s");
-            compagnie.InitListeArmes();
             InitializeComponent();
         }
 

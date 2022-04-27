@@ -254,7 +254,6 @@
             this.pbxBouclier.TabIndex = 18;
             this.pbxBouclier.TabStop = false;
             this.pbxBouclier.Visible = false;
-            this.pbxBouclier.Click += new System.EventHandler(this.pbxBouclier_Click);
             // 
             // pbxMetal
             // 
@@ -302,7 +301,6 @@
             this.pbxLance.TabIndex = 11;
             this.pbxLance.TabStop = false;
             this.pbxLance.Visible = false;
-            this.pbxLance.Click += new System.EventHandler(this.pbxLance_Click);
             // 
             // pbxArc
             // 
@@ -314,7 +312,6 @@
             this.pbxArc.TabIndex = 9;
             this.pbxArc.TabStop = false;
             this.pbxArc.Visible = false;
-            this.pbxArc.Click += new System.EventHandler(this.pbxArc_Click);
             // 
             // pbxHache
             // 
@@ -326,7 +323,6 @@
             this.pbxHache.TabIndex = 8;
             this.pbxHache.TabStop = false;
             this.pbxHache.Visible = false;
-            this.pbxHache.Click += new System.EventHandler(this.pbxHache_Click);
             // 
             // pbxDague
             // 
@@ -338,7 +334,6 @@
             this.pbxDague.TabIndex = 7;
             this.pbxDague.TabStop = false;
             this.pbxDague.Visible = false;
-            this.pbxDague.Click += new System.EventHandler(this.pbxDague_Click);
             // 
             // pbxEpee
             // 
@@ -350,7 +345,6 @@
             this.pbxEpee.TabIndex = 6;
             this.pbxEpee.TabStop = false;
             this.pbxEpee.Visible = false;
-            this.pbxEpee.Click += new System.EventHandler(this.pbxEpee_Click);
             // 
             // pbxPerso3
             // 
@@ -476,8 +470,6 @@
             this.Name = "SelectionPerso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.Load += new System.EventHandler(this.SelectionPerso_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SelectionPerso_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pbxBouclier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMetal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCuir)).EndInit();
