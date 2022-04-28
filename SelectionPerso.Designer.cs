@@ -34,18 +34,14 @@
             this.tbxNomPerso2 = new System.Windows.Forms.TextBox();
             this.tbxNomPerso1 = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.lblMainG = new System.Windows.Forms.Label();
+            this.lblMainD = new System.Windows.Forms.Label();
             this.lblVie = new System.Windows.Forms.Label();
             this.lbl5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblVitAtt = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.lblAgilite = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
-            this.lblMainD = new System.Windows.Forms.Label();
             this.lbl6 = new System.Windows.Forms.Label();
-            this.lblAtt = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
             this.pbxBouclier = new System.Windows.Forms.PictureBox();
             this.pbxMetal = new System.Windows.Forms.PictureBox();
             this.pbxCuir = new System.Windows.Forms.PictureBox();
@@ -62,6 +58,8 @@
             this.btnOk2 = new System.Windows.Forms.Button();
             this.btnOk3 = new System.Windows.Forms.Button();
             this.tbxNomCompagnie = new System.Windows.Forms.TextBox();
+            this.lblAtt = new System.Windows.Forms.Label();
+            this.lblMainG = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBouclier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMetal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCuir)).BeginInit();
@@ -123,15 +121,14 @@
             this.lbl1.TabIndex = 23;
             this.lbl1.Text = "Vie :";
             // 
-            // lblMainG
+            // lblMainD
             // 
-            this.lblMainG.AutoSize = true;
-            this.lblMainG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainG.Location = new System.Drawing.Point(845, 149);
-            this.lblMainG.Name = "lblMainG";
-            this.lblMainG.Size = new System.Drawing.Size(51, 20);
-            this.lblMainG.TabIndex = 24;
-            this.lblMainG.Text = "label2";
+            this.lblMainD.AutoSize = true;
+            this.lblMainD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainD.Location = new System.Drawing.Point(845, 149);
+            this.lblMainD.Name = "lblMainD";
+            this.lblMainD.Size = new System.Drawing.Size(0, 20);
+            this.lblMainD.TabIndex = 24;
             // 
             // lblVie
             // 
@@ -139,15 +136,14 @@
             this.lblVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVie.Location = new System.Drawing.Point(845, 18);
             this.lblVie.Name = "lblVie";
-            this.lblVie.Size = new System.Drawing.Size(51, 20);
+            this.lblVie.Size = new System.Drawing.Size(0, 20);
             this.lblVie.TabIndex = 26;
-            this.lblVie.Text = "label4";
             // 
             // lbl5
             // 
             this.lbl5.AutoSize = true;
             this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(731, 149);
+            this.lbl5.Location = new System.Drawing.Point(731, 120);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(108, 20);
             this.lbl5.TabIndex = 27;
@@ -157,21 +153,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(708, 87);
+            this.label6.Location = new System.Drawing.Point(765, 87);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 20);
+            this.label6.Size = new System.Drawing.Size(74, 20);
             this.label6.TabIndex = 28;
-            this.label6.Text = "Vitesse Attaque :";
-            // 
-            // lblVitAtt
-            // 
-            this.lblVitAtt.AutoSize = true;
-            this.lblVitAtt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVitAtt.Location = new System.Drawing.Point(845, 87);
-            this.lblVitAtt.Name = "lblVitAtt";
-            this.lblVitAtt.Size = new System.Drawing.Size(51, 20);
-            this.lblVitAtt.TabIndex = 29;
-            this.lblVitAtt.Text = "label7";
+            this.label6.Text = "Attaque :";
             // 
             // lbl3
             // 
@@ -189,9 +175,8 @@
             this.lblAgilite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgilite.Location = new System.Drawing.Point(845, 55);
             this.lblAgilite.Name = "lblAgilite";
-            this.lblAgilite.Size = new System.Drawing.Size(60, 20);
+            this.lblAgilite.Size = new System.Drawing.Size(0, 20);
             this.lblAgilite.TabIndex = 32;
-            this.lblAgilite.Text = "label10";
             // 
             // btnValider
             // 
@@ -204,45 +189,15 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
-            // lblMainD
-            // 
-            this.lblMainD.AutoSize = true;
-            this.lblMainD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainD.Location = new System.Drawing.Point(845, 181);
-            this.lblMainD.Name = "lblMainD";
-            this.lblMainD.Size = new System.Drawing.Size(51, 20);
-            this.lblMainD.TabIndex = 34;
-            this.lblMainD.Text = "label3";
-            // 
             // lbl6
             // 
             this.lbl6.AutoSize = true;
             this.lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl6.Location = new System.Drawing.Point(731, 181);
+            this.lbl6.Location = new System.Drawing.Point(744, 149);
             this.lbl6.Name = "lbl6";
             this.lbl6.Size = new System.Drawing.Size(95, 20);
             this.lbl6.TabIndex = 35;
             this.lbl6.Text = "Main droite :";
-            // 
-            // lblAtt
-            // 
-            this.lblAtt.AutoSize = true;
-            this.lblAtt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtt.Location = new System.Drawing.Point(845, 120);
-            this.lblAtt.Name = "lblAtt";
-            this.lblAtt.Size = new System.Drawing.Size(51, 20);
-            this.lblAtt.TabIndex = 37;
-            this.lblAtt.Text = "label8";
-            // 
-            // lbl2
-            // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(765, 120);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(74, 20);
-            this.lbl2.TabIndex = 36;
-            this.lbl2.Text = "Attaque :";
             // 
             // pbxBouclier
             // 
@@ -253,7 +208,9 @@
             this.pbxBouclier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxBouclier.TabIndex = 18;
             this.pbxBouclier.TabStop = false;
+            this.pbxBouclier.Tag = "bouclier";
             this.pbxBouclier.Visible = false;
+            this.pbxBouclier.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxMetal
             // 
@@ -264,8 +221,9 @@
             this.pbxMetal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxMetal.TabIndex = 17;
             this.pbxMetal.TabStop = false;
+            this.pbxMetal.Tag = "metal";
             this.pbxMetal.Visible = false;
-            this.pbxMetal.Click += new System.EventHandler(this.pbxMetal_Click);
+            this.pbxMetal.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxCuir
             // 
@@ -276,8 +234,9 @@
             this.pbxCuir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxCuir.TabIndex = 16;
             this.pbxCuir.TabStop = false;
+            this.pbxCuir.Tag = "cuir";
             this.pbxCuir.Visible = false;
-            this.pbxCuir.Click += new System.EventHandler(this.pbxCuir_Click);
+            this.pbxCuir.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxTissu
             // 
@@ -288,8 +247,9 @@
             this.pbxTissu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxTissu.TabIndex = 15;
             this.pbxTissu.TabStop = false;
+            this.pbxTissu.Tag = "tissu";
             this.pbxTissu.Visible = false;
-            this.pbxTissu.Click += new System.EventHandler(this.pbxTissu_Click);
+            this.pbxTissu.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxLance
             // 
@@ -300,7 +260,9 @@
             this.pbxLance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxLance.TabIndex = 11;
             this.pbxLance.TabStop = false;
+            this.pbxLance.Tag = "lance";
             this.pbxLance.Visible = false;
+            this.pbxLance.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxArc
             // 
@@ -311,7 +273,9 @@
             this.pbxArc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArc.TabIndex = 9;
             this.pbxArc.TabStop = false;
+            this.pbxArc.Tag = "arc";
             this.pbxArc.Visible = false;
+            this.pbxArc.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxHache
             // 
@@ -322,7 +286,9 @@
             this.pbxHache.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxHache.TabIndex = 8;
             this.pbxHache.TabStop = false;
+            this.pbxHache.Tag = "hache";
             this.pbxHache.Visible = false;
+            this.pbxHache.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxDague
             // 
@@ -333,7 +299,9 @@
             this.pbxDague.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxDague.TabIndex = 7;
             this.pbxDague.TabStop = false;
+            this.pbxDague.Tag = "dague";
             this.pbxDague.Visible = false;
+            this.pbxDague.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxEpee
             // 
@@ -344,7 +312,9 @@
             this.pbxEpee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxEpee.TabIndex = 6;
             this.pbxEpee.TabStop = false;
+            this.pbxEpee.Tag = "epee";
             this.pbxEpee.Visible = false;
+            this.pbxEpee.Click += new System.EventHandler(this.majPbx);
             // 
             // pbxPerso3
             // 
@@ -427,27 +397,43 @@
             this.tbxNomCompagnie.Size = new System.Drawing.Size(150, 20);
             this.tbxNomCompagnie.TabIndex = 41;
             // 
+            // lblAtt
+            // 
+            this.lblAtt.AutoSize = true;
+            this.lblAtt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtt.Location = new System.Drawing.Point(845, 87);
+            this.lblAtt.Name = "lblAtt";
+            this.lblAtt.Size = new System.Drawing.Size(0, 20);
+            this.lblAtt.TabIndex = 42;
+            // 
+            // lblMainG
+            // 
+            this.lblMainG.AutoSize = true;
+            this.lblMainG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainG.Location = new System.Drawing.Point(845, 120);
+            this.lblMainG.Name = "lblMainG";
+            this.lblMainG.Size = new System.Drawing.Size(0, 20);
+            this.lblMainG.TabIndex = 43;
+            // 
             // SelectionPerso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lblMainG);
+            this.Controls.Add(this.lblAtt);
             this.Controls.Add(this.tbxNomCompagnie);
             this.Controls.Add(this.btnOk3);
             this.Controls.Add(this.btnOk2);
             this.Controls.Add(this.btnOk1);
-            this.Controls.Add(this.lblAtt);
-            this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl6);
-            this.Controls.Add(this.lblMainD);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.lblAgilite);
             this.Controls.Add(this.lbl3);
-            this.Controls.Add(this.lblVitAtt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl5);
             this.Controls.Add(this.lblVie);
-            this.Controls.Add(this.lblMainG);
+            this.Controls.Add(this.lblMainD);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.tbxNomPerso1);
             this.Controls.Add(this.tbxNomPerso2);
@@ -470,6 +456,7 @@
             this.Name = "SelectionPerso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.SelectionPerso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxBouclier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMetal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCuir)).EndInit();
@@ -504,7 +491,6 @@
         private System.Windows.Forms.TextBox tbxNomPerso2;
         private System.Windows.Forms.TextBox tbxNomPerso1;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Label lblMainG;
         private System.Windows.Forms.Label lblVie;
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.Label label6;
@@ -515,12 +501,12 @@
         private System.Windows.Forms.PictureBox pbxBouclier;
         private System.Windows.Forms.Label lblMainD;
         private System.Windows.Forms.Label lbl6;
-        private System.Windows.Forms.Label lblAtt;
-        private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.PictureBox pbxLance;
         private System.Windows.Forms.Button btnOk1;
         private System.Windows.Forms.Button btnOk2;
         private System.Windows.Forms.Button btnOk3;
         private System.Windows.Forms.TextBox tbxNomCompagnie;
+        private System.Windows.Forms.Label lblAtt;
+        private System.Windows.Forms.Label lblMainG;
     }
 }

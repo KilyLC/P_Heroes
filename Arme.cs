@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace P_Heroes
 {
-    class Arme
+    public class Arme
     {
         public string NomArme { get; set; }
         public int NvAttaque { get; set; }
@@ -19,8 +19,6 @@ namespace P_Heroes
 
         public Arme()
         {
-         
-           
         }
         
     }

@@ -6,19 +6,25 @@ using System.Threading.Tasks;
 
 namespace P_Heroes
 {
-    class Compagnie
+    public class Compagnie
     {
         const int NB_HEROS_MAX = 3;
         private List<Heros> _heros = new List<Heros>();
         private string _nomCompagnie;
-        private List<string> _listeArmes;
+        private List<string> _listeArmes = new List<string>();
 
-        Dictionary<string, dynamic> listeArmes = new Dictionary<string, dynamic>();
+        Dictionary<string, DicoValues> listeArmes = new Dictionary<string, DicoValues>();
         public string NomCompagnie { get => _nomCompagnie; set => _nomCompagnie = value; }
         internal List<Heros> Heros { get => _heros; set => _heros = value; }
         public List<string> ListeArmes { get => _listeArmes; set => _listeArmes = value; }
+        public Dictionary<string, DicoValues> DicoListeArmes { get => listeArmes; set => listeArmes = value; }
 
-        public Compagnie(string nom)
+        public Compagnie()
+        {
+            
+        }
+
+        public void majNom(string nom)
         {
             NomCompagnie = nom;
         }
@@ -34,70 +40,86 @@ namespace P_Heroes
 
         public void InitListeArmes()
         {
+
+            ListeArmes.Add("hache");
+            ListeArmes.Add("bouclier");
+            ListeArmes.Add("dague");
+            ListeArmes.Add("epee");
+            ListeArmes.Add("lance");
+            ListeArmes.Add("arc");
+
+
             Arme hache = new Arme();
+            hache.NomArme = "hache";
             hache.NvAttaque = 50;
             hache.Durabilite = 50;
             hache.Poids = 55;
             hache.Munitions = 0;
-            hache.NbMains = 1;
+            hache.NbMains = 2;
             hache.Image = Properties.Resources.hache;
-            listeArmes["hache"].arme = hache;
-            listeArmes["hache"].utilisee = false;
+            DicoValues values = new DicoValues(hache, false);
+            DicoListeArmes["hache"] = values;
 
             Arme arc = new Arme();
+            arc.NomArme = "arc";
             arc.NvAttaque = 40;
             arc.Durabilite = 50;
             arc.Poids = 10;
             arc.Munitions = 18;
             arc.NbMains = 2;
             arc.Image = Properties.Resources.arc;
-            listeArmes["arc"].arme = arc;
-            listeArmes["arc"].utilisee = false;
+            values = new DicoValues(arc, false);
+            DicoListeArmes["arc"] = values;
 
             Arme epee = new Arme();
+            epee.NomArme = "epee";
             epee.NvAttaque = 50;
             epee.Durabilite = 70;
             epee.Poids = 40;
             epee.Munitions = 0;
             epee.NbMains = 1;
             epee.Image = Properties.Resources.epee;
-            listeArmes["epee"].arme = epee;
-            listeArmes["epee"].utilisee = false;
+            values = new DicoValues(epee, false);
+            DicoListeArmes["epee"] = values;
 
             Arme dague = new Arme();
+            dague.NomArme = "dague";
             dague.NvAttaque = 45;
             dague.Durabilite = 60;
             dague.Poids = 30;
             dague.Munitions = 0;
             dague.NbMains = 1;
             dague.Image = Properties.Resources.dague;
-            listeArmes["dague"].arme = dague;
-            listeArmes["dague"].utilisee = false;
+            values = new DicoValues(dague, false);
+            DicoListeArmes["dague"] = values;
 
             Arme bouclier = new Arme();
+            bouclier.NomArme = "bouclier";
             bouclier.NvAttaque = 10;
             bouclier.Durabilite = 150;
             bouclier.Poids = 70;
             bouclier.Munitions = 0;
             bouclier.NbMains = 1;
             bouclier.Image = Properties.Resources.bouclier;
-            listeArmes["bouclier"].arme = bouclier;
-            listeArmes["bouclier"].utilisee = false;
+            values = new DicoValues(bouclier, false);
+            DicoListeArmes["bouclier"] = values;
 
             Arme lance = new Arme();
+            lance.NomArme = "lance";
             lance.NvAttaque = 40;
             lance.Durabilite = 40;
             lance.Poids = 25;
             lance.Munitions = 0;
             lance.NbMains = 1;
             lance.Image = Properties.Resources.lance;
-            listeArmes["lance"].arme = lance;
-            listeArmes["lance"].utilisee = false;
+            values = new DicoValues(lance, false);
+            DicoListeArmes["lance"] = values;
         }
 
         public void SelectionArme(string nomArme)
         {
-            foreach (var arme in listeArmes)
+            DicoListeArmes["lance"].utilisee = true;
+            foreach (var arme in DicoListeArmes)
             {
                 if (arme.Key == nomArme)
                 {

@@ -19,16 +19,18 @@ namespace P_Heroes
             InitializeComponent();
         }
 
+        public void DefinirCompagnie(Compagnie compagnie)
+        {
+            this.compagnie = compagnie;
+        }
         //Initialisation
-        string choixHero = "";
-        Image imagePrincipal;
-        Image imageSecondaire;
+        Compagnie compagnie;
+        int numHeroPrincipal = 1;
         private void P_Heros_Load(object sender, EventArgs e)
         {
-            pbrVie.Value = 100;
-            EcranChargement ecranChargement = new EcranChargement();
+            pbrVieEnnemi.Value = 100;
+            EcranChargement ecranChargement = new EcranChargement(this);
             ecranChargement.Show(this);
-            
             playSound();
         }
         private void playSound()
@@ -41,56 +43,37 @@ namespace P_Heroes
 
         private void btnChangement_Click(object sender, EventArgs e)
         {
-        }
-        public void RecupererImage(Image image)
-        {
-            if (choixHero == "Perso1")
+            numHeroPrincipal += 1;
+            if (numHeroPrincipal > 3)
             {
-                pbxPerso1.Image = Properties.Resources.Hero1;
-                btnChangement.Enabled = false;
-                lblChangement.Visible = false;
-                pbxPerso1.Image = imagePrincipal;
+                numHeroPrincipal = 1;
             }
-            else if (choixHero == "Perso2")
+            if (numHeroPrincipal == 1)
             {
-                pbxPerso1.Image = Properties.Resources.Hero2;
-                btnChangement.Enabled = false;
-                lblChangement.Visible = false;
-                pbxPerso2.Image = imagePrincipal;
+                pbxPerso1.Image = compagnie.Heros[0].ImageArme;
+                pbxPerso2.Image = compagnie.Heros[1].ImageArme;
+                pbxPerso3.Image = compagnie.Heros[2].ImageArme;
             }
-            else if (choixHero == "Perso3")
+            else if (numHeroPrincipal == 2)
             {
-                pbxPerso1.Image = Properties.Resources.Hero3;
-                btnChangement.Enabled = false;
-                lblChangement.Visible = false;
-                pbxPerso3.Image = imagePrincipal;
+                pbxPerso1.Image = compagnie.Heros[1].ImageArme;
+                pbxPerso2.Image = compagnie.Heros[2].ImageArme;
+                pbxPerso3.Image = compagnie.Heros[0].ImageArme;
+            }
+            else
+            {
+                pbxPerso1.Image = compagnie.Heros[2].ImageArme;
+                pbxPerso2.Image = compagnie.Heros[0].ImageArme;
+                pbxPerso3.Image = compagnie.Heros[1].ImageArme;
             }
         }
 
-
-        private void pbxPerso2_Click(object sender, EventArgs e)
+        private void ChangementVie(Heros hero)
         {
-            btnChangement.Enabled = true;
-            lblChangement.Visible = true;
-            choixHero = "Perso2";
-            imagePrincipal = pbxPerso1.Image;
-            imageSecondaire = pbxPerso1.Image;
+            pbrViePerso.Value = hero.NvVie;
+            lblViePerso.Text = pbrViePerso.Value.ToString();
         }
 
-        private void pbxPerso3_Click(object sender, EventArgs e)
-        {
-            btnChangement.Enabled = true;
-            lblChangement.Visible = true;
-            choixHero = "Perso3";
-            imagePrincipal = pbxPerso1.Image;
-        }
 
-        private void pbxPerso1_Click(object sender, EventArgs e)
-        {
-            btnChangement.Enabled = true;
-            lblChangement.Visible = true;
-            choixHero = "Perso1";
-            imagePrincipal = pbxPerso1.Image;
-        }
     }
 }

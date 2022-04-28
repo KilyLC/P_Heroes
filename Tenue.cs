@@ -30,26 +30,32 @@ namespace P_Heroes
         const int POIDS_TENUE3 = 70;
         const int NIV_DEFENSE_3 = 40;
 
-        public Tenue(string nomTenue)
+        public Tenue()
         {
+            
+        }
+        public Tenue majTenue(string nomTenue)
+        {
+            Tenue tenue = new Tenue();
             if (nomTenue == TENUE1)
             {
-                NomTenue = TENUE1;
-                Poids = POIDS_TENUE1;
-                NvDefense = NIV_DEFENSE_1;
+                tenue.NomTenue = TENUE1;
+                tenue.Poids = POIDS_TENUE1;
+                tenue.NvDefense = NIV_DEFENSE_1;
             }
-            else if(nomTenue == TENUE2)
+            else if (nomTenue == TENUE2)
             {
-                NomTenue = TENUE2;
-                Poids = POIDS_TENUE2;
-                NvDefense = NIV_DEFENSE_2;
+                tenue.NomTenue = TENUE2;
+                tenue.Poids = POIDS_TENUE2;
+                tenue.NvDefense = NIV_DEFENSE_2;
             }
             else if (nomTenue == TENUE3)
             {
-                NomTenue = TENUE3;
-                Poids = POIDS_TENUE3;
-                NvDefense = NIV_DEFENSE_3;
+                tenue.NomTenue = TENUE3;
+                tenue.Poids = POIDS_TENUE3;
+                tenue.NvDefense = NIV_DEFENSE_3;
             }
+            return tenue;
         }
     }
 }

@@ -12,11 +12,18 @@ namespace P_Heroes
 {
     public partial class EcranChargement : Form
     {
+        P_Heros form;
+
         public EcranChargement()
         {
             InitializeComponent();
         }
-        
+
+        public EcranChargement(P_Heros form) : this()
+        {
+            this.form = form;
+        }
+
         private void tmrChargement_Tick(object sender, EventArgs e)
         {
             
@@ -29,7 +36,7 @@ namespace P_Heroes
 
             tmrChargement.Stop();
 
-            SelectionPerso selectionPerso = new SelectionPerso();
+            SelectionPerso selectionPerso = new SelectionPerso(form);
             selectionPerso.Show();
 
             this.Close();
