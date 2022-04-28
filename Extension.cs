@@ -6,35 +6,54 @@ using System.Threading.Tasks;
 
 namespace P_Heroes
 {
-      public static class Extension
-      {
-        const int POURCENTAGE = 20 / 100;
-         internal static Heros TraitementHeros(Arme armeChoisi, Tenue tenueChoisi)
-         {
-            Heros heros = new Heros();
-            if (armeChoisi.NbMains == 1)
+    public static class Extension
+    {
+        const double POURCENTAGE = 20f / 100;
+        internal static Heros TraitementHeros(Arme armeChoisi, Arme armeChoisi2, Tenue tenueChoisi, Heros heros)
+        {
+            //Assigner les armes choisies à l'héros concerné 
+            if (armeChoisi.NbMains == 1 && armeChoisi2.NbMains == 1)
             {
                 heros.Arme1 = armeChoisi;
+                heros.Arme2 = armeChoisi2;
             }
             else
             {
                 heros.Arme1 = armeChoisi;
                 heros.Arme2 = armeChoisi;
             }
+            //Assigner la tenue à l'héros concerné
             heros.Tenue = tenueChoisi;
 
+
+            //Changement des stats de l'héros en fonction de la tenue et des armes
+
             //Tenues Stat
-            heros.Agilite -= POURCENTAGE * tenueChoisi.Poids;
-            heros.NvVie += POURCENTAGE * tenueChoisi.NvDefense;
-            heros.VitesseAttaque -= POURCENTAGE * tenueChoisi.Poids;
+            double agilite = POURCENTAGE * tenueChoisi.Poids;
+
+            heros.Agilite -= Convert.ToInt32(agilite);
+            heros.NvVie += Convert.ToInt32(POURCENTAGE * tenueChoisi.NvDefense);
+            heros.Agilite -= Convert.ToInt32(POURCENTAGE * tenueChoisi.Poids);
+
             //Armes Stat
-            heros.Agilite -= POURCENTAGE * armeChoisi.Poids;
-            heros.VitesseAttaque -= POURCENTAGE * armeChoisi.Poids;
-            
+            if (armeChoisi.NomArme == "bouclier")
+            {
+                heros.NvVie += Convert.ToInt32(POURCENTAGE * armeChoisi.Durabilite);
+            }
+            else if (armeChoisi2.NomArme == "bouclier")
+            {
+                heros.NvVie += Convert.ToInt32(POURCENTAGE * armeChoisi2.Durabilite);
+            }
+
+            heros.Agilite -= Convert.ToInt32(POURCENTAGE * armeChoisi.Poids);
+            heros.Attaque += Convert.ToInt32(POURCENTAGE * armeChoisi.NvAttaque);
+            if (heros.Arme1 != heros.Arme2)
+            {
+                heros.Agilite -= Convert.ToInt32(POURCENTAGE * armeChoisi2.Poids);
+                heros.Attaque += Convert.ToInt32(POURCENTAGE * armeChoisi2.NvAttaque);
+            }
             return heros;
-        } 
 
-
-        
+        }
     }
 }

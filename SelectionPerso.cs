@@ -8,6 +8,14 @@ namespace P_Heroes
 {
     public partial class SelectionPerso : Form
     {
+        Compagnie compagnie = new Compagnie();
+        Arme armeChoisi1;
+        Arme armeChoisi2;
+        Heros heros1 = new Heros();
+        Heros heros2 = new Heros();
+        Heros heros3 = new Heros();
+        Tenue tenueSelectionne;
+        Heros heroSelectionne;
         public SelectionPerso()
         {
             InitializeComponent();
@@ -28,21 +36,6 @@ namespace P_Heroes
             ControlPaint.DrawBorder(e.Graphics, pbxPerso3.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
         }
 
-        private void pbxTissu_Click(object sender, EventArgs e)
-        {
-            Tenue tenue = new Tenue("tissu");
-        }
-
-        private void pbxCuir_Click(object sender, EventArgs e)
-        {
-            Tenue tenue = new Tenue("cuir");
-        }
-
-        private void pbxMetal_Click(object sender, EventArgs e)
-        {
-            Tenue tenue = new Tenue("metal");
-        }
-
         public void RefreshBtnOk()
         {
             pbxArc.Visible = true;
@@ -59,30 +52,32 @@ namespace P_Heroes
         private void btnOk1_Click(object sender, EventArgs e)
         {
             string nomHero = tbxNomPerso1.Text;
-            Heros heros1 = new Heros();
             heros1.Heros1(nomHero);
             tbxNomPerso1.Enabled = false;
             RefreshBtnOk();
+            heroSelectionne = heros1;
+            RefreshStats(heroSelectionne);
         }
 
         private void btnOk2_Click(object sender, EventArgs e)
         {
             string nomHero = tbxNomPerso2.Text;
-            Heros heros2 = new Heros();
             heros2.Heros2(nomHero);
             tbxNomPerso2.Enabled = false;
             RefreshBtnOk();
+            heroSelectionne = heros2;
+            RefreshStats(heroSelectionne);
 
         }
 
         private void btnOk3_Click(object sender, EventArgs e)
         {
             string nomHero = tbxNomPerso3.Text;
-            Heros heros3 = new Heros();
             heros3.Heros3(nomHero);
             tbxNomPerso3.Enabled = false;
             RefreshBtnOk();
-            
+            heroSelectionne = heros3;
+            RefreshStats(heroSelectionne);
         }
 
         private void tbxNomPerso1_TextChanged(object sender, EventArgs e)
@@ -123,14 +118,109 @@ namespace P_Heroes
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            Arme arme = new Arme();
-            Tenue tenue = new Tenue("metal");
-            Heros hero1 = Extension.TraitementHeros(arme, tenue);
+            compagnie.AjoutHeros(heroSelectionne);
+            if (compagnie.Heros.Count == 1)
+            {
+                pbxPerso2.Visible = true;
+                btnOk1.Enabled = true;
+            }
+            else if (compagnie.Heros.Count == 2)
+            {
+                pbxPerso3.Visible = true;
+                btnOk2.Enabled = true;
+            }
         }
 
         private void btnJouer_Click(object sender, EventArgs e)
         {
-            Compagnie compagnie = new Compagnie(tbxNomCompagnie.Text);
+            compagnie.majNom(tbxNomCompagnie.Text);
+        }
+
+        private void majPbx(object sender, EventArgs e)
+        {
+            PictureBox pbxCliquer = ((PictureBox)sender);
+            object tag = pbxCliquer.Tag;
+            if (tag == null)
+            {
+                return;
+            }
+            if (pbxCliquer.Tag.ToString() == "tissu")
+            {
+                tenueSelectionne = new Tenue();
+                tenueSelectionne = tenueSelectionne.majTenue("tissu");
+            }
+            else if (pbxCliquer.Tag.ToString() == "cuir")
+            {
+                tenueSelectionne = new Tenue();
+                tenueSelectionne = tenueSelectionne.majTenue("cuir");
+            }
+            else if (pbxCliquer.Tag.ToString() == "metal")
+            {
+                tenueSelectionne = new Tenue();
+                tenueSelectionne = tenueSelectionne.majTenue("metal");
+            }
+            compagnie.SelectionArme(pbxCliquer.Tag.ToString());
+            pbxCliquer.Visible = false;
+            
+            foreach (var arme in compagnie.DicoListeArmes)
+            {
+                if (arme.Key == pbxCliquer.Tag.ToString())
+                {
+                    
+                    if(arme.Value.arme.NbMains == 2)
+                    {
+                        armeChoisi1 = arme.Value.arme;
+                        armeChoisi2 = arme.Value.arme;
+                    }
+                    else
+                    {
+                        if (armeChoisi1 == null)
+                        {
+                            armeChoisi1 = arme.Value.arme;
+                        }
+                        else
+                        {
+                            armeChoisi2 = arme.Value.arme;
+                        }
+                        
+                    }
+                }
+            }
+
+
+            if (armeChoisi1 != null && armeChoisi2 != null && tenueSelectionne != null)
+            {
+                heroSelectionne = Extension.TraitementHeros(armeChoisi1, armeChoisi2, tenueSelectionne, heroSelectionne);
+                RefreshStats(heroSelectionne);
+                btnValider.Enabled = true;
+            }
+        }
+        private void RefreshStats(Heros hero)
+        {
+            lblAgilite.Text = hero.Agilite.ToString();
+            lblVie.Text = hero.NvVie.ToString();
+            lblAtt.Text = hero.Attaque.ToString();
+            if (hero.Arme1 == null)
+            {
+                lblMainD.Text = "libre";
+            }
+            else
+            {
+                lblMainD.Text = hero.Arme1.NomArme.ToString();
+            }
+            if (hero.Arme2 == null)
+            {
+                lblMainG.Text = "libre";
+            }
+            else
+            {
+                lblMainG.Text = hero.Arme2.NomArme.ToString();
+            }
+        }
+        private void SelectionPerso_Load(object sender, EventArgs e)
+        {
+            compagnie.InitListeArmes();
+
         }
     }
 }
