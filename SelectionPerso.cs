@@ -20,7 +20,11 @@ namespace P_Heroes
         {
             InitializeComponent();
         }
+        private void SelectionPerso_Load(object sender, EventArgs e)
+        {
+            compagnie.InitListeArmes();
 
+        }
         private void pbxPerso1_Paint(object sender, PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, pbxPerso1.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
@@ -57,6 +61,7 @@ namespace P_Heroes
             RefreshBtnOk();
             heroSelectionne = heros1;
             RefreshStats(heroSelectionne);
+            btnOk1.Enabled = false;
         }
 
         private void btnOk2_Click(object sender, EventArgs e)
@@ -67,6 +72,7 @@ namespace P_Heroes
             RefreshBtnOk();
             heroSelectionne = heros2;
             RefreshStats(heroSelectionne);
+            btnOk2.Enabled = false;
 
         }
 
@@ -78,6 +84,7 @@ namespace P_Heroes
             RefreshBtnOk();
             heroSelectionne = heros3;
             RefreshStats(heroSelectionne);
+            btnOk3.Enabled = false;
         }
 
         private void tbxNomPerso1_TextChanged(object sender, EventArgs e)
@@ -120,15 +127,20 @@ namespace P_Heroes
         {
             compagnie.AjoutHeros(heroSelectionne);
             if (compagnie.Heros.Count == 1)
-            {
+            {   
+                btnOk1.Enabled = false;
                 pbxPerso2.Visible = true;
-                btnOk1.Enabled = true;
+                btnOk2.Visible = true;
+                tbxNomPerso2.Visible = true;
             }
             else if (compagnie.Heros.Count == 2)
             {
+                btnOk2.Enabled = false;
                 pbxPerso3.Visible = true;
-                btnOk2.Enabled = true;
+                btnOk3.Visible = true;
+                tbxNomPerso3.Visible = true;
             }
+            btnValider.Enabled = false;
         }
 
         private void btnJouer_Click(object sender, EventArgs e)
@@ -182,17 +194,17 @@ namespace P_Heroes
                         {
                             armeChoisi2 = arme.Value.arme;
                         }
-                        
                     }
                 }
             }
-
-
             if (armeChoisi1 != null && armeChoisi2 != null && tenueSelectionne != null)
             {
                 heroSelectionne = Extension.TraitementHeros(armeChoisi1, armeChoisi2, tenueSelectionne, heroSelectionne);
                 RefreshStats(heroSelectionne);
                 btnValider.Enabled = true;
+                armeChoisi1 = null;
+                armeChoisi2 = null;
+                tenueSelectionne = null;
             }
         }
         private void RefreshStats(Heros hero)
@@ -217,10 +229,6 @@ namespace P_Heroes
                 lblMainG.Text = hero.Arme2.NomArme.ToString();
             }
         }
-        private void SelectionPerso_Load(object sender, EventArgs e)
-        {
-            compagnie.InitListeArmes();
-
-        }
+        
     }
 }
