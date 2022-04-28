@@ -55,7 +55,7 @@ namespace P_Heroes
             hache.Durabilite = 50;
             hache.Poids = 55;
             hache.Munitions = 0;
-            hache.NbMains = 1;
+            hache.NbMains = 2;
             hache.Image = Properties.Resources.hache;
             DicoValues values = new DicoValues(hache, false);
             DicoListeArmes["hache"] = values;

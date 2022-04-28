@@ -40,51 +40,23 @@ namespace P_Heroes
             ControlPaint.DrawBorder(e.Graphics, pbxPerso3.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
         }
 
-        public void RefreshBtnOk()
-        {
-            pbxArc.Visible = true;
-            pbxBouclier.Visible = true;
-            pbxCuir.Visible = true;
-            pbxDague.Visible = true;
-            pbxEpee.Visible = true;
-            pbxHache.Visible = true;
-            pbxLance.Visible = true;
-            pbxMetal.Visible = true;
-            pbxTissu.Visible = true;
-        }
-
         private void btnOk1_Click(object sender, EventArgs e)
         {
             string nomHero = tbxNomPerso1.Text;
-            heros1.Heros1(nomHero);
-            tbxNomPerso1.Enabled = false;
-            RefreshBtnOk();
-            heroSelectionne = heros1;
-            RefreshStats(heroSelectionne);
-            btnOk1.Enabled = false;
+            btnOkClick(heros1, 1, nomHero);
         }
 
         private void btnOk2_Click(object sender, EventArgs e)
         {
             string nomHero = tbxNomPerso2.Text;
-            heros2.Heros2(nomHero);
-            tbxNomPerso2.Enabled = false;
-            RefreshBtnOk();
-            heroSelectionne = heros2;
-            RefreshStats(heroSelectionne);
-            btnOk2.Enabled = false;
-
+            btnOkClick(heros2, 2, nomHero);
         }
 
         private void btnOk3_Click(object sender, EventArgs e)
         {
             string nomHero = tbxNomPerso3.Text;
-            heros3.Heros3(nomHero);
-            tbxNomPerso3.Enabled = false;
-            RefreshBtnOk();
-            heroSelectionne = heros3;
-            RefreshStats(heroSelectionne);
-            btnOk3.Enabled = false;
+            btnOkClick(heros3, 3, nomHero);
+            
         }
 
         private void tbxNomPerso1_TextChanged(object sender, EventArgs e)
@@ -125,7 +97,9 @@ namespace P_Heroes
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            //ajoute un héro à la compagnie
             compagnie.AjoutHeros(heroSelectionne);
+            //héro 2
             if (compagnie.Heros.Count == 1)
             {   
                 btnOk1.Enabled = false;
@@ -133,6 +107,7 @@ namespace P_Heroes
                 btnOk2.Visible = true;
                 tbxNomPerso2.Visible = true;
             }
+            //héro 3
             else if (compagnie.Heros.Count == 2)
             {
                 btnOk2.Enabled = false;
@@ -156,23 +131,31 @@ namespace P_Heroes
             {
                 return;
             }
+
+            pbxCliquer.Visible = false;
+
+            //Traitement de la tenue
             if (pbxCliquer.Tag.ToString() == "tissu")
             {
                 tenueSelectionne = new Tenue();
                 tenueSelectionne = tenueSelectionne.majTenue("tissu");
+                RefreshTenue(tenueSelectionne);
             }
             else if (pbxCliquer.Tag.ToString() == "cuir")
             {
                 tenueSelectionne = new Tenue();
                 tenueSelectionne = tenueSelectionne.majTenue("cuir");
+                RefreshTenue(tenueSelectionne);
             }
             else if (pbxCliquer.Tag.ToString() == "metal")
             {
                 tenueSelectionne = new Tenue();
                 tenueSelectionne = tenueSelectionne.majTenue("metal");
+                RefreshTenue(tenueSelectionne);
             }
+
+            //Traitement de l'arme
             compagnie.SelectionArme(pbxCliquer.Tag.ToString());
-            pbxCliquer.Visible = false;
             
             foreach (var arme in compagnie.DicoListeArmes)
             {
@@ -181,11 +164,13 @@ namespace P_Heroes
                     
                     if(arme.Value.arme.NbMains == 2)
                     {
+                        //arme 2 mains
                         armeChoisi1 = arme.Value.arme;
                         armeChoisi2 = arme.Value.arme;
                     }
                     else
                     {
+                        //arme 1 main
                         if (armeChoisi1 == null)
                         {
                             armeChoisi1 = arme.Value.arme;
@@ -195,10 +180,13 @@ namespace P_Heroes
                             armeChoisi2 = arme.Value.arme;
                         }
                     }
+
+                    RefreshArme(pbxCliquer.Tag.ToString());
                 }
             }
             if (armeChoisi1 != null && armeChoisi2 != null && tenueSelectionne != null)
             {
+                //maj de l'héros
                 heroSelectionne = Extension.TraitementHeros(armeChoisi1, armeChoisi2, tenueSelectionne, heroSelectionne);
                 RefreshStats(heroSelectionne);
                 btnValider.Enabled = true;
@@ -207,6 +195,8 @@ namespace P_Heroes
                 tenueSelectionne = null;
             }
         }
+
+        //Rafraichis les stats
         private void RefreshStats(Heros hero)
         {
             lblAgilite.Text = hero.Agilite.ToString();
@@ -229,6 +219,113 @@ namespace P_Heroes
                 lblMainG.Text = hero.Arme2.NomArme.ToString();
             }
         }
+        //rafraichi au clique d'un nouveau hero
+        private void RefreshBtnOk()
+        {
+            pbxArc.Visible = true;
+            pbxBouclier.Visible = true;
+            pbxCuir.Visible = true;
+            pbxDague.Visible = true;
+            pbxEpee.Visible = true;
+            pbxHache.Visible = true;
+            pbxLance.Visible = true;
+            pbxMetal.Visible = true;
+            pbxTissu.Visible = true;
+        }
+        //Refresh toutes les armes selon l'arme sélectionné
+        private void RefreshArme(string tagPbx)
+        {
+            pbxArc.Visible = false;
+            pbxHache.Visible = false;
+            if (armeChoisi2 != null)
+            {
+                pbxBouclier.Visible = false;
+                pbxLance.Visible = false;
+                pbxDague.Visible = false;
+                pbxEpee.Visible = false;
+            }
+            if (tagPbx == "lance")
+            {
+                pbxLance.Enabled = false;
+            }
+            else if (tagPbx == "bouclier")
+            {
+                pbxBouclier.Enabled = false;
+            }
+            else if (tagPbx == "epee")
+            {
+                pbxEpee.Enabled = false;
+            }
+            else if (tagPbx == "dague")
+            {
+                pbxDague.Enabled = false;
+            }
+            else if (tagPbx == "hache")
+            {
+                pbxHache.Enabled = false;
+                pbxArc.Visible = false;
+                pbxBouclier.Visible = false;
+                pbxLance.Visible = false;
+                pbxDague.Visible = false;
+                pbxEpee.Visible = false;
+            }
+            else if(tagPbx == "arc") 
+            {
+                pbxArc.Enabled = false;
+                pbxBouclier.Visible = false;
+                pbxLance.Visible = false;
+                pbxDague.Visible = false;
+                pbxEpee.Visible = false;
+                pbxHache.Visible = false;
+            }
+        }
+        //Rafraichi les tenues
+        private void RefreshTenue(Tenue tenue)
+        {
+            if (tenue.NomTenue == "tissu")
+            {
+                pbxTissu.Enabled = false;
+                pbxCuir.Visible = false;
+                pbxMetal.Visible = false;
+            }
+            else if (tenue.NomTenue == "cuir")
+            {
+                pbxCuir.Enabled = false;
+                pbxTissu.Visible = false;
+                pbxMetal.Visible = false;
+            }
+            else if (tenue.NomTenue == "metal")
+            {
+                pbxMetal.Enabled = false;
+                pbxTissu.Visible = false;
+                pbxCuir.Visible = false;
+            }
+        }
         
+        private void btnOkClick(Heros hero, int numHero, string nomHero)
+        {
+            if (numHero == 1)
+            {
+                hero.Heros1(nomHero);
+                tbxNomPerso1.Enabled = false;
+                btnOk1.Enabled = false;
+            }
+            else if (numHero == 2)
+            {
+                hero.Heros2(nomHero);
+                tbxNomPerso2.Enabled = false;
+                btnOk2.Enabled = false;
+            }
+            else
+            {
+                hero.Heros3(nomHero);
+                tbxNomPerso3.Enabled = false;
+                btnOk3.Enabled = false;
+            }
+            RefreshBtnOk();
+            heroSelectionne = hero;
+            RefreshStats(heroSelectionne);
+        }
+
     }
 }
