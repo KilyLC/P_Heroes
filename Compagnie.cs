@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P_Heroes
 {
-    class Compagnie
+    public class Compagnie
     {
         const int NB_HEROS_MAX = 3;
         private List<Heros> _heros = new List<Heros>();

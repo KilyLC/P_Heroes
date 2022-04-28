@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P_Heroes
 {
-    class DicoValues
+    public class DicoValues
     {
         public DicoValues(Arme arme, bool utilisee)
         {

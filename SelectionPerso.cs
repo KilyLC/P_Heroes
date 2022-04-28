@@ -16,10 +16,18 @@ namespace P_Heroes
         Heros heros3 = new Heros();
         Tenue tenueSelectionne;
         Heros heroSelectionne;
+
+        P_Heros form;
         public SelectionPerso()
         {
             InitializeComponent();
         }
+
+        public SelectionPerso(P_Heros form) : this()
+        {
+            this.form = form;
+        }
+
         private void SelectionPerso_Load(object sender, EventArgs e)
         {
             compagnie.InitListeArmes();
@@ -56,7 +64,6 @@ namespace P_Heroes
         {
             string nomHero = tbxNomPerso3.Text;
             btnOkClick(heros3, 3, nomHero);
-            
         }
 
         private void tbxNomPerso1_TextChanged(object sender, EventArgs e)
@@ -115,12 +122,20 @@ namespace P_Heroes
                 btnOk3.Visible = true;
                 tbxNomPerso3.Visible = true;
             }
+            else if (compagnie.Heros.Count == 3)
+            {
+                btnJouer.Visible = true;
+            }
             btnValider.Enabled = false;
         }
 
         private void btnJouer_Click(object sender, EventArgs e)
         {
             compagnie.majNom(tbxNomCompagnie.Text);
+
+            form.DefinirCompagnie(compagnie);
+
+            this.Close();
         }
 
         private void majPbx(object sender, EventArgs e)
