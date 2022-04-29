@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Billegas Lucas, Crausaz Neal 
+ * Projet : Jeu en c#
+ * Fichier : Class Tenue
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +39,9 @@ namespace P_Heroes
         {
             
         }
+        /// <summary>
+        /// Ajoute les stats à la tenue choisie
+        /// </summary>
         public Tenue majTenue(string nomTenue)
         {
             Tenue tenue = new Tenue();

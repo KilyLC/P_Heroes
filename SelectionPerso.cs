@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Billegas Lucas, Crausaz Neal 
+ * Projet : Jeu en c#
+ * Fichier : Form sélection des héros
+ */
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
@@ -8,6 +13,7 @@ namespace P_Heroes
 {
     public partial class SelectionPerso : Form
     {
+        //init
         Compagnie compagnie = new Compagnie();
         Arme armeChoisi1;
         Arme armeChoisi2;
@@ -31,10 +37,12 @@ namespace P_Heroes
         private void SelectionPerso_Load(object sender, EventArgs e)
         {
             compagnie.InitListeArmes();
+            btnJouer.Enabled = false;
 
         }
         private void pbxPerso1_Paint(object sender, PaintEventArgs e)
         {
+            //contour hero
             ControlPaint.DrawBorder(e.Graphics, pbxPerso1.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
         }
 
@@ -137,7 +145,9 @@ namespace P_Heroes
 
             this.Close();
         }
-
+        /// <summary>
+        /// Maj des items
+        /// </summary>
         private void majPbx(object sender, EventArgs e)
         {
             PictureBox pbxCliquer = ((PictureBox)sender);
@@ -211,7 +221,9 @@ namespace P_Heroes
             }
         }
 
-        //Rafraichis les stats
+        /// <summary>
+        /// Rafraichi les stats
+        /// </summary>
         private void RefreshStats(Heros hero)
         {
             lblAgilite.Text = hero.Agilite.ToString();
@@ -234,7 +246,9 @@ namespace P_Heroes
                 lblMainG.Text = hero.Arme2.NomArme.ToString();
             }
         }
-        //rafraichi au clique d'un nouveau hero
+        /// <summary>
+        /// Rafraichi au clique d'un nouveau hero
+        /// </summary>
         private void RefreshBtnOk()
         {
             pbxArc.Visible = true;
@@ -247,7 +261,9 @@ namespace P_Heroes
             pbxMetal.Visible = true;
             pbxTissu.Visible = true;
         }
-        //Refresh toutes les armes selon l'arme sélectionné
+        /// <summary>
+        /// Rafraichi les armes
+        /// </summary>
         private void RefreshArme(string tagPbx)
         {
             pbxArc.Visible = false;
@@ -294,7 +310,9 @@ namespace P_Heroes
                 pbxHache.Visible = false;
             }
         }
-        //Rafraichi les tenues
+        /// <summary>
+        /// Rafraichi les tenues
+        /// </summary>
         private void RefreshTenue(Tenue tenue)
         {
             if (tenue.NomTenue == "tissu")
@@ -319,6 +337,7 @@ namespace P_Heroes
         
         private void btnOkClick(Heros hero, int numHero, string nomHero)
         {
+            // Mets les stats à l'héro séléctionné 
             if (numHero == 1)
             {
                 hero.Heros1(nomHero);
@@ -342,5 +361,9 @@ namespace P_Heroes
             RefreshStats(heroSelectionne);
         }
 
+        private void tbxNomCompagnie_TextChanged(object sender, EventArgs e)
+        {
+            btnJouer.Enabled = true;
+        }
     }
 }

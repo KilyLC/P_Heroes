@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Billegas Lucas, Crausaz Neal 
+ * Projet : Jeu en c#
+ * Fichier : Class compagnie
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,12 +28,16 @@ namespace P_Heroes
         {
             
         }
-
+        /// <summary>
+        /// Maj du nom de la compagnie
+        /// </summary>
         public void majNom(string nom)
         {
             NomCompagnie = nom;
         }
-
+        /// <summary>
+        /// Ajout d'un héro à la compagnie
+        /// </summary>
         public List<Heros> AjoutHeros(Heros hero)
         {
             if (Heros.Count < NB_HEROS_MAX)
@@ -37,7 +46,9 @@ namespace P_Heroes
             }
             return Heros;
         }
-
+        /// <summary>
+        /// Init des armes
+        /// </summary>
         public void InitListeArmes()
         {
 
@@ -115,7 +126,9 @@ namespace P_Heroes
             values = new DicoValues(lance, false);
             DicoListeArmes["lance"] = values;
         }
-
+        /// <summary>
+        /// Maj selon arme séléctionné
+        /// </summary>
         public void SelectionArme(string nomArme)
         {
             DicoListeArmes["lance"].utilisee = true;

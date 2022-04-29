@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bntAttaque = new System.Windows.Forms.Button();
+            this.btnAttaque = new System.Windows.Forms.Button();
             this.btnDefense = new System.Windows.Forms.Button();
             this.btnChangement = new System.Windows.Forms.Button();
             this.pbxPerso1 = new System.Windows.Forms.PictureBox();
@@ -36,27 +36,31 @@
             this.pbxPerso3 = new System.Windows.Forms.PictureBox();
             this.pbxEnnemie = new System.Windows.Forms.PictureBox();
             this.pbrVieEnnemi = new System.Windows.Forms.ProgressBar();
-            this.lblChangement = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVieEnnemi = new System.Windows.Forms.Label();
             this.lblViePerso = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pbrViePerso = new System.Windows.Forms.ProgressBar();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lblNomCompagnie = new System.Windows.Forms.Label();
+            this.btnCommencer = new System.Windows.Forms.Button();
+            this.lblNomHero = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemie)).BeginInit();
             this.SuspendLayout();
             // 
-            // bntAttaque
+            // btnAttaque
             // 
-            this.bntAttaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntAttaque.Location = new System.Drawing.Point(32, 754);
-            this.bntAttaque.Name = "bntAttaque";
-            this.bntAttaque.Size = new System.Drawing.Size(229, 92);
-            this.bntAttaque.TabIndex = 0;
-            this.bntAttaque.Text = "Attaque";
-            this.bntAttaque.UseVisualStyleBackColor = true;
+            this.btnAttaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttaque.Location = new System.Drawing.Point(32, 754);
+            this.btnAttaque.Name = "btnAttaque";
+            this.btnAttaque.Size = new System.Drawing.Size(229, 92);
+            this.btnAttaque.TabIndex = 0;
+            this.btnAttaque.Text = "Attaque";
+            this.btnAttaque.UseVisualStyleBackColor = true;
+            this.btnAttaque.Visible = false;
             // 
             // btnDefense
             // 
@@ -68,6 +72,7 @@
             this.btnDefense.TabIndex = 1;
             this.btnDefense.Text = "Defense";
             this.btnDefense.UseVisualStyleBackColor = true;
+            this.btnDefense.Visible = false;
             // 
             // btnChangement
             // 
@@ -78,6 +83,7 @@
             this.btnChangement.TabIndex = 2;
             this.btnChangement.Text = "Changement";
             this.btnChangement.UseVisualStyleBackColor = true;
+            this.btnChangement.Visible = false;
             this.btnChangement.Click += new System.EventHandler(this.btnChangement_Click);
             // 
             // pbxPerso1
@@ -90,6 +96,7 @@
             this.pbxPerso1.TabIndex = 4;
             this.pbxPerso1.TabStop = false;
             this.pbxPerso1.Tag = "hero1";
+            this.pbxPerso1.Visible = false;
             // 
             // pbxPerso2
             // 
@@ -101,6 +108,7 @@
             this.pbxPerso2.TabIndex = 5;
             this.pbxPerso2.TabStop = false;
             this.pbxPerso2.Tag = "hero3";
+            this.pbxPerso2.Visible = false;
             // 
             // pbxPerso3
             // 
@@ -112,6 +120,7 @@
             this.pbxPerso3.TabIndex = 6;
             this.pbxPerso3.TabStop = false;
             this.pbxPerso3.Tag = "hero2";
+            this.pbxPerso3.Visible = false;
             // 
             // pbxEnnemie
             // 
@@ -122,6 +131,7 @@
             this.pbxEnnemie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxEnnemie.TabIndex = 7;
             this.pbxEnnemie.TabStop = false;
+            this.pbxEnnemie.Visible = false;
             // 
             // pbrVieEnnemi
             // 
@@ -130,17 +140,7 @@
             this.pbrVieEnnemi.Size = new System.Drawing.Size(266, 39);
             this.pbrVieEnnemi.TabIndex = 8;
             this.pbrVieEnnemi.Value = 100;
-            // 
-            // lblChangement
-            // 
-            this.lblChangement.AutoSize = true;
-            this.lblChangement.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChangement.Location = new System.Drawing.Point(439, 911);
-            this.lblChangement.Name = "lblChangement";
-            this.lblChangement.Size = new System.Drawing.Size(285, 25);
-            this.lblChangement.TabIndex = 9;
-            this.lblChangement.Text = "Veuiller changer votre Heros";
-            this.lblChangement.Visible = false;
+            this.pbrVieEnnemi.Visible = false;
             // 
             // label1
             // 
@@ -151,6 +151,7 @@
             this.label1.Size = new System.Drawing.Size(40, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "PV";
+            this.label1.Visible = false;
             // 
             // lblVieEnnemi
             // 
@@ -161,6 +162,7 @@
             this.lblVieEnnemi.Size = new System.Drawing.Size(36, 20);
             this.lblVieEnnemi.TabIndex = 11;
             this.lblVieEnnemi.Text = "100";
+            this.lblVieEnnemi.Visible = false;
             // 
             // lblViePerso
             // 
@@ -171,6 +173,7 @@
             this.lblViePerso.Size = new System.Drawing.Size(36, 20);
             this.lblViePerso.TabIndex = 14;
             this.lblViePerso.Text = "100";
+            this.lblViePerso.Visible = false;
             // 
             // label4
             // 
@@ -181,6 +184,7 @@
             this.label4.Size = new System.Drawing.Size(40, 25);
             this.label4.TabIndex = 13;
             this.label4.Text = "PV";
+            this.label4.Visible = false;
             // 
             // pbrViePerso
             // 
@@ -189,18 +193,63 @@
             this.pbrViePerso.Size = new System.Drawing.Size(266, 39);
             this.pbrViePerso.TabIndex = 12;
             this.pbrViePerso.Value = 100;
+            this.pbrViePerso.Visible = false;
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(289, 9);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(87, 17);
+            this.lbl1.TabIndex = 15;
+            this.lbl1.Text = "Compagnie :";
+            this.lbl1.Visible = false;
+            // 
+            // lblNomCompagnie
+            // 
+            this.lblNomCompagnie.AutoSize = true;
+            this.lblNomCompagnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomCompagnie.Location = new System.Drawing.Point(382, 9);
+            this.lblNomCompagnie.Name = "lblNomCompagnie";
+            this.lblNomCompagnie.Size = new System.Drawing.Size(0, 17);
+            this.lblNomCompagnie.TabIndex = 16;
+            this.lblNomCompagnie.Visible = false;
+            // 
+            // btnCommencer
+            // 
+            this.btnCommencer.Location = new System.Drawing.Point(402, 244);
+            this.btnCommencer.Name = "btnCommencer";
+            this.btnCommencer.Size = new System.Drawing.Size(255, 229);
+            this.btnCommencer.TabIndex = 17;
+            this.btnCommencer.Text = "Commencer";
+            this.btnCommencer.UseVisualStyleBackColor = true;
+            this.btnCommencer.Click += new System.EventHandler(this.btnCommencer_Click);
+            // 
+            // lblNomHero
+            // 
+            this.lblNomHero.AutoSize = true;
+            this.lblNomHero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomHero.Location = new System.Drawing.Point(324, 460);
+            this.lblNomHero.Name = "lblNomHero";
+            this.lblNomHero.Size = new System.Drawing.Size(0, 17);
+            this.lblNomHero.TabIndex = 18;
+            this.lblNomHero.Visible = false;
             // 
             // P_Heros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lblNomHero);
+            this.Controls.Add(this.btnCommencer);
+            this.Controls.Add(this.lblNomCompagnie);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lblViePerso);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbrViePerso);
             this.Controls.Add(this.lblVieEnnemi);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblChangement);
             this.Controls.Add(this.pbrVieEnnemi);
             this.Controls.Add(this.pbxEnnemie);
             this.Controls.Add(this.pbxPerso3);
@@ -208,7 +257,7 @@
             this.Controls.Add(this.pbxPerso1);
             this.Controls.Add(this.btnChangement);
             this.Controls.Add(this.btnDefense);
-            this.Controls.Add(this.bntAttaque);
+            this.Controls.Add(this.btnAttaque);
             this.Name = "P_Heros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heros";
@@ -224,7 +273,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button bntAttaque;
+        private System.Windows.Forms.Button btnAttaque;
         private System.Windows.Forms.Button btnChangement;
         private System.Windows.Forms.PictureBox pbxPerso1;
         private System.Windows.Forms.PictureBox pbxPerso2;
@@ -232,12 +281,15 @@
         private System.Windows.Forms.PictureBox pbxEnnemie;
         private System.Windows.Forms.ProgressBar pbrVieEnnemi;
         private System.Windows.Forms.Button btnDefense;
-        private System.Windows.Forms.Label lblChangement;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblVieEnnemi;
         private System.Windows.Forms.Label lblViePerso;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ProgressBar pbrViePerso;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lblNomCompagnie;
+        private System.Windows.Forms.Button btnCommencer;
+        private System.Windows.Forms.Label lblNomHero;
     }
 }
 

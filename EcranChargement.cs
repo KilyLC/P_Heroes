@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Billegas Lucas, Crausaz Neal 
+ * Projet : Jeu en c#
+ * Fichier : Form écran de chargement
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,12 +38,9 @@ namespace P_Heroes
                 pbrChargement.Value += 1;
 
             }
-
             tmrChargement.Stop();
-
             SelectionPerso selectionPerso = new SelectionPerso(form);
             selectionPerso.Show();
-
             this.Close();
         }
 
@@ -46,11 +48,6 @@ namespace P_Heroes
         {
             tmrChargement.Start();
             pbrChargement.Value = 0;
-        }
-
-        private void pbrChargement_Click(object sender, EventArgs e)
-        {
-         
         }
     }
 }

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Billegas Lucas, Crausaz Neal 
+ * Projet : Jeu en c#
+ * Fichier : Form principal (combat)
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +38,9 @@ namespace P_Heroes
             ecranChargement.Show(this);
             playSound();
         }
+        /// <summary>
+        /// Lance la musique
+        /// </summary>
         private void playSound()
         {
             player = new System.Media.SoundPlayer();
@@ -48,32 +56,81 @@ namespace P_Heroes
             {
                 numHeroPrincipal = 1;
             }
+            //Hero 1
             if (numHeroPrincipal == 1)
             {
                 pbxPerso1.Image = compagnie.Heros[0].ImageArme;
                 pbxPerso2.Image = compagnie.Heros[1].ImageArme;
                 pbxPerso3.Image = compagnie.Heros[2].ImageArme;
+                ChangementVieEtNom(compagnie.Heros[0]);
             }
+            //Hero 2
             else if (numHeroPrincipal == 2)
             {
                 pbxPerso1.Image = compagnie.Heros[1].ImageArme;
                 pbxPerso2.Image = compagnie.Heros[2].ImageArme;
                 pbxPerso3.Image = compagnie.Heros[0].ImageArme;
+                ChangementVieEtNom(compagnie.Heros[1]);
             }
+            //Hero 3
             else
             {
                 pbxPerso1.Image = compagnie.Heros[2].ImageArme;
                 pbxPerso2.Image = compagnie.Heros[0].ImageArme;
                 pbxPerso3.Image = compagnie.Heros[1].ImageArme;
+                ChangementVieEtNom(compagnie.Heros[2]);
             }
         }
-
-        private void ChangementVie(Heros hero)
+        /// <summary>
+        /// Change la vie et le nom selon l'héro
+        /// </summary>
+        private void ChangementVieEtNom(Heros hero)
         {
-            pbrViePerso.Value = hero.NvVie;
-            lblViePerso.Text = pbrViePerso.Value.ToString();
+            //Maj nom hero
+            lblNomHero.Text = hero.NomHeros;
+            //Maj progressbar vie
+            if (hero.NvVie > pbrViePerso.Maximum)
+            {
+                pbrViePerso.Value = pbrViePerso.Maximum;
+            }
+            else
+            {
+                pbrViePerso.Value = hero.NvVie;
+            }
+            //Maj label vie
+            lblViePerso.Text = hero.NvVie.ToString();
         }
 
-
+        private void btnCommencer_Click(object sender, EventArgs e)
+        {
+            Commencer();
+        }
+        /// <summary>
+        /// Init de la fenetre
+        /// /// </summary>
+        private void Commencer()
+        {
+            //init élément graphique
+            btnCommencer.Enabled = false;
+            btnCommencer.Visible = false;
+            pbrVieEnnemi.Visible = true;
+            pbrViePerso.Visible = true;
+            pbxPerso1.Visible = true;
+            pbxPerso2.Visible = true;
+            pbxPerso3.Visible = true;
+            lblNomCompagnie.Visible = true;
+            lblViePerso.Visible = true;
+            lblVieEnnemi.Visible = true;
+            lbl1.Visible = true;
+            pbxEnnemie.Visible = true;
+            btnAttaque.Visible = true;
+            lblNomHero.Visible = true;
+            btnChangement.Visible = true;
+            btnDefense.Visible = true;
+            //init nom compagnie, hero et la vie de l'héro principal
+            lblNomCompagnie.Text = compagnie.NomCompagnie;
+            lblViePerso.Text = compagnie.Heros[0].NvVie.ToString();
+            lblNomHero.Text = compagnie.Heros[0].NomHeros;
+        }
     }
 }

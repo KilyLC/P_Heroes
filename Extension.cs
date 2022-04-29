@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Billegas Lucas, Crausaz Neal 
+ * Projet : Jeu en c#
+ * Fichier : Class Extension
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +14,9 @@ namespace P_Heroes
     public static class Extension
     {
         const double POURCENTAGE = 20f / 100;
+        /// <summary>
+        /// Traitement de l'héro, ajout tenue, armes
+        /// </summary>
         internal static Heros TraitementHeros(Arme armeChoisi, Arme armeChoisi2, Tenue tenueChoisi, Heros heros)
         {
             //Assigner les armes choisies à l'héros concerné 

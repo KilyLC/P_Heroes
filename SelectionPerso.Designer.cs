@@ -60,6 +60,7 @@
             this.tbxNomCompagnie = new System.Windows.Forms.TextBox();
             this.lblAtt = new System.Windows.Forms.Label();
             this.lblMainG = new System.Windows.Forms.Label();
+            this.lbl7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBouclier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMetal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCuir)).BeginInit();
@@ -396,6 +397,7 @@
             this.tbxNomCompagnie.Name = "tbxNomCompagnie";
             this.tbxNomCompagnie.Size = new System.Drawing.Size(150, 20);
             this.tbxNomCompagnie.TabIndex = 41;
+            this.tbxNomCompagnie.TextChanged += new System.EventHandler(this.tbxNomCompagnie_TextChanged);
             // 
             // lblAtt
             // 
@@ -415,11 +417,21 @@
             this.lblMainG.Size = new System.Drawing.Size(0, 20);
             this.lblMainG.TabIndex = 43;
             // 
+            // lbl7
+            // 
+            this.lbl7.AutoSize = true;
+            this.lbl7.Location = new System.Drawing.Point(929, 875);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(110, 13);
+            this.lbl7.TabIndex = 44;
+            this.lbl7.Text = "Nom de la compagnie";
+            // 
             // SelectionPerso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lbl7);
             this.Controls.Add(this.lblMainG);
             this.Controls.Add(this.lblAtt);
             this.Controls.Add(this.tbxNomCompagnie);
@@ -494,7 +506,6 @@
         private System.Windows.Forms.Label lblVie;
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblVitAtt;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.Label lblAgilite;
         private System.Windows.Forms.Button btnValider;
@@ -508,5 +519,6 @@
         private System.Windows.Forms.TextBox tbxNomCompagnie;
         private System.Windows.Forms.Label lblAtt;
         private System.Windows.Forms.Label lblMainG;
+        private System.Windows.Forms.Label lbl7;
     }
 }

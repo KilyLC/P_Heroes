@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Billegas Lucas, Crausaz Neal 
+ * Projet : Jeu en c#
+ * Fichier : Class Arme 
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

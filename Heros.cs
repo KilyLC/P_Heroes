@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Billegas Lucas, Crausaz Neal 
+ * Projet : Jeu en c#
+ * Fichier : Class Heros
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +35,7 @@ namespace P_Heroes
         internal Compagnie Compagnie { get => _compagnie; set => _compagnie = value; }
         
 
-
+        //
         public void Heros1(string nomHeros)
         {
             Agilite = 70;

@@ -47,7 +47,6 @@
             this.pbrChargement.Step = 1;
             this.pbrChargement.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbrChargement.TabIndex = 0;
-            this.pbrChargement.Click += new System.EventHandler(this.pbrChargement_Click);
             // 
             // label1
             // 
