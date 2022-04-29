@@ -18,8 +18,19 @@ namespace P_Heroes
 {
     public partial class P_Heros : Form
     {
+        //Initialisation
         System.Media.SoundPlayer player;
+
+        Compagnie compagnie;
+        int numHeroPrincipal = 1;
         int vieEnnemi = 100;
+        const int attaque = 30;
+        Heros heroPrincipal;
+        Random rnd = new Random();
+        int valeurRandom = 3;
+        bool defenseEnnemi = false;
+        List<string> actionEnnemi = new List<string>();
+        List<Heros> listeHeros = new List<Heros>();
 
         public P_Heros()
         {
@@ -29,16 +40,17 @@ namespace P_Heroes
         public void DefinirCompagnie(Compagnie compagnie)
         {
             this.compagnie = compagnie;
+            listeHeros = compagnie.Heros;
         }
-        //Initialisation
-        Compagnie compagnie;
-        int numHeroPrincipal = 1;
+      
         private void P_Heros_Load(object sender, EventArgs e)
         {
             pbrVieEnnemi.Value = 100;
             EcranChargement ecranChargement = new EcranChargement(this);
             ecranChargement.Show(this);
             playSound();
+            actionEnnemi.Add("Defense");
+            actionEnnemi.Add("Attaque");
         }
         /// <summary>
         /// Lance la musique
@@ -48,18 +60,23 @@ namespace P_Heroes
             player = new System.Media.SoundPlayer();
             player.Stream = Properties.Resources.MusicSeigneurAnneaux;
             player.PlayLooping();
-
         }
 
         private void btnChangement_Click(object sender, EventArgs e)
         {
+            lbxAction.Items.Add(compagnie.NomCompagnie + " : Changement");
+            ActionJoueur();
             numHeroPrincipal += 1;
-            if (numHeroPrincipal > 3)
+            numHeroVerif();
+            heroPrincipal = compagnie.Heros[numHeroPrincipal - 1];
+            if (heroPrincipal.NvVie <= 0)
             {
-                numHeroPrincipal = 1;
+                numHeroPrincipal += 1;
+                numHeroVerif();
+                heroPrincipal = compagnie.Heros[numHeroPrincipal - 1];
             }
-            pbxPerso1.Image = compagnie.Heros[numHeroPrincipal - 1].ImageArme;
-            ChangementVieEtNom(compagnie.Heros[numHeroPrincipal - 1]);
+            pbxPerso1.Image = heroPrincipal.ImageArme;
+            ChangementVieEtNom(heroPrincipal);
             //Hero 1
             if (numHeroPrincipal == 1)
             {
@@ -78,6 +95,14 @@ namespace P_Heroes
                 pbxPerso2.Image = compagnie.Heros[0].ImageArme;
                 pbxPerso3.Image = compagnie.Heros[1].ImageArme;
             }
+            TourEnnemiDefault(heroPrincipal, false);
+        }
+        private void numHeroVerif()
+        {
+            if (numHeroPrincipal > 3)
+            {
+                numHeroPrincipal = 1;
+            }
         }
         /// <summary>
         /// Change la vie et le nom selon l'héro
@@ -90,6 +115,10 @@ namespace P_Heroes
             if (hero.NvVie > pbrViePerso.Maximum)
             {
                 pbrViePerso.Value = pbrViePerso.Maximum;
+            }
+            else if (hero.NvVie <= 0)
+            {
+                MessageBox.Show("Vous avez perdu l'héro : " + hero.NomHeros);   
             }
             else
             {
@@ -121,19 +150,29 @@ namespace P_Heroes
             lblVieEnnemi.Visible = true;
             lbl1.Visible = true;
             pbxEnnemie.Visible = true;
+            lbxAction.Visible = true;
             btnAttaque.Visible = true;
             lblNomHero.Visible = true;
             btnChangement.Visible = true;
             btnDefense.Visible = true;
             //init nom compagnie, hero et la vie de l'héro principal
+            heroPrincipal = compagnie.Heros[numHeroPrincipal - 1];
             lblNomCompagnie.Text = compagnie.NomCompagnie;
-            lblViePerso.Text = compagnie.Heros[0].NvVie.ToString();
-            lblNomHero.Text = compagnie.Heros[0].NomHeros;
+            lblViePerso.Text = heroPrincipal.NvVie.ToString();
+            lblNomHero.Text = heroPrincipal.NomHeros;
         }
 
         private void Attaque(Heros hero)
         {
-            vieEnnemi -= hero.Attaque;
+            lbxAction.Items.Add(compagnie.NomCompagnie + " : Attaque");
+            if (defenseEnnemi)
+            {
+                vieEnnemi -= Convert.ToInt32(hero.Attaque / 2);
+            }
+            else
+            {
+                vieEnnemi -= hero.Attaque;
+            }
             if (vieEnnemi <= 0)
             {
                 lblVieEnnemi.Text = "0";
@@ -150,7 +189,59 @@ namespace P_Heroes
 
         private void btnAttaque_Click(object sender, EventArgs e)
         {
-            Attaque(compagnie.Heros[numHeroPrincipal - 1]);
+            Attaque(heroPrincipal);
+            ActionJoueur();
+            TourEnnemiDefault(heroPrincipal, false);
+            
+        }
+        private void TourEnnemiDefault(Heros hero, bool defenseHero)
+        {
+            defenseEnnemi = false;
+            valeurRandom = rnd.Next(0, 2);
+            if (actionEnnemi[valeurRandom] == "Defense")
+            {
+                defenseEnnemi = true;
+            }
+            else
+            {
+                if (defenseHero)
+                {
+                    hero.NvVie -= Convert.ToInt32(attaque / 2);
+                }
+                else
+                {
+                    hero.NvVie -= attaque;
+                }
+            }
+            lbxAction.Items.Add("Ennemi : " + actionEnnemi[valeurRandom]);
+            ChangementVieEtNom(hero);
+            ActionEnnemi();
+        }
+
+        private void btnDefense_Click(object sender, EventArgs e)
+        {
+            ActionJoueur();
+            lbxAction.Items.Add(compagnie.NomCompagnie + " : Defense");
+            TourEnnemiDefault(heroPrincipal, true);
+        }
+        private void ActionJoueur()
+        {
+            btnAttaque.Enabled = false;
+            btnDefense.Enabled = false;
+            btnChangement.Enabled = false;
+        }
+        private void ActionEnnemi()
+        {
+            btnAttaque.Enabled = true;
+            btnDefense.Enabled = true;
+            btnChangement.Enabled = true;
+        }
+
+        private void MortHero()
+        {
+            listeHeros.Remove(heroPrincipal);
+            btnAttaque.Enabled = false;
+            btnDefense.Enabled = false;
         }
     }
 }

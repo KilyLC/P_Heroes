@@ -45,6 +45,7 @@
             this.lblNomCompagnie = new System.Windows.Forms.Label();
             this.btnCommencer = new System.Windows.Forms.Button();
             this.lblNomHero = new System.Windows.Forms.Label();
+            this.lbxAction = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).BeginInit();
@@ -74,6 +75,7 @@
             this.btnDefense.Text = "Defense";
             this.btnDefense.UseVisualStyleBackColor = true;
             this.btnDefense.Visible = false;
+            this.btnDefense.Click += new System.EventHandler(this.btnDefense_Click);
             // 
             // btnChangement
             // 
@@ -237,11 +239,23 @@
             this.lblNomHero.TabIndex = 18;
             this.lblNomHero.Visible = false;
             // 
+            // lbxAction
+            // 
+            this.lbxAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxAction.FormattingEnabled = true;
+            this.lbxAction.ItemHeight = 20;
+            this.lbxAction.Location = new System.Drawing.Point(715, 571);
+            this.lbxAction.Name = "lbxAction";
+            this.lbxAction.Size = new System.Drawing.Size(266, 364);
+            this.lbxAction.TabIndex = 19;
+            this.lbxAction.Visible = false;
+            // 
             // P_Heros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lbxAction);
             this.Controls.Add(this.lblNomHero);
             this.Controls.Add(this.btnCommencer);
             this.Controls.Add(this.lblNomCompagnie);
@@ -291,6 +305,7 @@
         private System.Windows.Forms.Label lblNomCompagnie;
         private System.Windows.Forms.Button btnCommencer;
         private System.Windows.Forms.Label lblNomHero;
+        private System.Windows.Forms.ListBox lbxAction;
     }
 }
 
