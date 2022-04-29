@@ -19,6 +19,8 @@ namespace P_Heroes
     public partial class P_Heros : Form
     {
         System.Media.SoundPlayer player;
+        int vieEnnemi = 100;
+
         public P_Heros()
         {
             InitializeComponent();
@@ -56,29 +58,25 @@ namespace P_Heroes
             {
                 numHeroPrincipal = 1;
             }
+            pbxPerso1.Image = compagnie.Heros[numHeroPrincipal - 1].ImageArme;
+            ChangementVieEtNom(compagnie.Heros[numHeroPrincipal - 1]);
             //Hero 1
             if (numHeroPrincipal == 1)
             {
-                pbxPerso1.Image = compagnie.Heros[0].ImageArme;
                 pbxPerso2.Image = compagnie.Heros[1].ImageArme;
                 pbxPerso3.Image = compagnie.Heros[2].ImageArme;
-                ChangementVieEtNom(compagnie.Heros[0]);
             }
             //Hero 2
             else if (numHeroPrincipal == 2)
             {
-                pbxPerso1.Image = compagnie.Heros[1].ImageArme;
                 pbxPerso2.Image = compagnie.Heros[2].ImageArme;
                 pbxPerso3.Image = compagnie.Heros[0].ImageArme;
-                ChangementVieEtNom(compagnie.Heros[1]);
             }
             //Hero 3
             else
             {
-                pbxPerso1.Image = compagnie.Heros[2].ImageArme;
                 pbxPerso2.Image = compagnie.Heros[0].ImageArme;
                 pbxPerso3.Image = compagnie.Heros[1].ImageArme;
-                ChangementVieEtNom(compagnie.Heros[2]);
             }
         }
         /// <summary>
@@ -131,6 +129,28 @@ namespace P_Heroes
             lblNomCompagnie.Text = compagnie.NomCompagnie;
             lblViePerso.Text = compagnie.Heros[0].NvVie.ToString();
             lblNomHero.Text = compagnie.Heros[0].NomHeros;
+        }
+
+        private void Attaque(Heros hero)
+        {
+            vieEnnemi -= hero.Attaque;
+            if (vieEnnemi <= 0)
+            {
+                lblVieEnnemi.Text = "0";
+                pbrVieEnnemi.Value = pbrVieEnnemi.Minimum;
+                MessageBox.Show("Bravo vous avez gagné");
+                
+            }
+            else
+            {
+                pbrVieEnnemi.Value = vieEnnemi;
+                lblVieEnnemi.Text = vieEnnemi.ToString();
+            }
+        }
+
+        private void btnAttaque_Click(object sender, EventArgs e)
+        {
+            Attaque(compagnie.Heros[numHeroPrincipal - 1]);
         }
     }
 }

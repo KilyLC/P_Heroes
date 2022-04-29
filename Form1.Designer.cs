@@ -61,6 +61,7 @@
             this.btnAttaque.Text = "Attaque";
             this.btnAttaque.UseVisualStyleBackColor = true;
             this.btnAttaque.Visible = false;
+            this.btnAttaque.Click += new System.EventHandler(this.btnAttaque_Click);
             // 
             // btnDefense
             // 
