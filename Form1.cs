@@ -65,16 +65,20 @@ namespace P_Heroes
         private void btnChangement_Click(object sender, EventArgs e)
         {
             lbxAction.Items.Add(compagnie.NomCompagnie + " : Changement");
+            
             ActionJoueur();
             numHeroPrincipal += 1;
             numHeroVerif();
             heroPrincipal = compagnie.Heros[numHeroPrincipal - 1];
+            
+            //Hero mort
             if (heroPrincipal.NvVie <= 0)
             {
                 numHeroPrincipal += 1;
                 numHeroVerif();
                 heroPrincipal = compagnie.Heros[numHeroPrincipal - 1];
             }
+            //affiche le nouveau hero principal
             pbxPerso1.Image = heroPrincipal.ImageArme;
             ChangementVieEtNom(heroPrincipal);
             //Hero 1
@@ -118,7 +122,8 @@ namespace P_Heroes
             }
             else if (hero.NvVie <= 0)
             {
-                MessageBox.Show("Vous avez perdu l'héro : " + hero.NomHeros);   
+                MessageBox.Show("Vous avez perdu l'héro : " + hero.NomHeros);
+                MortHero();
             }
             else
             {
@@ -161,7 +166,10 @@ namespace P_Heroes
             lblViePerso.Text = heroPrincipal.NvVie.ToString();
             lblNomHero.Text = heroPrincipal.NomHeros;
         }
-
+        /// <summary>
+        /// En cas d'attaque du joueur 
+        /// </summary>
+        /// <param name="hero">L'héro qui attaque</param>
         private void Attaque(Heros hero)
         {
             lbxAction.Items.Add(compagnie.NomCompagnie + " : Attaque");
@@ -224,21 +232,31 @@ namespace P_Heroes
             lbxAction.Items.Add(compagnie.NomCompagnie + " : Defense");
             TourEnnemiDefault(heroPrincipal, true);
         }
+        /// <summary>
+        /// Si le joueur fait une action
+        /// </summary>
         private void ActionJoueur()
         {
             btnAttaque.Enabled = false;
             btnDefense.Enabled = false;
             btnChangement.Enabled = false;
         }
+        /// <summary>
+        /// Si l'ennemi fait une action
+        /// </summary>
         private void ActionEnnemi()
         {
             btnAttaque.Enabled = true;
             btnDefense.Enabled = true;
             btnChangement.Enabled = true;
         }
-
+        /// <summary>
+        /// Si un héro meurt
+        /// </summary>
         private void MortHero()
         {
+            lblViePerso.Text = "0";
+            pbrViePerso.Value = 0;
             listeHeros.Remove(heroPrincipal);
             btnAttaque.Enabled = false;
             btnDefense.Enabled = false;
