@@ -343,8 +343,8 @@
             // 
             // pbxPerso1
             // 
+            this.pbxPerso1.BackColor = System.Drawing.SystemColors.Control;
             this.pbxPerso1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbxPerso1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxPerso1.Image = ((System.Drawing.Image)(resources.GetObject("pbxPerso1.Image")));
             this.pbxPerso1.Location = new System.Drawing.Point(50, 46);
             this.pbxPerso1.Name = "pbxPerso1";

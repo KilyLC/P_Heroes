@@ -23,6 +23,10 @@ namespace P_Heroes
         Tenue tenueSelectionne;
         Heros heroSelectionne;
 
+        Graphics g1;
+        Graphics g2;
+        Graphics g3;
+
         P_Heros form;
         public SelectionPerso()
         {
@@ -42,18 +46,56 @@ namespace P_Heroes
         }
         private void pbxPerso1_Paint(object sender, PaintEventArgs e)
         {
-            //contour hero
-            ControlPaint.DrawBorder(e.Graphics, pbxPerso1.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
+            if (compagnie.Heros.Count == 0)
+                ControlPaint.DrawBorder(e.Graphics, pbxPerso1.ClientRectangle,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid
+                );
+            else
+                ControlPaint.DrawBorder(e.Graphics, pbxPerso1.ClientRectangle,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid
+                );
         }
 
         private void pbxPerso2_Paint(object sender, PaintEventArgs e)
         {
-            ControlPaint.DrawBorder(e.Graphics, pbxPerso2.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
+            if (compagnie.Heros.Count == 1)
+                ControlPaint.DrawBorder(e.Graphics, pbxPerso2.ClientRectangle,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid
+                );
+            else
+                ControlPaint.DrawBorder(e.Graphics, pbxPerso2.ClientRectangle,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid
+                );
         }
 
         private void pbxPerso3_Paint(object sender, PaintEventArgs e)
         {
-            ControlPaint.DrawBorder(e.Graphics, pbxPerso3.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
+            if (compagnie.Heros.Count == 2)
+                ControlPaint.DrawBorder(e.Graphics, pbxPerso3.ClientRectangle,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid,
+                    Color.Red, 2, ButtonBorderStyle.Solid
+                );
+            else
+                ControlPaint.DrawBorder(e.Graphics, pbxPerso3.ClientRectangle,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid,
+                    this.BackColor, 2, ButtonBorderStyle.Solid
+                );
         }
 
         private void btnOk1_Click(object sender, EventArgs e)
@@ -121,6 +163,8 @@ namespace P_Heroes
                 pbxPerso2.Visible = true;
                 btnOk2.Visible = true;
                 tbxNomPerso2.Visible = true;
+
+                pbxPerso1.Refresh();
             }
             //héro 3
             else if (compagnie.Heros.Count == 2)
@@ -129,10 +173,14 @@ namespace P_Heroes
                 pbxPerso3.Visible = true;
                 btnOk3.Visible = true;
                 tbxNomPerso3.Visible = true;
+
+                pbxPerso2.Refresh();
             }
             else if (compagnie.Heros.Count == 3)
             {
                 btnJouer.Visible = true;
+
+                pbxPerso3.Refresh();
             }
             btnValider.Enabled = false;
         }
