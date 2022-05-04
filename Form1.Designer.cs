@@ -34,7 +34,7 @@
             this.pbxPerso1 = new System.Windows.Forms.PictureBox();
             this.pbxPerso2 = new System.Windows.Forms.PictureBox();
             this.pbxPerso3 = new System.Windows.Forms.PictureBox();
-            this.pbxEnnemie = new System.Windows.Forms.PictureBox();
+            this.pbxEnnemi1 = new System.Windows.Forms.PictureBox();
             this.pbrVieEnnemi = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVieEnnemi = new System.Windows.Forms.Label();
@@ -46,10 +46,19 @@
             this.btnCommencer = new System.Windows.Forms.Button();
             this.lblNomHero = new System.Windows.Forms.Label();
             this.lbxAction = new System.Windows.Forms.ListBox();
+            this.btnCapaciteSpecial = new System.Windows.Forms.Button();
+            this.btnFinTour = new System.Windows.Forms.Button();
+            this.pbxEnnemi3 = new System.Windows.Forms.PictureBox();
+            this.pbxEnnemi2 = new System.Windows.Forms.PictureBox();
+            this.lblNomCompagnieEnnemi = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblNomEnnemi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAttaque
@@ -80,7 +89,7 @@
             // btnChangement
             // 
             this.btnChangement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangement.Location = new System.Drawing.Point(170, 880);
+            this.btnChangement.Location = new System.Drawing.Point(32, 873);
             this.btnChangement.Name = "btnChangement";
             this.btnChangement.Size = new System.Drawing.Size(229, 92);
             this.btnChangement.TabIndex = 2;
@@ -125,22 +134,22 @@
             this.pbxPerso3.Tag = "hero2";
             this.pbxPerso3.Visible = false;
             // 
-            // pbxEnnemie
+            // pbxEnnemi1
             // 
-            this.pbxEnnemie.Image = global::P_Heroes.Properties.Resources.Orc_Warriors_Armor_Shield;
-            this.pbxEnnemie.Location = new System.Drawing.Point(715, 184);
-            this.pbxEnnemie.Name = "pbxEnnemie";
-            this.pbxEnnemie.Size = new System.Drawing.Size(266, 349);
-            this.pbxEnnemie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxEnnemie.TabIndex = 7;
-            this.pbxEnnemie.TabStop = false;
-            this.pbxEnnemie.Visible = false;
+            this.pbxEnnemi1.Image = global::P_Heroes.Properties.Resources.Orc_Warriors_Armor_Shield;
+            this.pbxEnnemi1.Location = new System.Drawing.Point(594, 257);
+            this.pbxEnnemi1.Name = "pbxEnnemi1";
+            this.pbxEnnemi1.Size = new System.Drawing.Size(252, 184);
+            this.pbxEnnemi1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxEnnemi1.TabIndex = 7;
+            this.pbxEnnemi1.TabStop = false;
+            this.pbxEnnemi1.Visible = false;
             // 
             // pbrVieEnnemi
             // 
-            this.pbrVieEnnemi.Location = new System.Drawing.Point(715, 113);
+            this.pbrVieEnnemi.Location = new System.Drawing.Point(594, 212);
             this.pbrVieEnnemi.Name = "pbrVieEnnemi";
-            this.pbrVieEnnemi.Size = new System.Drawing.Size(266, 39);
+            this.pbrVieEnnemi.Size = new System.Drawing.Size(272, 39);
             this.pbrVieEnnemi.TabIndex = 8;
             this.pbrVieEnnemi.Value = 100;
             this.pbrVieEnnemi.Visible = false;
@@ -149,7 +158,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(826, 85);
+            this.label1.Location = new System.Drawing.Point(713, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 25);
             this.label1.TabIndex = 10;
@@ -160,7 +169,7 @@
             // 
             this.lblVieEnnemi.AutoSize = true;
             this.lblVieEnnemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVieEnnemi.Location = new System.Drawing.Point(987, 122);
+            this.lblVieEnnemi.Location = new System.Drawing.Point(552, 221);
             this.lblVieEnnemi.Name = "lblVieEnnemi";
             this.lblVieEnnemi.Size = new System.Drawing.Size(36, 20);
             this.lblVieEnnemi.TabIndex = 11;
@@ -202,7 +211,7 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(289, 9);
+            this.lbl1.Location = new System.Drawing.Point(205, 9);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(87, 17);
             this.lbl1.TabIndex = 15;
@@ -213,7 +222,7 @@
             // 
             this.lblNomCompagnie.AutoSize = true;
             this.lblNomCompagnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomCompagnie.Location = new System.Drawing.Point(382, 9);
+            this.lblNomCompagnie.Location = new System.Drawing.Point(298, 9);
             this.lblNomCompagnie.Name = "lblNomCompagnie";
             this.lblNomCompagnie.Size = new System.Drawing.Size(0, 17);
             this.lblNomCompagnie.TabIndex = 16;
@@ -233,7 +242,7 @@
             // 
             this.lblNomHero.AutoSize = true;
             this.lblNomHero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomHero.Location = new System.Drawing.Point(324, 460);
+            this.lblNomHero.Location = new System.Drawing.Point(321, 465);
             this.lblNomHero.Name = "lblNomHero";
             this.lblNomHero.Size = new System.Drawing.Size(0, 17);
             this.lblNomHero.TabIndex = 18;
@@ -244,17 +253,100 @@
             this.lbxAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxAction.FormattingEnabled = true;
             this.lbxAction.ItemHeight = 20;
-            this.lbxAction.Location = new System.Drawing.Point(715, 571);
+            this.lbxAction.Location = new System.Drawing.Point(760, 693);
             this.lbxAction.Name = "lbxAction";
-            this.lbxAction.Size = new System.Drawing.Size(266, 364);
+            this.lbxAction.Size = new System.Drawing.Size(221, 304);
             this.lbxAction.TabIndex = 19;
             this.lbxAction.Visible = false;
+            // 
+            // btnCapaciteSpecial
+            // 
+            this.btnCapaciteSpecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapaciteSpecial.Location = new System.Drawing.Point(292, 873);
+            this.btnCapaciteSpecial.Name = "btnCapaciteSpecial";
+            this.btnCapaciteSpecial.Size = new System.Drawing.Size(229, 92);
+            this.btnCapaciteSpecial.TabIndex = 20;
+            this.btnCapaciteSpecial.Text = "Capacité spécial";
+            this.btnCapaciteSpecial.UseVisualStyleBackColor = true;
+            this.btnCapaciteSpecial.Visible = false;
+            // 
+            // btnFinTour
+            // 
+            this.btnFinTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinTour.Location = new System.Drawing.Point(542, 820);
+            this.btnFinTour.Name = "btnFinTour";
+            this.btnFinTour.Size = new System.Drawing.Size(151, 62);
+            this.btnFinTour.TabIndex = 21;
+            this.btnFinTour.Text = "Fin de tour";
+            this.btnFinTour.UseVisualStyleBackColor = true;
+            this.btnFinTour.Visible = false;
+            this.btnFinTour.Click += new System.EventHandler(this.btnFinTour_Click);
+            // 
+            // pbxEnnemi3
+            // 
+            this.pbxEnnemi3.Image = global::P_Heroes.Properties.Resources.OrcArcherCuir;
+            this.pbxEnnemi3.Location = new System.Drawing.Point(809, 475);
+            this.pbxEnnemi3.Name = "pbxEnnemi3";
+            this.pbxEnnemi3.Size = new System.Drawing.Size(179, 156);
+            this.pbxEnnemi3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxEnnemi3.TabIndex = 22;
+            this.pbxEnnemi3.TabStop = false;
+            this.pbxEnnemi3.Visible = false;
+            // 
+            // pbxEnnemi2
+            // 
+            this.pbxEnnemi2.Image = global::P_Heroes.Properties.Resources.OrcArcherCuir;
+            this.pbxEnnemi2.Location = new System.Drawing.Point(809, 53);
+            this.pbxEnnemi2.Name = "pbxEnnemi2";
+            this.pbxEnnemi2.Size = new System.Drawing.Size(172, 156);
+            this.pbxEnnemi2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxEnnemi2.TabIndex = 23;
+            this.pbxEnnemi2.TabStop = false;
+            this.pbxEnnemi2.Visible = false;
+            // 
+            // lblNomCompagnieEnnemi
+            // 
+            this.lblNomCompagnieEnnemi.AutoSize = true;
+            this.lblNomCompagnieEnnemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomCompagnieEnnemi.Location = new System.Drawing.Point(850, 9);
+            this.lblNomCompagnieEnnemi.Name = "lblNomCompagnieEnnemi";
+            this.lblNomCompagnieEnnemi.Size = new System.Drawing.Size(0, 17);
+            this.lblNomCompagnieEnnemi.TabIndex = 25;
+            this.lblNomCompagnieEnnemi.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(757, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 17);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Compagnie :";
+            this.label3.Visible = false;
+            // 
+            // lblNomEnnemi
+            // 
+            this.lblNomEnnemi.AutoSize = true;
+            this.lblNomEnnemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomEnnemi.Location = new System.Drawing.Point(715, 465);
+            this.lblNomEnnemi.Name = "lblNomEnnemi";
+            this.lblNomEnnemi.Size = new System.Drawing.Size(0, 17);
+            this.lblNomEnnemi.TabIndex = 26;
+            this.lblNomEnnemi.Visible = false;
             // 
             // P_Heros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lblNomEnnemi);
+            this.Controls.Add(this.lblNomCompagnieEnnemi);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pbxEnnemi2);
+            this.Controls.Add(this.pbxEnnemi3);
+            this.Controls.Add(this.btnFinTour);
+            this.Controls.Add(this.btnCapaciteSpecial);
             this.Controls.Add(this.lbxAction);
             this.Controls.Add(this.lblNomHero);
             this.Controls.Add(this.btnCommencer);
@@ -266,7 +358,7 @@
             this.Controls.Add(this.lblVieEnnemi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbrVieEnnemi);
-            this.Controls.Add(this.pbxEnnemie);
+            this.Controls.Add(this.pbxEnnemi1);
             this.Controls.Add(this.pbxPerso3);
             this.Controls.Add(this.pbxPerso2);
             this.Controls.Add(this.pbxPerso1);
@@ -280,7 +372,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,7 +387,7 @@
         private System.Windows.Forms.PictureBox pbxPerso1;
         private System.Windows.Forms.PictureBox pbxPerso2;
         private System.Windows.Forms.PictureBox pbxPerso3;
-        private System.Windows.Forms.PictureBox pbxEnnemie;
+        private System.Windows.Forms.PictureBox pbxEnnemi1;
         private System.Windows.Forms.ProgressBar pbrVieEnnemi;
         private System.Windows.Forms.Button btnDefense;
         private System.Windows.Forms.Label label1;
@@ -306,6 +400,13 @@
         private System.Windows.Forms.Button btnCommencer;
         private System.Windows.Forms.Label lblNomHero;
         private System.Windows.Forms.ListBox lbxAction;
+        private System.Windows.Forms.Button btnCapaciteSpecial;
+        private System.Windows.Forms.Button btnFinTour;
+        private System.Windows.Forms.PictureBox pbxEnnemi3;
+        private System.Windows.Forms.PictureBox pbxEnnemi2;
+        private System.Windows.Forms.Label lblNomCompagnieEnnemi;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNomEnnemi;
     }
 }
 

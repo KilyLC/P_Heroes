@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arme.cs" />
+    <Compile Include="Combat.cs" />
     <Compile Include="Compagnie.cs" />
     <Compile Include="DicoValues.cs" />
     <Compile Include="EcranChargement.cs">

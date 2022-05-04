@@ -16,9 +16,11 @@ namespace P_Heroes
     {
         public string NomArme { get; set; }
         public int NvAttaque { get; set; }
+        /*
+            public int NvAttaqueMax { get; set; }
+            public int NvAttaqueMin { get; set; }
+         */
         public int Durabilite { get; set; }
-        public int Poids { get; set; }
-        public int Munitions{ get; set; }
         public int NbMains { get; set; }
         public Image Image { get; set; }
 

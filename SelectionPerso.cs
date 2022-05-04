@@ -186,7 +186,6 @@ namespace P_Heroes
             {
                 if (arme.Key == pbxCliquer.Tag.ToString())
                 {
-                    
                     if(arme.Value.arme.NbMains == 2)
                     {
                         //arme 2 mains

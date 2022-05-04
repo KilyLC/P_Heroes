@@ -37,9 +37,6 @@ namespace P_Heroes
             //Changement des stats de l'héros en fonction de la tenue et des armes
 
             //Tenues Stat
-            double agilite = POURCENTAGE * tenueChoisi.Poids;
-
-            heros.Agilite -= Convert.ToInt32(agilite);
             heros.NvVie += Convert.ToInt32(POURCENTAGE * tenueChoisi.NvDefense);
             heros.Agilite -= Convert.ToInt32(POURCENTAGE * tenueChoisi.Poids);
 
@@ -53,11 +50,9 @@ namespace P_Heroes
                 heros.NvVie += Convert.ToInt32(POURCENTAGE * armeChoisi2.Durabilite);
             }
 
-            heros.Agilite -= Convert.ToInt32(POURCENTAGE * armeChoisi.Poids);
             heros.Attaque += Convert.ToInt32(POURCENTAGE * armeChoisi.NvAttaque);
             if (heros.Arme1 != heros.Arme2)
             {
-                heros.Agilite -= Convert.ToInt32(POURCENTAGE * armeChoisi2.Poids);
                 heros.Attaque += Convert.ToInt32(POURCENTAGE * armeChoisi2.NvAttaque);
             }
             return heros;
