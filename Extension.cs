@@ -50,10 +50,10 @@ namespace P_Heroes
                 heros.NvVie += Convert.ToInt32(POURCENTAGE * armeChoisi2.Durabilite);
             }
 
-            heros.Attaque += Convert.ToInt32(POURCENTAGE * armeChoisi.NvAttaque);
+            heros.Attaque += armeChoisi.NvAttaque;
             if (heros.Arme1 != heros.Arme2)
             {
-                heros.Attaque += Convert.ToInt32(POURCENTAGE * armeChoisi2.NvAttaque);
+                heros.Attaque += armeChoisi2.NvAttaque;
             }
             return heros;
 

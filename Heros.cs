@@ -18,7 +18,8 @@ namespace P_Heroes
         private Tenue _tenue;
         private int _nvVie;
         private int _attaque;
-        private int _agilite;      
+        private int _agilite;
+        private int _niveau;
         private Arme _arme1;
         private Arme _arme2;
         private Compagnie _compagnie;
@@ -28,6 +29,7 @@ namespace P_Heroes
         public int NvVie { get => _nvVie; set => _nvVie = value; }
         public int Agilite { get => _agilite; set => _agilite = value; }
         public int Attaque { get => _attaque; set => _attaque = value; }
+        public int Niveau { get => _niveau; set => _niveau = value; }
         public Image ImageHero { get => imageHero; set => imageHero = value; }
         internal Tenue Tenue { get => _tenue; set => _tenue = value; }
         internal Arme Arme1 { get => _arme1; set => _arme1 = value; }

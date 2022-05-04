@@ -17,9 +17,11 @@ namespace P_Heroes
         private List<Heros> _heros = new List<Heros>();
         private string _nomCompagnie;
         private List<string> _listeArmes = new List<string>();
-
+        private int _niveau;
+        
         Dictionary<string, DicoValues> listeArmes = new Dictionary<string, DicoValues>();
         public string NomCompagnie { get => _nomCompagnie; set => _nomCompagnie = value; }
+        public int Niveau { get => _niveau; set => _niveau = value; }
         public List<Heros> Heros { get => _heros; set => _heros = value; }
         public List<string> ListeArmes { get => _listeArmes; set => _listeArmes = value; }
         public Dictionary<string, DicoValues> DicoListeArmes { get => listeArmes; set => listeArmes = value; }
@@ -105,7 +107,7 @@ namespace P_Heroes
 
             Arme lance = new Arme();
             lance.NomArme = "lance";
-            lance.NvAttaque = 40;
+            lance.NvAttaque = 20;
             lance.Durabilite = 40;
             lance.NbMains = 1;
             lance.Image = Properties.Resources.lance;
