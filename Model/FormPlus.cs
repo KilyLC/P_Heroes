@@ -17,14 +17,15 @@ namespace P_Heroes.Model
             InitializeComponent();
         }
 
-        public FormPlus(string texte) : this()
+        public FormPlus(Objet o) : this()
         {
-            DefinirTexte(texte);
+            MiseAJour(o);
         }
 
-        public void DefinirTexte(string texte)
+        public void MiseAJour(Objet o)
         {
-            this.lblMain.Text = texte;
+            this.lblMain.Text = o.Description;
+            this.Text = o.Nom;
         }
     }
 }

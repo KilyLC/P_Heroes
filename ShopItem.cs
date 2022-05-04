@@ -38,11 +38,10 @@ namespace P_Heroes
             this.pbxMiniature.Image = _objet.Miniature;
             this.lblDescription.Text = _objet.Description;
             this.lblStatsGauche.Text = _objet.statistiquesEnTexte(); // Stats de l'arme ou armure
-            this.btnAction.Text = _objet.calculPrix().ToString();
 
             // Form plus
-            this._formPlusStats = new FormPlus(_objet.statistiquesEnTexte());
-            this._formPlusDescription = new FormPlus(_objet.Description);
+            this._formPlusStats = new FormPlus(_objet);
+            this._formPlusDescription = new FormPlus(_objet);
 
             // Rareté
             Color border_color = Color.White;
@@ -71,6 +70,11 @@ namespace P_Heroes
         private void btnPlusStats_Click(object sender, EventArgs e)
         {
             this._formPlusStats.ShowDialog();
+        }
+
+        public void DefinirAction(string texte)
+        {
+            this.btnAction.Text = texte;
         }
     }
 }
