@@ -16,8 +16,7 @@ namespace P_Heroes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new P_Heros());
-            Application.Run(new FormBoutique());
+            Application.Run(new P_Heros());
         }
     }
 }

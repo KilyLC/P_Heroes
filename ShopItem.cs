@@ -13,20 +13,64 @@ namespace P_Heroes
 {
     public partial class ShopItem : UserControl
     {
-        public Objet objet;
-        public Objet Objet { get => objet; set { objet = value; miseAJour(); } }
+        private Objet _objet;
+        public Objet Objet { get => _objet; set { _objet = value; MiseAJour(); } }
+
+        private FormPlus _formPlusStats;
+        private FormPlus _formPlusDescription;
 
         public ShopItem()
         {
             InitializeComponent();
         }
-        public void miseAJour() {
+
+        public ShopItem(Objet o) : this()
+        {
+            this.Objet = o;
+        }
+
+        private void MiseAJour() {
+            if (_objet == null) return;
+
             // Mise à jour des composants
-            this.lblNom.Text = objet.Nom;
-            this.pbxMiniature.Image = objet.Miniature;
-            this.lblDescription.Text = objet.Description;
-            this.lblStatsGauche.Text = objet.statistiqueEnText();
-            this.btnAction.Text = objet.calculPrix().ToString();
+            this.lblNom.Text = _objet.Nom;
+            this.lblNiveau.Text = _objet.Niveau.ToString();
+            this.pbxMiniature.Image = _objet.Miniature;
+            this.lblDescription.Text = _objet.Description;
+            this.lblStatsGauche.Text = _objet.statistiquesEnTexte(); // Stats de l'arme ou armure
+            this.btnAction.Text = _objet.calculPrix().ToString();
+
+            // Form plus
+            this._formPlusStats = new FormPlus(_objet.statistiquesEnTexte());
+            this._formPlusDescription = new FormPlus(_objet.Description);
+
+            // Rareté
+            Color border_color = Color.White;
+            switch (_objet.Rarete)
+            {
+                case RareteObjet.Commun:
+                    border_color = Color.Gray; break;
+                case RareteObjet.PeuCommun:
+                    border_color = Color.LimeGreen; break;
+                case RareteObjet.Rare:
+                    border_color = Color.DeepSkyBlue; break;
+                case RareteObjet.TresRare:
+                    border_color = Color.Magenta; break;
+                case RareteObjet.Legendaire:
+                    border_color = Color.Gold; break;
+            }
+
+            this.BackColor = border_color;
+        }
+
+        private void btnPlusDescription_Click(object sender, EventArgs e)
+        {
+            this._formPlusDescription.ShowDialog();
+        }
+
+        private void btnPlusStats_Click(object sender, EventArgs e)
+        {
+            this._formPlusStats.ShowDialog();
         }
     }
 }
