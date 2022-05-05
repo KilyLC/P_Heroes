@@ -21,7 +21,8 @@ namespace P_Heroes
         public int NumActionEnnemi { get; set; }
 
         public List<string> ActionsEnnemi { get; set; } = new List<string>();
- 
+
+        const int NB_HEROS_MAX = 3;
 
         bool defenseEnnemi = false;
         bool defenseJoueur = false;
@@ -51,10 +52,6 @@ namespace P_Heroes
                 {
                     HeroPrincipalEnnemi.NvVie -= HeroPrincipalJoueur.Attaque;
                 }
-                if (HeroPrincipalEnnemi.NvVie <= 0)
-                {
-                    HeroMort(HeroPrincipalEnnemi);
-                }
             }
             else
             {
@@ -65,10 +62,6 @@ namespace P_Heroes
                 else
                 {
                     HeroPrincipalJoueur.NvVie -= HeroPrincipalEnnemi.Attaque;
-                }
-                if (HeroPrincipalJoueur.NvVie <= 0)
-                {
-                    HeroMort(HeroPrincipalJoueur);
                 }
             }
             defenseJoueur = false;
@@ -85,38 +78,45 @@ namespace P_Heroes
             {
                 defenseEnnemi = true;
             }
-            
         }
         public void Mouvement(bool actionJoueur)
         {
             if (actionJoueur)
             {
+                ChangementHero(actionJoueur);
+                //Hero mort
+                while (HeroPrincipalJoueur.Vivant == false)
+                {
+                    ChangementHero(actionJoueur);
+                }
+            }
+            else
+            {
+                ChangementHero(actionJoueur);
+                //Hero mort
+                while (HeroPrincipalEnnemi.NvVie <= 0)
+                {
+                    ChangementHero(actionJoueur);
+                }
+            }
+            defenseJoueur = false;
+            defenseEnnemi = false;
+        }
+
+        public void ChangementHero(bool joueur)
+        {
+            if (joueur)
+            {
                 NumHeroPrincipalJoueur += 1;
                 numHeroVerif();
                 HeroPrincipalJoueur = CompagnieJoueur.Heros[NumHeroPrincipalJoueur - 1];
-                //Hero mort
-                while (HeroPrincipalJoueur.NvVie <= 0)
-                {
-                    NumHeroPrincipalJoueur += 1;
-                    numHeroVerif();
-                    HeroPrincipalJoueur = CompagnieJoueur.Heros[NumHeroPrincipalJoueur - 1];
-                }
             }
             else
             {
                 NumHeroPrincipalEnnemi += 1;
                 numHeroVerif();
-                HeroPrincipalEnnemi = CompagnieJoueur.Heros[NumHeroPrincipalEnnemi - 1];
-                //Hero mort
-                while (HeroPrincipalEnnemi.NvVie <= 0)
-                {
-                    NumHeroPrincipalEnnemi += 1;
-                    numHeroVerif();
-                    HeroPrincipalEnnemi = CompagnieEnnemi.Heros[NumHeroPrincipalEnnemi - 1];
-                }
+                HeroPrincipalEnnemi = CompagnieEnnemi.Heros[NumHeroPrincipalEnnemi - 1];
             }
-            defenseJoueur = false;
-            defenseEnnemi = false;
         }
         public void CapaciteSpecial()
         {
@@ -128,18 +128,25 @@ namespace P_Heroes
         }
         public void numHeroVerif()
         {
-            if (NumHeroPrincipalJoueur > 3)
+            if (NumHeroPrincipalJoueur > NB_HEROS_MAX)
             {
                 NumHeroPrincipalJoueur = 1;
             }
-            else if (NumHeroPrincipalEnnemi > 3)
+            else if (NumHeroPrincipalEnnemi > NB_HEROS_MAX)
             {
                 NumHeroPrincipalEnnemi = 1;
             }
         }
         public void TourEnnemi()
         {
-            NumActionEnnemi = rnd.Next(0, 3);
+            if (ActionsEnnemi.Count == 2)
+            {
+                NumActionEnnemi = rnd.Next(0, 2);
+            }
+            else
+            {
+                NumActionEnnemi = rnd.Next(0, 3);
+            }
             if (ActionsEnnemi[NumActionEnnemi] == "Defense")
             {
                 Defense(false);
@@ -157,12 +164,23 @@ namespace P_Heroes
         {
             if (heroMort == HeroPrincipalJoueur)
             {
-                NbHeroRestantJoueur -= 1;
+                NbHeroRestantJoueur--;
+                HeroPrincipalJoueur.Vivant = false;
+                if (NbHeroRestantJoueur > 1)
+                {
+                    Mouvement(true);
+                }
             }
             else
             {
-                NbHeroRestantEnnemi -= 1;
+                NbHeroRestantEnnemi--;
+                HeroPrincipalEnnemi.Vivant = false;
+                if (NbHeroRestantEnnemi > 1)
+                {
+                    Mouvement(false);
+                }
             }
+            heroMort.NvVie = 0;
         }
         public void Commencer()
         {
@@ -174,6 +192,23 @@ namespace P_Heroes
         public void CompagnieJoueurInit(Compagnie compagnie)
         {
             CompagnieJoueur = compagnie;
+        }
+
+        public bool Gagne()
+        {
+            if (NbHeroRestantEnnemi == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool Perdu()
+        {
+            if (NbHeroRestantJoueur == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public Compagnie CreationCompagnieEnnemi()

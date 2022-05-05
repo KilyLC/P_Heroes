@@ -30,6 +30,7 @@ namespace P_Heroes
         public int Agilite { get => _agilite; set => _agilite = value; }
         public int Attaque { get => _attaque; set => _attaque = value; }
         public int Niveau { get => _niveau; set => _niveau = value; }
+        public bool Vivant { get; set; }
         public Image ImageHero { get => imageHero; set => imageHero = value; }
         internal Tenue Tenue { get => _tenue; set => _tenue = value; }
         internal Arme Arme1 { get => _arme1; set => _arme1 = value; }
@@ -44,6 +45,7 @@ namespace P_Heroes
             Attaque = 60;
             NvVie = 100;
             NomHeros = nomHeros;
+            Vivant = true;
             ImageHero = Properties.Resources.Hero1;
         }
         public void Heros2(string nomHeros)
@@ -51,6 +53,7 @@ namespace P_Heroes
             Agilite = 50;
             Attaque = 40;
             NvVie = 100;
+            Vivant = true;
             NomHeros = nomHeros;
             ImageHero = Properties.Resources.Hero2;
         }
@@ -59,6 +62,7 @@ namespace P_Heroes
             Agilite = 40;
             Attaque = 30;
             NvVie = 100;
+            Vivant = true;
             NomHeros = nomHeros;
             ImageHero = Properties.Resources.Hero3;
         }
@@ -68,6 +72,7 @@ namespace P_Heroes
             Attaque = 20;
             NvVie = 100;
             NomHeros = nomHeros;
+            Vivant = true;
             ImageHero = Properties.Resources.OrcArcherCuir;
         }
         public void Ennemi2(string nomHeros)
@@ -75,6 +80,7 @@ namespace P_Heroes
             Agilite = 10;
             Attaque = 50;
             NvVie = 100;
+            Vivant = true;
             NomHeros = nomHeros;
             ImageHero = Properties.Resources.Orc_Warriors_Armor_Shield;
         }
@@ -83,6 +89,7 @@ namespace P_Heroes
             Agilite = 60;
             Attaque = 30;
             NvVie = 100;
+            Vivant = true;
             NomHeros = nomHeros;
             ImageHero = Properties.Resources.OrcArcherCuir;
         }

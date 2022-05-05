@@ -53,6 +53,8 @@
             this.lblNomCompagnieEnnemi = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblNomEnnemi = new System.Windows.Forms.Label();
+            this.lbxAffichage = new System.Windows.Forms.ListBox();
+            this.lbl5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).BeginInit();
@@ -272,6 +274,7 @@
             // 
             // btnFinTour
             // 
+            this.btnFinTour.Enabled = false;
             this.btnFinTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinTour.Location = new System.Drawing.Point(542, 820);
             this.btnFinTour.Name = "btnFinTour";
@@ -329,17 +332,39 @@
             // 
             this.lblNomEnnemi.AutoSize = true;
             this.lblNomEnnemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomEnnemi.Location = new System.Drawing.Point(715, 465);
+            this.lblNomEnnemi.Location = new System.Drawing.Point(693, 465);
             this.lblNomEnnemi.Name = "lblNomEnnemi";
             this.lblNomEnnemi.Size = new System.Drawing.Size(0, 17);
             this.lblNomEnnemi.TabIndex = 26;
             this.lblNomEnnemi.Visible = false;
+            // 
+            // lbxAffichage
+            // 
+            this.lbxAffichage.FormattingEnabled = true;
+            this.lbxAffichage.Location = new System.Drawing.Point(402, 25);
+            this.lbxAffichage.Name = "lbxAffichage";
+            this.lbxAffichage.Size = new System.Drawing.Size(262, 134);
+            this.lbxAffichage.TabIndex = 27;
+            this.lbxAffichage.Visible = false;
+            // 
+            // lbl5
+            // 
+            this.lbl5.AutoSize = true;
+            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5.Location = new System.Drawing.Point(757, 666);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(62, 17);
+            this.lbl5.TabIndex = 29;
+            this.lbl5.Text = "Actions :";
+            this.lbl5.Visible = false;
             // 
             // P_Heros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lbl5);
+            this.Controls.Add(this.lbxAffichage);
             this.Controls.Add(this.lblNomEnnemi);
             this.Controls.Add(this.lblNomCompagnieEnnemi);
             this.Controls.Add(this.label3);
@@ -407,6 +432,8 @@
         private System.Windows.Forms.Label lblNomCompagnieEnnemi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblNomEnnemi;
+        private System.Windows.Forms.ListBox lbxAffichage;
+        private System.Windows.Forms.Label lbl5;
     }
 }
 

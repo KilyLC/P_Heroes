@@ -58,6 +58,7 @@ namespace P_Heroes
         private void btnChangement_Click(object sender, EventArgs e)
         {
             mouvement = true;
+            btnActionCliquer();
         }
         /// <summary>
         /// Change la vie et le nom selon l'héro
@@ -76,7 +77,13 @@ namespace P_Heroes
                 else if (combat.HeroPrincipalJoueur.NvVie <= 0)
                 {
                     MortHeroAffichage(true);
+                    combat.HeroMort(combat.HeroPrincipalJoueur);
                     VerifNbHeroAffichage(true);
+                    if (combat.NbHeroRestantJoueur > 1)
+                    {
+                        ChangementHeroAffichage(true);
+                        ChangementVieEtNom(true);
+                    }
                 }
                 else
                 {
@@ -96,9 +103,15 @@ namespace P_Heroes
                     pbrVieEnnemi.Value = pbrVieEnnemi.Maximum;
                 }
                 else if (combat.HeroPrincipalEnnemi.NvVie <= 0)
-                {
+                {   
                     MortHeroAffichage(false);
+                    combat.HeroMort(combat.HeroPrincipalEnnemi);
                     VerifNbHeroAffichage(false);
+                    if (combat.NbHeroRestantEnnemi > 1)
+                    {
+                        ChangementHeroAffichage(false);
+                        ChangementVieEtNom(false);
+                    }
                 }
                 else
                 {
@@ -129,6 +142,8 @@ namespace P_Heroes
             pbxPerso3.Visible = true;
             lblNomCompagnie.Visible = true;
             lblViePerso.Visible = true;
+            lbl5.Visible = true;
+            lbxAffichage.Visible = true;
             lblVieEnnemi.Visible = true;
             lbl1.Visible = true;
             lbxAction.Visible = true;
@@ -161,32 +176,11 @@ namespace P_Heroes
         {
             if (joueur)
             {
-                if (combat.HeroPrincipalEnnemi.NvVie <= 0)
-                {
-                    lblVieEnnemi.Text = "0";
-                    pbrVieEnnemi.Value = pbrVieEnnemi.Minimum;
-                    ChangementVieEtNom(false);
-                }
-                else
-                {
-                    pbrVieEnnemi.Value = combat.HeroPrincipalEnnemi.NvVie;
-                    lblVieEnnemi.Text = combat.HeroPrincipalEnnemi.NvVie.ToString();
-                }
+                ChangementVieEtNom(false);
             }
             else
             {
-                lbxAction.Items.Add(combat.CompagnieEnnemi.NomCompagnie + " : Attaque");
-                if (combat.HeroPrincipalJoueur.NvVie <= 0)
-                {
-                    lblViePerso.Text = "0";
-                    pbrViePerso.Value = pbrVieEnnemi.Minimum;
-                    ChangementVieEtNom(true);
-                }
-                else
-                {
-                    pbrViePerso.Value = combat.HeroPrincipalJoueur.NvVie;
-                    lblViePerso.Text = combat.HeroPrincipalJoueur.NvVie.ToString();
-                }
+                ChangementVieEtNom(true); ;
             }
            
         }
@@ -194,6 +188,7 @@ namespace P_Heroes
         private void btnAttaque_Click(object sender, EventArgs e)
         {
             attaque = true;
+            btnActionCliquer();
         }
         private void TourEnnemiAffichage()
         {
@@ -201,15 +196,20 @@ namespace P_Heroes
             if (combat.ActionsEnnemi[combat.NumActionEnnemi] == "Mouvement")
             {
                 ChangementHeroAffichage(false);
+                ChangementVieEtNom(false);
             }
-            ChangementVieEtNom(false);
+            else
+            {
+                ChangementVieEtNom(true);
+            }
+            VerifNbHeroAffichage(true);
             ActionEnnemi();
-            VerifNbHeroAffichage(false);
+            
         }
-
         private void btnDefense_Click(object sender, EventArgs e)
         {
             defense = true;
+            btnActionCliquer();
         }
 
         private void VerifNbHeroAffichage(bool joueur)
@@ -220,16 +220,20 @@ namespace P_Heroes
                 {
                     btnChangement.Enabled = false;
                 }
-                else if (combat.NbHeroRestantJoueur < 1)
+                else if (combat.Perdu())
                 {
-                    MessageBox.Show("La compagnie " + combat.CompagnieJoueur.NomCompagnie + " a été tuée, vous avez perdu");
+                    lbxAffichage.Items.Add("La compagnie " + combat.CompagnieJoueur.NomCompagnie + " a été tuée, vous avez perdu");
                 }
             }
             else
             {
-                if (combat.NbHeroRestantEnnemi < 1)
+                if (combat.NbHeroRestantEnnemi == 1)
                 {
-                    MessageBox.Show("La compagnie " +  combat.CompagnieEnnemi.NomCompagnie + "a été tuée, vous avez gagné");
+                    combat.ActionsEnnemi.Remove("Mouvement");
+                }
+                else if (combat.Gagne())
+                {
+                    lbxAffichage.Items.Add("La compagnie " +  combat.CompagnieEnnemi.NomCompagnie + "a été tuée, vous avez gagné");
                 }
             }
         }
@@ -294,6 +298,8 @@ namespace P_Heroes
             btnAttaque.Enabled = false;
             btnDefense.Enabled = false;
             btnChangement.Enabled = false;
+            btnCapaciteSpecial.Enabled = false;
+            btnFinTour.Enabled = false;
         }
         /// <summary>
         /// Si l'ennemi fait une action
@@ -303,6 +309,7 @@ namespace P_Heroes
             btnAttaque.Enabled = true;
             btnDefense.Enabled = true;
             btnChangement.Enabled = true;
+            btnCapaciteSpecial.Enabled = true;
         }
         /// <summary>
         /// Si un héro meurt
@@ -313,17 +320,19 @@ namespace P_Heroes
             {
                 lblViePerso.Text = "0";
                 pbrViePerso.Value = 0;
-                btnAttaque.Enabled = false;
-                btnDefense.Enabled = false;
-                btnCapaciteSpecial.Enabled = false;
-                MessageBox.Show("Vous avez perdu l'héro : " + combat.HeroPrincipalJoueur.NomHeros);
+                lbxAffichage.Items.Add("Vous avez perdu l'héro : " + combat.HeroPrincipalJoueur.NomHeros);
             }
             else
             {
                 lblVieEnnemi.Text = "0";
                 pbrVieEnnemi.Value = 0;
+                lbxAffichage.Items.Add("Vous avez tué l'héro : " + combat.HeroPrincipalEnnemi.NomHeros);
             }
             
+        }
+        private void btnActionCliquer()
+        {
+            btnFinTour.Enabled = true;
         }
 
         private void btnFinTour_Click(object sender, EventArgs e)
@@ -347,17 +356,12 @@ namespace P_Heroes
                 ChangementVieEtNom(true);
                 lbxAction.Items.Add(combat.CompagnieJoueur.NomCompagnie + " : Mouvement");
             }
-            else
-            {
-                MessageBox.Show("Veuillez choisir une action");
-            }
             ActionJoueur();
             defense = false;
             attaque = false;
             mouvement = false;
             combat.TourEnnemi();
             TourEnnemiAffichage();
-
         }
     }
 }
