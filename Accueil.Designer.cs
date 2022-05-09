@@ -66,6 +66,7 @@
             // 
             // hsbVolume
             // 
+            this.hsbVolume.LargeChange = 1;
             this.hsbVolume.Location = new System.Drawing.Point(398, 516);
             this.hsbVolume.Name = "hsbVolume";
             this.hsbVolume.Size = new System.Drawing.Size(235, 27);
@@ -92,6 +93,7 @@
             this.Controls.Add(this.btnJouer);
             this.Controls.Add(this.btnQuitter);
             this.Name = "Accueil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
             this.ResumeLayout(false);
             this.PerformLayout();

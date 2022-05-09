@@ -41,8 +41,8 @@ namespace P_Heroes
         private void P_Heros_Load(object sender, EventArgs e)
         {
             pbrVieEnnemi.Value = 100;
-            EcranChargement ecranChargement = new EcranChargement(this);
-            ecranChargement.Show(this);
+            Accueil Accueil = new Accueil(this);
+            Accueil.Show(this);
             playSound();
         }
         /// <summary>

@@ -13,9 +13,22 @@ namespace P_Heroes
 {
     public partial class Accueil : Form
     {
-        public Accueil()
+        [DllImport("winmm.dll")]
+        public static extern int waveOutGetVolume(IntPtr hwo, out uint dwVolume);
+
+        [DllImport("winmm.dll")]
+        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
+
+
+        public Accueil(P_Heros p_Heros)
         {
             InitializeComponent();
+          
+            lblNbVolume.Text = hsbVolume.Value.ToString();
+
+            int newVolume = ((ushort.MaxValue / 5) * hsbVolume.Value / 10);
+            uint newVolumeAllChannels = (((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16));
+            waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
@@ -25,17 +38,19 @@ namespace P_Heroes
 
         private void btnJouer_Click(object sender, EventArgs e)
         {
-
+            EcranChargement ecranChargment = new EcranChargement();
+            ecranChargment.Show();
         }
 
-        [DllImport("winmm.dll")]
-        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
+
 
         private void hsbVolume_Scroll(object sender, ScrollEventArgs e)
         {
+            lblNbVolume.Text = hsbVolume.Value.ToString();
+
             int newVolume = ((ushort.MaxValue / 5) * hsbVolume.Value / 10);
             uint newVolumeAllChannels = (((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16));
-            waveOutSetVolume(IntPtr.Zero,  newVolumeAllChannels);
+            waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
         }
     }
 }
