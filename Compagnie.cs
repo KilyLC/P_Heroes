@@ -107,7 +107,7 @@ namespace P_Heroes
 
             Arme lance = new Arme();
             lance.NomArme = "lance";
-            lance.NvAttaque = 20;
+            lance.NvAttaque = 12;
             lance.Durabilite = 40;
             lance.NbMains = 1;
             lance.Image = Properties.Resources.lance;
