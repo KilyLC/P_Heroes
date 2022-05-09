@@ -119,7 +119,6 @@ namespace P_Heroes
                 }
                 //Maj label vie
                 lblVieEnnemi.Text = combat.HeroPrincipalEnnemi.NvVie.ToString();
-
             }
         }
         private void btnCommencer_Click(object sender, EventArgs e)
@@ -149,6 +148,8 @@ namespace P_Heroes
             lbxAction.Visible = true;
             btnAttaque.Visible = true;
             btnFinTour.Visible = true;
+            lbl3.Visible = true;
+            lbl4.Visible = true;
             btnCapaciteSpecial.Visible = true;
             lblNomHero.Visible = true;
             btnChangement.Visible = true;

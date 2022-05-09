@@ -55,6 +55,8 @@
             this.lblNomEnnemi = new System.Windows.Forms.Label();
             this.lbxAffichage = new System.Windows.Forms.ListBox();
             this.lbl5 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).BeginInit();
@@ -115,9 +117,9 @@
             // pbxPerso2
             // 
             this.pbxPerso2.Image = global::P_Heroes.Properties.Resources.Hero3;
-            this.pbxPerso2.Location = new System.Drawing.Point(65, 53);
+            this.pbxPerso2.Location = new System.Drawing.Point(38, 53);
             this.pbxPerso2.Name = "pbxPerso2";
-            this.pbxPerso2.Size = new System.Drawing.Size(156, 156);
+            this.pbxPerso2.Size = new System.Drawing.Size(165, 156);
             this.pbxPerso2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPerso2.TabIndex = 5;
             this.pbxPerso2.TabStop = false;
@@ -127,9 +129,9 @@
             // pbxPerso3
             // 
             this.pbxPerso3.Image = global::P_Heroes.Properties.Resources.Hero2;
-            this.pbxPerso3.Location = new System.Drawing.Point(65, 475);
+            this.pbxPerso3.Location = new System.Drawing.Point(38, 465);
             this.pbxPerso3.Name = "pbxPerso3";
-            this.pbxPerso3.Size = new System.Drawing.Size(156, 156);
+            this.pbxPerso3.Size = new System.Drawing.Size(165, 166);
             this.pbxPerso3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPerso3.TabIndex = 6;
             this.pbxPerso3.TabStop = false;
@@ -358,11 +360,33 @@
             this.lbl5.Text = "Actions :";
             this.lbl5.Visible = false;
             // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Location = new System.Drawing.Point(113, 216);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(13, 13);
+            this.lbl3.TabIndex = 30;
+            this.lbl3.Text = "2";
+            this.lbl3.Visible = false;
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.Location = new System.Drawing.Point(113, 647);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(13, 13);
+            this.lbl4.TabIndex = 31;
+            this.lbl4.Text = "3";
+            this.lbl4.Visible = false;
+            // 
             // P_Heros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl5);
             this.Controls.Add(this.lbxAffichage);
             this.Controls.Add(this.lblNomEnnemi);
@@ -434,6 +458,8 @@
         private System.Windows.Forms.Label lblNomEnnemi;
         private System.Windows.Forms.ListBox lbxAffichage;
         private System.Windows.Forms.Label lbl5;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl4;
     }
 }
 
