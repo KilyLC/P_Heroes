@@ -49,5 +49,10 @@ namespace P_Heroes
             tmrChargement.Start();
             pbrChargement.Value = 0;
         }
+
+        private void pbrChargement_Click(object sender, EventArgs e)
+        {  
+
+        }
     }
 }

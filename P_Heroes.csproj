@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accueil.Designer.cs">
+      <DependentUpon>Accueil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Arme.cs" />
     <Compile Include="Combat.cs" />
     <Compile Include="Compagnie.cs" />
@@ -93,6 +99,9 @@
       <DependentUpon>ShopItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Tenue.cs" />
+    <EmbeddedResource Include="Accueil.resx">
+      <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EcranChargement.resx">
       <DependentUpon>EcranChargement.cs</DependentUpon>
     </EmbeddedResource>
