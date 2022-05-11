@@ -132,7 +132,6 @@
             this.Name = "SelectionHeros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "la";
-            this.Load += new System.EventHandler(this.SelectionHeros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero3)).EndInit();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using P_Heroes.Model;
 
 namespace P_Heroes
 {
@@ -14,6 +15,8 @@ namespace P_Heroes
     {
         private EventHandler _handler = null;
         private Heros _heros;
+        private Arme _arme;
+        private Tenue _tenue;
         public PersoSelection()
         {
             InitializeComponent();
@@ -25,15 +28,32 @@ namespace P_Heroes
             this._heros = h;
             InitializeComponent();
         }
+        public PersoSelection(Arme a, EventHandler handler)
+        {
+            this._handler = handler;
+            this._arme = a;
+            InitializeComponent();
+        }
+        public PersoSelection(Tenue t, EventHandler handler)
+        {
+            this._handler = handler;
+            this._tenue = t;
+            InitializeComponent();
+        }
 
-        public void DefinirStats(string stats, string nomHeros)
+        public void DefinirStatsHero(string stats, string nomHeros)
         {
             lblStat.Text = stats;
             lblNomHero.Text = nomHeros;
         }
+        public void DefinirStatsArme(string stats, string nomArme)
+        {
+            lblStat.Text = stats;
+            lblNomHero.Text = nomArme;
+        }
         public void DefinirMiniature(Image miniature)
         {
-            pbxHeros.Image = miniature;
+            pbxImage.Image = miniature;
         }
 
         private void btnValider_Click(object sender, EventArgs e)
@@ -49,5 +69,34 @@ namespace P_Heroes
         {
             return this._heros;
         }
+        public Arme RecupererArmes()
+        {
+            return this._arme;
+        }
+        public Tenue RecupererTenues()
+        {
+            return this._tenue;
+        }
+
+        //public void MiseAJour()
+        //{
+        //    // Rareté
+        //    Color border_color = Color.White;
+        //    switch (_objet.Rarete)
+        //    {
+        //        case RareteObjet.Commun:
+        //            border_color = Color.Gray; break;
+        //        case RareteObjet.PeuCommun:
+        //            border_color = Color.LimeGreen; break;
+        //        case RareteObjet.Rare:
+        //            border_color = Color.DeepSkyBlue; break;
+        //        case RareteObjet.TresRare:
+        //            border_color = Color.Magenta; break;
+        //        case RareteObjet.Legendaire:
+        //            border_color = Color.Gold; break;
+        //    }
+
+        //    this.BackColor = border_color;
+        //}
     }
 }

@@ -19,6 +19,9 @@ namespace P_Heroes
         private int _nvVie;
         private int _attaque;
         private int _agilite;
+        private string _capaciteSpecial;
+        private bool _defenseSpeciale;
+        private bool _defense;
         private int _niveau;
         private Arme _arme1;
         private Arme _arme2;
@@ -32,12 +35,15 @@ namespace P_Heroes
         public int Niveau { get => _niveau; set => _niveau = value; }
         public bool Vivant { get; set; }
         public Image ImageHero { get => imageHero; set => imageHero = value; }
-        internal Tenue Tenue { get => _tenue; set => _tenue = value; }
-        internal Arme Arme1 { get => _arme1; set => _arme1 = value; }
-        internal Arme Arme2 { get => _arme2; set => _arme2 = value; }
-        internal Compagnie Compagnie { get => _compagnie; set => _compagnie = value; }
-        
-        public void CreeHero(int nvVie, int agilite, int attaque, string nomHero, Image image, bool vivant, Compagnie compagnie)
+        public Tenue Tenue { get => _tenue; set => _tenue = value; }
+        public Arme Arme1 { get => _arme1; set => _arme1 = value; }
+        public Arme Arme2 { get => _arme2; set => _arme2 = value; }
+        public Compagnie Compagnie { get => _compagnie; set => _compagnie = value; }
+        public string CapaciteSpecial { get => _capaciteSpecial; set => _capaciteSpecial = value; }
+        public bool DefenseSpeciale { get => _defenseSpeciale; set => _defenseSpeciale = value; }
+        public bool Defense { get => _defense; set => _defense = value; }
+
+        public void CreeHero(int nvVie, int agilite, int attaque, string nomHero, Image image, bool vivant, Compagnie compagnie, string capaciteSpeciale)
         {
             Agilite = agilite;
             Attaque = attaque;
@@ -46,6 +52,7 @@ namespace P_Heroes
             Vivant = vivant;
             ImageHero = image;
             Compagnie = compagnie;
+            CapaciteSpecial = capaciteSpeciale;
         }
 
         const double POURCENTAGE = 20f / 100;
@@ -67,7 +74,6 @@ namespace P_Heroes
             }
             //Assigner la tenue à l'héros concerné
             heros.Tenue = tenueChoisi;
-
 
             //Changement des stats de l'héros en fonction de la tenue et des armes
 
@@ -92,59 +98,31 @@ namespace P_Heroes
             }
             return heros;
         }
-        //public void Heros1(string nomHeros)
-        //{
-        //    Agilite = 70;
-        //    Attaque = 60;
-        //    NvVie = 100;
-        //    NomHeros = nomHeros;
-        //    Vivant = true;
-        //    ImageHero = Properties.Resources.Hero1;
-        //}
-        //public void Heros2(string nomHeros)
-        //{
-        //    Agilite = 50;
-        //    Attaque = 40;
-        //    NvVie = 100;
-        //    Vivant = true;
-        //    NomHeros = nomHeros;
-        //    ImageHero = Properties.Resources.Hero2;
-        //}
-        //public void Heros3(string nomHeros)
-        //{
-        //    Agilite = 40;
-        //    Attaque = 30;
-        //    NvVie = 100;
-        //    Vivant = true;
-        //    NomHeros = nomHeros;
-        //    ImageHero = Properties.Resources.Hero3;
-        //}
-        //public void Ennemi1(string nomHeros)
-        //{
-        //    Agilite = 40;
-        //    Attaque = 20;
-        //    NvVie = 100;
-        //    NomHeros = nomHeros;
-        //    Vivant = true;
-        //    ImageHero = Properties.Resources.OrcArcherCuir;
-        //}
-        //public void Ennemi2(string nomHeros)
-        //{
-        //    Agilite = 10;
-        //    Attaque = 50;
-        //    NvVie = 100;
-        //    Vivant = true;
-        //    NomHeros = nomHeros;
-        //    ImageHero = Properties.Resources.Orc_Warriors_Armor_Shield;
-        //}
-        //public void Ennemi3(string nomHeros)
-        //{
-        //    Agilite = 60;
-        //    Attaque = 30;
-        //    NvVie = 100;
-        //    Vivant = true;
-        //    NomHeros = nomHeros;
-        //    ImageHero = Properties.Resources.OrcArcherCuir;
-        //}
+        public int Degats()
+        {
+            int attaqueHero = 0;
+            if (Arme1 != Arme2)
+            {
+                attaqueHero += Attaque + Arme1.Degats();
+                attaqueHero += Attaque + Arme2.Degats();
+            }
+            else
+            {
+                attaqueHero += Attaque + Arme1.Degats();
+            }
+            return attaqueHero;
+        }
+        public void PerteVie(int degatsTotaux)
+        {
+            if (this.Defense)
+            {
+                degatsTotaux += Convert.ToInt32(degatsTotaux / 2);
+            }
+            else if (this.DefenseSpeciale)
+            {
+                degatsTotaux += Convert.ToInt32(degatsTotaux / 4);
+            }
+            this.NvVie -= degatsTotaux;
+        }
     }
 }

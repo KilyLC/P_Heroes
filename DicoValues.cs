@@ -19,10 +19,17 @@ namespace P_Heroes
         public DicoValues(Arme arme, bool utilisee)
         {
             this.arme = arme;
-            this.utilisee = utilisee;
+            this.utiliseeArme = utilisee;
+        }
+        public DicoValues(Tenue tenue, bool utilisee)
+        {
+            this.tenue = tenue;
+            this.utiliseeTenue = utilisee;
         }
 
         public Arme arme { get; set; }
-        public bool utilisee { get; set; }
+        public Tenue tenue { get; set; }
+        public bool utiliseeArme { get; set; }
+        public bool utiliseeTenue { get; set; }
     }
 }

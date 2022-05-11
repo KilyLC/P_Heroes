@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnValider = new System.Windows.Forms.Button();
             this.lblStat = new System.Windows.Forms.Label();
-            this.pbxHeros = new System.Windows.Forms.PictureBox();
+            this.pbxImage = new System.Windows.Forms.PictureBox();
             this.lblNomHero = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHeros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -43,7 +43,7 @@
             this.panel1.Controls.Add(this.lblNomHero);
             this.panel1.Controls.Add(this.btnValider);
             this.panel1.Controls.Add(this.lblStat);
-            this.panel1.Controls.Add(this.pbxHeros);
+            this.panel1.Controls.Add(this.pbxImage);
             this.panel1.Location = new System.Drawing.Point(13, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(223, 319);
@@ -51,7 +51,7 @@
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(47, 278);
+            this.btnValider.Location = new System.Drawing.Point(60, 278);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(105, 38);
             this.btnValider.TabIndex = 2;
@@ -67,14 +67,14 @@
             this.lblStat.TabIndex = 1;
             this.lblStat.Text = "label1";
             // 
-            // pbxHeros
+            // pbxImage
             // 
-            this.pbxHeros.Location = new System.Drawing.Point(13, 38);
-            this.pbxHeros.Name = "pbxHeros";
-            this.pbxHeros.Size = new System.Drawing.Size(196, 166);
-            this.pbxHeros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxHeros.TabIndex = 0;
-            this.pbxHeros.TabStop = false;
+            this.pbxImage.Location = new System.Drawing.Point(13, 38);
+            this.pbxImage.Name = "pbxImage";
+            this.pbxImage.Size = new System.Drawing.Size(196, 166);
+            this.pbxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImage.TabIndex = 0;
+            this.pbxImage.TabStop = false;
             // 
             // lblNomHero
             // 
@@ -89,13 +89,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.Gray;
             this.Controls.Add(this.panel1);
             this.Name = "PersoSelection";
             this.Size = new System.Drawing.Size(248, 348);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHeros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -103,7 +103,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pbxHeros;
+        private System.Windows.Forms.PictureBox pbxImage;
         private System.Windows.Forms.Label lblStat;
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.Label lblNomHero;

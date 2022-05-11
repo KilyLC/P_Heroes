@@ -24,6 +24,10 @@ namespace P_Heroes
         bool attaque = false;
         bool defense = false;
         bool mouvement = false;
+        bool capaciteSpecial = false;
+
+        string nomCompagnieJoueur;
+        string nomCompagnieEnnemi;
 
         //combat
         Combat combat = new Combat();
@@ -32,17 +36,15 @@ namespace P_Heroes
         {
             InitializeComponent();
         }
-
         public void DefinirCompagnie(Compagnie compagnie)
         {
             combat.CompagnieJoueurInit(compagnie);
         }
-      
+
         private void P_Heros_Load(object sender, EventArgs e)
         {
-            pbrVieEnnemi.Value = 100;
-            Accueil Accueil = new Accueil(this);
-            Accueil.Show(this);
+            EcranChargement ecranChargement = new EcranChargement(this);
+            ecranChargement.Show(this);
             playSound();
         }
         /// <summary>
@@ -79,7 +81,7 @@ namespace P_Heroes
                     MortHeroAffichage(true);
                     combat.HeroMort(combat.HeroPrincipalJoueur);
                     VerifNbHeroAffichage(true);
-                    if (combat.NbHeroRestantJoueur > 1)
+                    if (combat.NbHeroRestantJoueur >= 1)
                     {
                         ChangementHeroAffichage(true);
                         ChangementVieEtNom(true);
@@ -103,11 +105,11 @@ namespace P_Heroes
                     pbrVieEnnemi.Value = pbrVieEnnemi.Maximum;
                 }
                 else if (combat.HeroPrincipalEnnemi.NvVie <= 0)
-                {   
+                {
                     MortHeroAffichage(false);
                     combat.HeroMort(combat.HeroPrincipalEnnemi);
                     VerifNbHeroAffichage(false);
-                    if (combat.NbHeroRestantEnnemi > 1)
+                    if (combat.NbHeroRestantEnnemi >= 1)
                     {
                         ChangementHeroAffichage(false);
                         ChangementVieEtNom(false);
@@ -125,6 +127,9 @@ namespace P_Heroes
         {
             combat.Commencer();
             CommencerAffichage();
+
+            nomCompagnieEnnemi = combat.CompagnieEnnemi.NomCompagnie;
+            nomCompagnieJoueur = combat.CompagnieJoueur.NomCompagnie;
         }
         /// <summary>
         /// Init de la fenetre
@@ -162,11 +167,11 @@ namespace P_Heroes
             lblNomCompagnieEnnemi.Visible = true;
 
             //Joueur
-            lblNomCompagnie.Text = combat.CompagnieJoueur.NomCompagnie;
+            lblNomCompagnie.Text = nomCompagnieJoueur;
             lblViePerso.Text = combat.HeroPrincipalJoueur.NvVie.ToString();
             lblNomHero.Text = combat.HeroPrincipalJoueur.NomHeros;
             //Ennemi
-            lblNomCompagnieEnnemi.Text = combat.CompagnieEnnemi.NomCompagnie;
+            lblNomCompagnieEnnemi.Text = nomCompagnieEnnemi;
             lblVieEnnemi.Text = combat.HeroPrincipalEnnemi.NvVie.ToString();
             lblNomEnnemi.Text = combat.HeroPrincipalEnnemi.NomHeros;
         }
@@ -183,7 +188,7 @@ namespace P_Heroes
             {
                 ChangementVieEtNom(true); ;
             }
-           
+
         }
 
         private void btnAttaque_Click(object sender, EventArgs e)
@@ -193,11 +198,15 @@ namespace P_Heroes
         }
         private void TourEnnemiAffichage()
         {
-            lbxAction.Items.Add(combat.CompagnieEnnemi.NomCompagnie + " : " + combat.ActionsEnnemi[combat.NumActionEnnemi]);
+            lbxAction.Items.Add(nomCompagnieEnnemi + " : " + combat.ActionsEnnemi[combat.NumActionEnnemi]);
             if (combat.ActionsEnnemi[combat.NumActionEnnemi] == "Mouvement")
             {
                 ChangementHeroAffichage(false);
                 ChangementVieEtNom(false);
+            }
+            else if (combat.ActionsEnnemi[combat.NumActionEnnemi] == "Capacite Speciale")
+            {
+                VerifNbCapaciteSpecialRestant(false);
             }
             else
             {
@@ -205,7 +214,7 @@ namespace P_Heroes
             }
             VerifNbHeroAffichage(true);
             ActionEnnemi();
-            
+
         }
         private void btnDefense_Click(object sender, EventArgs e)
         {
@@ -223,7 +232,7 @@ namespace P_Heroes
                 }
                 else if (combat.Perdu())
                 {
-                    lbxAffichage.Items.Add("La compagnie " + combat.CompagnieJoueur.NomCompagnie + " a été tuée, vous avez perdu");
+                    lbxAffichage.Items.Add("La compagnie " + nomCompagnieJoueur + " a été tuée, vous avez perdu");
                 }
             }
             else
@@ -234,7 +243,24 @@ namespace P_Heroes
                 }
                 else if (combat.Gagne())
                 {
-                    lbxAffichage.Items.Add("La compagnie " +  combat.CompagnieEnnemi.NomCompagnie + "a été tuée, vous avez gagné");
+                    lbxAffichage.Items.Add("La compagnie " + nomCompagnieEnnemi + "a été tuée, vous avez gagné");
+                }
+            }
+        }
+        private void VerifNbCapaciteSpecialRestant(bool joueur)
+        {
+            if (joueur)
+            {
+                if (combat.NbCapaciteSpecialJoueur < 1)
+                {
+                    btnCapaciteSpecial.Enabled = false;
+                }
+            }
+            else
+            {
+                if (combat.NbCapaciteSpecialEnnemi < 1)
+                {
+                    combat.ActionsEnnemi.Remove("Capacite Speciale");
                 }
             }
         }
@@ -300,7 +326,6 @@ namespace P_Heroes
             btnDefense.Enabled = false;
             btnChangement.Enabled = false;
             btnCapaciteSpecial.Enabled = false;
-            btnFinTour.Enabled = false;
         }
         /// <summary>
         /// Si l'ennemi fait une action
@@ -309,8 +334,15 @@ namespace P_Heroes
         {
             btnAttaque.Enabled = true;
             btnDefense.Enabled = true;
-            btnChangement.Enabled = true;
-            btnCapaciteSpecial.Enabled = true;
+            if (combat.NbHeroRestantJoueur > 1)
+            {
+                btnChangement.Enabled = true;
+            }
+            if (combat.NbCapaciteSpecialJoueur >= 1)
+            {
+                btnCapaciteSpecial.Enabled = true;
+            }
+
         }
         /// <summary>
         /// Si un héro meurt
@@ -329,40 +361,56 @@ namespace P_Heroes
                 pbrVieEnnemi.Value = 0;
                 lbxAffichage.Items.Add("Vous avez tué l'héro : " + combat.HeroPrincipalEnnemi.NomHeros);
             }
-            
+
         }
         private void btnActionCliquer()
         {
             btnFinTour.Enabled = true;
+            ActionJoueur();
         }
 
         private void btnFinTour_Click(object sender, EventArgs e)
         {
+            btnFinTour.Enabled = false;
             if (attaque)
             {
-                combat.Attaque(true);
+                combat.Attaque(combat.HeroPrincipalJoueur, combat.HeroPrincipalEnnemi);
                 AttaqueAffichage(true);
-                lbxAction.Items.Add(combat.CompagnieJoueur.NomCompagnie + " : Attaque");
+                lbxAction.Items.Add(nomCompagnieJoueur + " : Attaque");
             }
             else if (defense)
             {
-                combat.Defense(true);
+                combat.Defense(combat.HeroPrincipalJoueur);
                 ChangementVieEtNom(true);
-                lbxAction.Items.Add(combat.CompagnieJoueur.NomCompagnie + " : Defense");
+                lbxAction.Items.Add(nomCompagnieJoueur + " : Defense");
             }
             else if (mouvement)
             {
                 combat.Mouvement(true);
                 ChangementHeroAffichage(true);
                 ChangementVieEtNom(true);
-                lbxAction.Items.Add(combat.CompagnieJoueur.NomCompagnie + " : Mouvement");
+                lbxAction.Items.Add(nomCompagnieJoueur + " : Mouvement");
+            }
+            else if (capaciteSpecial)
+            {
+                combat.CapaciteSpecial(combat.HeroPrincipalJoueur, combat.HeroPrincipalEnnemi);
+                ChangementVieEtNom(false);
+                lbxAction.Items.Add(nomCompagnieJoueur + " : Capacité Spéciale");
+                VerifNbCapaciteSpecialRestant(true);
             }
             ActionJoueur();
+            capaciteSpecial = false;
             defense = false;
             attaque = false;
             mouvement = false;
             combat.TourEnnemi();
             TourEnnemiAffichage();
+        }
+
+        private void btnCapaciteSpecial_Click(object sender, EventArgs e)
+        {
+            capaciteSpecial = true;
+            btnActionCliquer();
         }
     }
 }
