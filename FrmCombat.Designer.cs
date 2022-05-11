@@ -104,7 +104,7 @@
             // 
             // pbxPerso1
             // 
-            this.pbxPerso1.Image = global::P_Heroes.Properties.Resources.Hero1;
+            this.pbxPerso1.Image = global::P_Heroes.Properties.Resources.Legolas;
             this.pbxPerso1.Location = new System.Drawing.Point(230, 257);
             this.pbxPerso1.Name = "pbxPerso1";
             this.pbxPerso1.Size = new System.Drawing.Size(215, 184);
@@ -116,7 +116,7 @@
             // 
             // pbxPerso2
             // 
-            this.pbxPerso2.Image = global::P_Heroes.Properties.Resources.Hero3;
+            this.pbxPerso2.Image = global::P_Heroes.Properties.Resources.Gimli;
             this.pbxPerso2.Location = new System.Drawing.Point(38, 53);
             this.pbxPerso2.Name = "pbxPerso2";
             this.pbxPerso2.Size = new System.Drawing.Size(165, 156);
@@ -128,7 +128,7 @@
             // 
             // pbxPerso3
             // 
-            this.pbxPerso3.Image = global::P_Heroes.Properties.Resources.Hero2;
+            this.pbxPerso3.Image = global::P_Heroes.Properties.Resources.Aragorn;
             this.pbxPerso3.Location = new System.Drawing.Point(38, 465);
             this.pbxPerso3.Name = "pbxPerso3";
             this.pbxPerso3.Size = new System.Drawing.Size(165, 166);

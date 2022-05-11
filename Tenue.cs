@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace P_Heroes
 {
-    class Tenue
+    public class Tenue
     {
         private string _nomTenue;
         private int _nvDefense;

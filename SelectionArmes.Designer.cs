@@ -1,6 +1,6 @@
 ﻿namespace P_Heroes
 {
-    partial class SelectionPerso
+    partial class SelectionArmes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectionPerso));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectionArmes));
             this.btnJouer = new System.Windows.Forms.Button();
             this.tbxNomPerso3 = new System.Windows.Forms.TextBox();
             this.tbxNomPerso2 = new System.Windows.Forms.TextBox();
@@ -426,7 +426,7 @@
             this.lbl7.TabIndex = 44;
             this.lbl7.Text = "Nom de la compagnie";
             // 
-            // SelectionPerso
+            // SelectionArmes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -465,7 +465,7 @@
             this.Controls.Add(this.pbxPerso1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SelectionPerso";
+            this.Name = "SelectionArmes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.SelectionPerso_Load);

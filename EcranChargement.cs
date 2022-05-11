@@ -39,8 +39,10 @@ namespace P_Heroes
 
             }
             tmrChargement.Stop();
-            SelectionPerso selectionPerso = new SelectionPerso(form);
-            selectionPerso.Show();
+            //SelectionArmes selectionArmes = new SelectionArmes(form);
+            //selectionArmes.Show();
+            SelectionHeros selectionHeros = new SelectionHeros();
+            selectionHeros.Show();
             this.Close();
         }
 

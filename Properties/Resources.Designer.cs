@@ -63,6 +63,16 @@ namespace P_Heroes.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aragorn {
+            get {
+                object obj = ResourceManager.GetObject("Aragorn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arbalete {
             get {
                 object obj = ResourceManager.GetObject("arbalete", resourceCulture);
@@ -123,9 +133,39 @@ namespace P_Heroes.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap elrond {
+            get {
+                object obj = ResourceManager.GetObject("elrond", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap epee {
             get {
                 object obj = ResourceManager.GetObject("epee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Frodon {
+            get {
+                object obj = ResourceManager.GetObject("Frodon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gimli {
+            get {
+                object obj = ResourceManager.GetObject("Gimli", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,39 +183,19 @@ namespace P_Heroes.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Hero1 {
-            get {
-                object obj = ResourceManager.GetObject("Hero1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hero2 {
-            get {
-                object obj = ResourceManager.GetObject("Hero2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hero3 {
-            get {
-                object obj = ResourceManager.GetObject("Hero3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap lance {
             get {
                 object obj = ResourceManager.GetObject("lance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Legolas {
+            get {
+                object obj = ResourceManager.GetObject("Legolas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -37,61 +37,114 @@ namespace P_Heroes
         internal Arme Arme2 { get => _arme2; set => _arme2 = value; }
         internal Compagnie Compagnie { get => _compagnie; set => _compagnie = value; }
         
+        public void CreeHero(int nvVie, int agilite, int attaque, string nomHero, Image image, bool vivant, Compagnie compagnie)
+        {
+            Agilite = agilite;
+            Attaque = attaque;
+            NvVie = nvVie;
+            NomHeros = nomHero;
+            Vivant = vivant;
+            ImageHero = image;
+            Compagnie = compagnie;
+        }
 
-        //
-        public void Heros1(string nomHeros)
+        const double POURCENTAGE = 20f / 100;
+        /// <summary>
+        /// Traitement de l'héro, ajout tenue, armes
+        /// </summary>
+        public Heros TraitementHeros(Arme armeChoisi, Arme armeChoisi2, Tenue tenueChoisi, Heros heros)
         {
-            Agilite = 70;
-            Attaque = 60;
-            NvVie = 100;
-            NomHeros = nomHeros;
-            Vivant = true;
-            ImageHero = Properties.Resources.Hero1;
+            //Assigner les armes choisies à l'héros concerné 
+            if (armeChoisi.NbMains == 1 && armeChoisi2.NbMains == 1)
+            {
+                heros.Arme1 = armeChoisi;
+                heros.Arme2 = armeChoisi2;
+            }
+            else
+            {
+                heros.Arme1 = armeChoisi;
+                heros.Arme2 = armeChoisi;
+            }
+            //Assigner la tenue à l'héros concerné
+            heros.Tenue = tenueChoisi;
+
+
+            //Changement des stats de l'héros en fonction de la tenue et des armes
+
+            //Tenues Stat
+            heros.NvVie += Convert.ToInt32(POURCENTAGE * tenueChoisi.NvDefense);
+            heros.Agilite -= Convert.ToInt32(POURCENTAGE * tenueChoisi.Poids);
+
+            //Armes Stat
+            if (armeChoisi.NomArme == "bouclier")
+            {
+                heros.NvVie += Convert.ToInt32(POURCENTAGE * armeChoisi.Durabilite);
+            }
+            else if (armeChoisi2.NomArme == "bouclier")
+            {
+                heros.NvVie += Convert.ToInt32(POURCENTAGE * armeChoisi2.Durabilite);
+            }
+
+            heros.Attaque += armeChoisi.NvAttaque;
+            if (heros.Arme1 != heros.Arme2)
+            {
+                heros.Attaque += armeChoisi2.NvAttaque;
+            }
+            return heros;
         }
-        public void Heros2(string nomHeros)
-        {
-            Agilite = 50;
-            Attaque = 40;
-            NvVie = 100;
-            Vivant = true;
-            NomHeros = nomHeros;
-            ImageHero = Properties.Resources.Hero2;
-        }
-        public void Heros3(string nomHeros)
-        {
-            Agilite = 40;
-            Attaque = 30;
-            NvVie = 100;
-            Vivant = true;
-            NomHeros = nomHeros;
-            ImageHero = Properties.Resources.Hero3;
-        }
-        public void Ennemi1(string nomHeros)
-        {
-            Agilite = 40;
-            Attaque = 20;
-            NvVie = 100;
-            NomHeros = nomHeros;
-            Vivant = true;
-            ImageHero = Properties.Resources.OrcArcherCuir;
-        }
-        public void Ennemi2(string nomHeros)
-        {
-            Agilite = 10;
-            Attaque = 50;
-            NvVie = 100;
-            Vivant = true;
-            NomHeros = nomHeros;
-            ImageHero = Properties.Resources.Orc_Warriors_Armor_Shield;
-        }
-        public void Ennemi3(string nomHeros)
-        {
-            Agilite = 60;
-            Attaque = 30;
-            NvVie = 100;
-            Vivant = true;
-            NomHeros = nomHeros;
-            ImageHero = Properties.Resources.OrcArcherCuir;
-        }
+        //public void Heros1(string nomHeros)
+        //{
+        //    Agilite = 70;
+        //    Attaque = 60;
+        //    NvVie = 100;
+        //    NomHeros = nomHeros;
+        //    Vivant = true;
+        //    ImageHero = Properties.Resources.Hero1;
+        //}
+        //public void Heros2(string nomHeros)
+        //{
+        //    Agilite = 50;
+        //    Attaque = 40;
+        //    NvVie = 100;
+        //    Vivant = true;
+        //    NomHeros = nomHeros;
+        //    ImageHero = Properties.Resources.Hero2;
+        //}
+        //public void Heros3(string nomHeros)
+        //{
+        //    Agilite = 40;
+        //    Attaque = 30;
+        //    NvVie = 100;
+        //    Vivant = true;
+        //    NomHeros = nomHeros;
+        //    ImageHero = Properties.Resources.Hero3;
+        //}
+        //public void Ennemi1(string nomHeros)
+        //{
+        //    Agilite = 40;
+        //    Attaque = 20;
+        //    NvVie = 100;
+        //    NomHeros = nomHeros;
+        //    Vivant = true;
+        //    ImageHero = Properties.Resources.OrcArcherCuir;
+        //}
+        //public void Ennemi2(string nomHeros)
+        //{
+        //    Agilite = 10;
+        //    Attaque = 50;
+        //    NvVie = 100;
+        //    Vivant = true;
+        //    NomHeros = nomHeros;
+        //    ImageHero = Properties.Resources.Orc_Warriors_Armor_Shield;
+        //}
+        //public void Ennemi3(string nomHeros)
+        //{
+        //    Agilite = 60;
+        //    Attaque = 30;
+        //    NvVie = 100;
+        //    Vivant = true;
+        //    NomHeros = nomHeros;
+        //    ImageHero = Properties.Resources.OrcArcherCuir;
+        //}
     }
 }

@@ -224,10 +224,10 @@ namespace P_Heroes
             Heros ennemi3 = new Heros();
             
 
-            ennemi1.Ennemi1("Ennemi 1");
+            /*ennemi1.Ennemi1("Ennemi 1");
             ennemi2.Ennemi2("Ennemi 2");
             ennemi3.Ennemi3("Ennemi 3");
-
+            */
             ennemi1.Tenue = tenue1.majTenue("metal");
             ennemi2.Tenue = tenue2.majTenue("cuir");
             ennemi3.Tenue = tenue3.majTenue("tissu");
@@ -246,9 +246,9 @@ namespace P_Heroes
             ennemi3.ImageHero = Properties.Resources.OrcArcherCuir;
 
 
-            ennemi1 = Extension.TraitementHeros(ennemi1.Arme1, ennemi1.Arme2, ennemi1.Tenue, ennemi1);
-            ennemi2 = Extension.TraitementHeros(ennemi2.Arme1, ennemi1.Arme2, ennemi2.Tenue, ennemi2);
-            ennemi3 = Extension.TraitementHeros(ennemi3.Arme1, ennemi1.Arme2, ennemi3.Tenue, ennemi3);
+            ennemi1.TraitementHeros(ennemi1.Arme1, ennemi1.Arme2, ennemi1.Tenue, ennemi1);
+            ennemi2.TraitementHeros(ennemi2.Arme1, ennemi1.Arme2, ennemi2.Tenue, ennemi2);
+            ennemi3.TraitementHeros(ennemi3.Arme1, ennemi1.Arme2, ennemi3.Tenue, ennemi3);
 
             herosEnnemi.Add(ennemi1);
             herosEnnemi.Add(ennemi2);
