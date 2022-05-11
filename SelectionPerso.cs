@@ -23,10 +23,6 @@ namespace P_Heroes
         Tenue tenueSelectionne;
         Heros heroSelectionne;
 
-        Graphics g1;
-        Graphics g2;
-        Graphics g3;
-
         P_Heros form;
         public SelectionPerso()
         {

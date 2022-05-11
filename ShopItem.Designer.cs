@@ -35,8 +35,7 @@
             this.pbxMiniature = new System.Windows.Forms.PictureBox();
             this.btnAction = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPlusDescription = new System.Windows.Forms.Button();
-            this.btnPlusStats = new System.Windows.Forms.Button();
+            this.btnPlus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMiniature)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -90,18 +89,18 @@
             // 
             // btnAction
             // 
-            this.btnAction.Location = new System.Drawing.Point(71, 283);
+            this.btnAction.Location = new System.Drawing.Point(29, 283);
             this.btnAction.Name = "btnAction";
-            this.btnAction.Size = new System.Drawing.Size(75, 23);
+            this.btnAction.Size = new System.Drawing.Size(179, 23);
             this.btnAction.TabIndex = 5;
             this.btnAction.Text = "500$";
             this.btnAction.UseVisualStyleBackColor = true;
+            this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnPlusDescription);
-            this.panel1.Controls.Add(this.btnPlusStats);
+            this.panel1.Controls.Add(this.btnPlus);
             this.panel1.Controls.Add(this.lblNiveau);
             this.panel1.Controls.Add(this.btnAction);
             this.panel1.Controls.Add(this.lblNom);
@@ -113,25 +112,15 @@
             this.panel1.Size = new System.Drawing.Size(224, 324);
             this.panel1.TabIndex = 6;
             // 
-            // btnPlusDescription
+            // btnPlus
             // 
-            this.btnPlusDescription.Location = new System.Drawing.Point(120, 254);
-            this.btnPlusDescription.Name = "btnPlusDescription";
-            this.btnPlusDescription.Size = new System.Drawing.Size(88, 23);
-            this.btnPlusDescription.TabIndex = 7;
-            this.btnPlusDescription.Text = "Voir plus";
-            this.btnPlusDescription.UseVisualStyleBackColor = true;
-            this.btnPlusDescription.Click += new System.EventHandler(this.btnPlusDescription_Click);
-            // 
-            // btnPlusStats
-            // 
-            this.btnPlusStats.Location = new System.Drawing.Point(29, 254);
-            this.btnPlusStats.Name = "btnPlusStats";
-            this.btnPlusStats.Size = new System.Drawing.Size(82, 23);
-            this.btnPlusStats.TabIndex = 6;
-            this.btnPlusStats.Text = "Voir plus";
-            this.btnPlusStats.UseVisualStyleBackColor = true;
-            this.btnPlusStats.Click += new System.EventHandler(this.btnPlusStats_Click);
+            this.btnPlus.Location = new System.Drawing.Point(29, 254);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.Size = new System.Drawing.Size(179, 23);
+            this.btnPlus.TabIndex = 6;
+            this.btnPlus.Text = "Voir plus";
+            this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // ShopItem
             // 
@@ -158,7 +147,6 @@
         private System.Windows.Forms.PictureBox pbxMiniature;
         private System.Windows.Forms.Button btnAction;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnPlusDescription;
-        private System.Windows.Forms.Button btnPlusStats;
+        private System.Windows.Forms.Button btnPlus;
     }
 }

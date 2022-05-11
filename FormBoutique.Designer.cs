@@ -70,9 +70,10 @@
             // lblArgent
             // 
             this.lblArgent.AutoSize = true;
-            this.lblArgent.Location = new System.Drawing.Point(12, 9);
+            this.lblArgent.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArgent.Location = new System.Drawing.Point(12, 2);
             this.lblArgent.Name = "lblArgent";
-            this.lblArgent.Size = new System.Drawing.Size(38, 13);
+            this.lblArgent.Size = new System.Drawing.Size(107, 26);
             this.lblArgent.TabIndex = 0;
             this.lblArgent.Text = "Argent";
             // 

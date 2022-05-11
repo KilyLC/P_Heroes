@@ -15,18 +15,25 @@ namespace P_Heroes
     {
         private Objet _objet;
         public Objet Objet { get => _objet; set { _objet = value; MiseAJour(); } }
+        private EventHandler _callback = null; // Fonction de callback lors d'un clic sur l'action
+        private FormPlus _formPlus;
 
-        private FormPlus _formPlusStats;
-        private FormPlus _formPlusDescription;
+        public int Idx = -1; // Index du contrôle sur la form parent (pour enlever l'item de la liste)
 
-        public ShopItem()
+        public ShopItem(int idx)
         {
             InitializeComponent();
+            Idx = idx;
         }
 
-        public ShopItem(Objet o) : this()
+        public ShopItem(int idx, Objet o) : this(idx)
         {
             this.Objet = o;
+        }
+
+        public ShopItem(int idx, Objet o, EventHandler callback) : this(idx, o)
+        {
+            this._callback = callback;
         }
 
         private void MiseAJour() {
@@ -40,8 +47,7 @@ namespace P_Heroes
             this.lblStatsGauche.Text = _objet.statistiquesEnTexte(); // Stats de l'arme ou armure
 
             // Form plus
-            this._formPlusStats = new FormPlus(_objet);
-            this._formPlusDescription = new FormPlus(_objet);
+            this._formPlus = new FormPlus(_objet);
 
             // Rareté
             Color border_color = Color.White;
@@ -62,19 +68,22 @@ namespace P_Heroes
             this.BackColor = border_color;
         }
 
-        private void btnPlusDescription_Click(object sender, EventArgs e)
-        {
-            this._formPlusDescription.ShowDialog();
-        }
-
-        private void btnPlusStats_Click(object sender, EventArgs e)
-        {
-            this._formPlusStats.ShowDialog();
-        }
-
         public void DefinirAction(string texte)
         {
             this.btnAction.Text = texte;
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            this._formPlus.ShowDialog();
+        }
+
+        private void btnAction_Click(object sender, EventArgs e)
+        {
+            if (_callback == null)
+                return;
+
+            _callback(sender, e);
         }
     }
 }
