@@ -48,9 +48,28 @@
             this.pnlAffichageArmes = new System.Windows.Forms.Panel();
             this.pnlAffichageTenues = new System.Windows.Forms.Panel();
             this.btnValider = new System.Windows.Forms.Button();
+            this.pbxTenueHero1 = new System.Windows.Forms.PictureBox();
+            this.pbxArme1Hero1 = new System.Windows.Forms.PictureBox();
+            this.pbxArme2Hero1 = new System.Windows.Forms.PictureBox();
+            this.pbxArme2Hero2 = new System.Windows.Forms.PictureBox();
+            this.pbxArme1Hero2 = new System.Windows.Forms.PictureBox();
+            this.pbxTenueHero2 = new System.Windows.Forms.PictureBox();
+            this.pbxArme2Hero3 = new System.Windows.Forms.PictureBox();
+            this.pbxArme1Hero3 = new System.Windows.Forms.PictureBox();
+            this.pbxTenueHero3 = new System.Windows.Forms.PictureBox();
+            this.btnResetHero = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTenueHero1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme1Hero1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme2Hero1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme2Hero2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme1Hero2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTenueHero2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme2Hero3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme1Hero3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTenueHero3)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl1
@@ -107,9 +126,9 @@
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl3.Location = new System.Drawing.Point(770, 55);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(69, 20);
+            this.lbl3.Size = new System.Drawing.Size(60, 20);
             this.lbl3.TabIndex = 31;
-            this.lbl3.Text = "Agilitée :";
+            this.lbl3.Text = "Agilité :";
             // 
             // lblAgilite
             // 
@@ -168,6 +187,7 @@
             // 
             // btnOk1
             // 
+            this.btnOk1.Enabled = false;
             this.btnOk1.Location = new System.Drawing.Point(63, 166);
             this.btnOk1.Name = "btnOk1";
             this.btnOk1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -220,7 +240,7 @@
             // pnlAffichageArmes
             // 
             this.pnlAffichageArmes.AutoScroll = true;
-            this.pnlAffichageArmes.Location = new System.Drawing.Point(12, 229);
+            this.pnlAffichageArmes.Location = new System.Drawing.Point(18, 330);
             this.pnlAffichageArmes.Name = "pnlAffichageArmes";
             this.pnlAffichageArmes.Size = new System.Drawing.Size(750, 655);
             this.pnlAffichageArmes.TabIndex = 44;
@@ -228,7 +248,7 @@
             // pnlAffichageTenues
             // 
             this.pnlAffichageTenues.AutoScroll = true;
-            this.pnlAffichageTenues.Location = new System.Drawing.Point(774, 229);
+            this.pnlAffichageTenues.Location = new System.Drawing.Point(774, 330);
             this.pnlAffichageTenues.Name = "pnlAffichageTenues";
             this.pnlAffichageTenues.Size = new System.Drawing.Size(286, 655);
             this.pnlAffichageTenues.TabIndex = 45;
@@ -244,11 +264,112 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
+            // pbxTenueHero1
+            // 
+            this.pbxTenueHero1.Location = new System.Drawing.Point(63, 262);
+            this.pbxTenueHero1.Name = "pbxTenueHero1";
+            this.pbxTenueHero1.Size = new System.Drawing.Size(75, 62);
+            this.pbxTenueHero1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxTenueHero1.TabIndex = 47;
+            this.pbxTenueHero1.TabStop = false;
+            // 
+            // pbxArme1Hero1
+            // 
+            this.pbxArme1Hero1.Location = new System.Drawing.Point(34, 195);
+            this.pbxArme1Hero1.Name = "pbxArme1Hero1";
+            this.pbxArme1Hero1.Size = new System.Drawing.Size(67, 61);
+            this.pbxArme1Hero1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArme1Hero1.TabIndex = 48;
+            this.pbxArme1Hero1.TabStop = false;
+            // 
+            // pbxArme2Hero1
+            // 
+            this.pbxArme2Hero1.Location = new System.Drawing.Point(107, 195);
+            this.pbxArme2Hero1.Name = "pbxArme2Hero1";
+            this.pbxArme2Hero1.Size = new System.Drawing.Size(70, 61);
+            this.pbxArme2Hero1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArme2Hero1.TabIndex = 49;
+            this.pbxArme2Hero1.TabStop = false;
+            // 
+            // pbxArme2Hero2
+            // 
+            this.pbxArme2Hero2.Location = new System.Drawing.Point(290, 195);
+            this.pbxArme2Hero2.Name = "pbxArme2Hero2";
+            this.pbxArme2Hero2.Size = new System.Drawing.Size(70, 61);
+            this.pbxArme2Hero2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArme2Hero2.TabIndex = 52;
+            this.pbxArme2Hero2.TabStop = false;
+            // 
+            // pbxArme1Hero2
+            // 
+            this.pbxArme1Hero2.Location = new System.Drawing.Point(217, 195);
+            this.pbxArme1Hero2.Name = "pbxArme1Hero2";
+            this.pbxArme1Hero2.Size = new System.Drawing.Size(67, 61);
+            this.pbxArme1Hero2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArme1Hero2.TabIndex = 51;
+            this.pbxArme1Hero2.TabStop = false;
+            // 
+            // pbxTenueHero2
+            // 
+            this.pbxTenueHero2.Location = new System.Drawing.Point(246, 262);
+            this.pbxTenueHero2.Name = "pbxTenueHero2";
+            this.pbxTenueHero2.Size = new System.Drawing.Size(75, 62);
+            this.pbxTenueHero2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxTenueHero2.TabIndex = 50;
+            this.pbxTenueHero2.TabStop = false;
+            // 
+            // pbxArme2Hero3
+            // 
+            this.pbxArme2Hero3.Location = new System.Drawing.Point(482, 195);
+            this.pbxArme2Hero3.Name = "pbxArme2Hero3";
+            this.pbxArme2Hero3.Size = new System.Drawing.Size(70, 61);
+            this.pbxArme2Hero3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArme2Hero3.TabIndex = 55;
+            this.pbxArme2Hero3.TabStop = false;
+            // 
+            // pbxArme1Hero3
+            // 
+            this.pbxArme1Hero3.Location = new System.Drawing.Point(409, 195);
+            this.pbxArme1Hero3.Name = "pbxArme1Hero3";
+            this.pbxArme1Hero3.Size = new System.Drawing.Size(67, 61);
+            this.pbxArme1Hero3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArme1Hero3.TabIndex = 54;
+            this.pbxArme1Hero3.TabStop = false;
+            // 
+            // pbxTenueHero3
+            // 
+            this.pbxTenueHero3.Location = new System.Drawing.Point(438, 262);
+            this.pbxTenueHero3.Name = "pbxTenueHero3";
+            this.pbxTenueHero3.Size = new System.Drawing.Size(75, 62);
+            this.pbxTenueHero3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxTenueHero3.TabIndex = 53;
+            this.pbxTenueHero3.TabStop = false;
+            // 
+            // btnResetHero
+            // 
+            this.btnResetHero.Location = new System.Drawing.Point(600, 209);
+            this.btnResetHero.Name = "btnResetHero";
+            this.btnResetHero.Size = new System.Drawing.Size(131, 78);
+            this.btnResetHero.TabIndex = 56;
+            this.btnResetHero.Text = "Rénitialiser les armes et tenues";
+            this.btnResetHero.UseVisualStyleBackColor = true;
+            this.btnResetHero.Click += new System.EventHandler(this.btnResetHero_Click);
+            // 
             // SelectionArmes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.btnResetHero);
+            this.Controls.Add(this.pbxArme2Hero3);
+            this.Controls.Add(this.pbxArme1Hero3);
+            this.Controls.Add(this.pbxTenueHero3);
+            this.Controls.Add(this.pbxArme2Hero2);
+            this.Controls.Add(this.pbxArme1Hero2);
+            this.Controls.Add(this.pbxTenueHero2);
+            this.Controls.Add(this.pbxArme2Hero1);
+            this.Controls.Add(this.pbxArme1Hero1);
+            this.Controls.Add(this.pbxTenueHero1);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.pnlAffichageTenues);
             this.Controls.Add(this.pnlAffichageArmes);
@@ -277,6 +398,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTenueHero1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme1Hero1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme2Hero1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme2Hero2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme1Hero2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTenueHero2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme2Hero3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArme1Hero3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTenueHero3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +433,15 @@
         private System.Windows.Forms.Panel pnlAffichageArmes;
         private System.Windows.Forms.Panel pnlAffichageTenues;
         private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.PictureBox pbxTenueHero1;
+        private System.Windows.Forms.PictureBox pbxArme1Hero1;
+        private System.Windows.Forms.PictureBox pbxArme2Hero1;
+        private System.Windows.Forms.PictureBox pbxArme2Hero2;
+        private System.Windows.Forms.PictureBox pbxArme1Hero2;
+        private System.Windows.Forms.PictureBox pbxTenueHero2;
+        private System.Windows.Forms.PictureBox pbxArme2Hero3;
+        private System.Windows.Forms.PictureBox pbxArme1Hero3;
+        private System.Windows.Forms.PictureBox pbxTenueHero3;
+        private System.Windows.Forms.Button btnResetHero;
     }
 }

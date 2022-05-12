@@ -290,9 +290,9 @@ namespace P_Heroes
             ennemi3.ImageHero = Properties.Resources.OrcArcherCuir;
 
             //traitement de l'heros
-            ennemi1 = ennemi1.TraitementHeros(ennemi1.Arme1, ennemi1.Arme2, ennemi1.Tenue, ennemi1);
+           /* ennemi1 = ennemi1.TraitementHeros(ennemi1.Arme1, ennemi1.Arme2, ennemi1.Tenue, ennemi1);
             ennemi2 = ennemi2.TraitementHeros(ennemi2.Arme1, ennemi1.Arme2, ennemi2.Tenue, ennemi2);
-            ennemi3 = ennemi3.TraitementHeros(ennemi3.Arme1, ennemi1.Arme2, ennemi3.Tenue, ennemi3);
+            ennemi3 = ennemi3.TraitementHeros(ennemi3.Arme1, ennemi1.Arme2, ennemi3.Tenue, ennemi3);*/
             //ajout dans la compagnie
             herosEnnemi.Add(ennemi1);
             herosEnnemi.Add(ennemi2);

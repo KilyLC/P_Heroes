@@ -23,6 +23,8 @@ namespace P_Heroes
         List<Arme> listeArmes = new List<Arme>();
         List<Tenue> listeTenues = new List<Tenue>();
 
+        int numHeroSelectionne = 1;
+
         P_Heros form;
         public SelectionArmes()
         {
@@ -36,20 +38,27 @@ namespace P_Heroes
 
         public SelectionArmes(P_Heros form, Compagnie compagnie) : this(form)
         {
+            //Récupere la compagnie
             this.compagnie = compagnie;
+            //Assigne les héros
             this.heros1 = compagnie.Heros[0];
             this.heros2 = compagnie.Heros[1];
             this.heros3 = compagnie.Heros[2];
+
             this.heroSelectionne = heros1;
         }
 
         private void SelectionPerso_Load(object sender, EventArgs e)
         {
-            CreeTenue();
             CreeArme();
+            CreeTenue();
             ImageHero();
             AffichageCarteArmeTenue();
+            RefreshStats();
         }
+        /// <summary>
+         /// Crée les tenues
+         /// </summary>
         public void CreeTenue()
         {
             Tenue legere = new Tenue();
@@ -70,6 +79,9 @@ namespace P_Heroes
             values = new DicoValues(lourde, false);
             compagnie.DicoListeTenues["lourde"] = values;
         }
+        /// <summary>
+        /// Crée les armes
+        /// </summary>
         public void CreeArme()
         {
             Arme hache = new Arme();
@@ -108,6 +120,9 @@ namespace P_Heroes
             values = new DicoValues(bouclier, false);
             compagnie.DicoListeArmes["bouclier"] = values;
         }
+        /// <summary>
+        /// Affichage des images des héros sélectionné
+        /// </summary>
         public void ImageHero()
         {
             for (int i = 1; i <= compagnie.Heros.Count; i++)
@@ -183,62 +198,130 @@ namespace P_Heroes
 
         private void btnOk1_Click(object sender, EventArgs e)
         {
-            heros1.TraitementHeros(heros1.Arme1, heros1.Arme2, heros1.Tenue, heros1);
+            ItemRefreshImage(heros1);
             btnOkClick(heros2, 1);
+            numHeroSelectionne = 2;
+            pnlAffichageArmes.Enabled = true;
+            pnlAffichageTenues.Enabled = true;
         }
 
         private void btnOk2_Click(object sender, EventArgs e)
         {
-            heros2.TraitementHeros(heros2.Arme1, heros2.Arme2, heros2.Tenue, heros2);
+            ItemRefreshImage(heros2);
+            numHeroSelectionne = 3;
             btnOkClick(heros3, 2);
+            pnlAffichageArmes.Enabled = true;
+            pnlAffichageTenues.Enabled = true;
         }
 
         private void btnOk3_Click(object sender, EventArgs e)
         {
-            heros3.TraitementHeros(heros3.Arme1, heros3.Arme2, heros3.Tenue, heros3);
+            ItemRefreshImage(heros3);
             btnOkClick(heros3, 3);
         }
-       
+        /// <summary>
+        /// Affichage de l'image des items séléctionné sous l'héro concerné
+        /// </summary>
+        /// <param name="hero"></param>
+        private void ItemRefreshImage(Heros hero)
+        {
+            //Hero 1
+            if (numHeroSelectionne == 1)
+            {
+                if (hero.Arme1 == null && hero.Arme2 == null && hero.Tenue == null)
+                {
+                    pbxArme2Hero1.Image = null;
+                    pbxTenueHero1.Image = null;
+                    pbxArme1Hero1.Image = null;
+                    return;
+                }
+                if (hero.Arme1.NbMains == 2)
+                {
+                    pbxArme2Hero1.Visible = false;
+                }
+                pbxArme1Hero1.Image = hero.Arme1.Image;
+                pbxArme2Hero1.Image = hero.Arme2.Image;
+                pbxTenueHero1.Image = hero.Tenue.ImageTenue;
+            }
+            //Hero 2
+            else if (numHeroSelectionne == 2)
+            {
+                if (hero.Arme1 == null && hero.Arme2 == null && hero.Tenue == null)
+                {
+                    pbxArme2Hero2.Image = null;
+                    pbxTenueHero2.Image = null;
+                    pbxArme1Hero2.Image = null;
+                    return;
+                }
+                if (hero.Arme1.NbMains == 2)
+                {
+                    pbxArme2Hero2.Visible = false;
+                }
+                pbxArme1Hero2.Image = hero.Arme1.Image;
+                pbxArme2Hero2.Image = hero.Arme2.Image;
+                pbxTenueHero2.Image = hero.Tenue.ImageTenue;
+            }
+            //Hero 3
+            else
+            {
+                if (hero.Arme1 == null && hero.Arme2 == null && hero.Tenue == null)
+                {
+                    pbxArme2Hero3.Image = null;
+                    pbxTenueHero3.Image = null;
+                    pbxArme1Hero3.Image = null;
+                    return;
+                }
+                if (hero.Arme1.NbMains == 2)
+                {
+                    pbxArme2Hero3.Visible = false;
+                }
+                pbxArme1Hero3.Image = hero.Arme1.Image;
+                pbxArme2Hero3.Image = hero.Arme2.Image;
+                pbxTenueHero3.Image = hero.Tenue.ImageTenue;
+            }
+        }
         /// <summary>
         /// Rafraichi les stats
         /// </summary>
-        private void RefreshStats(Heros hero)
+        private void RefreshStats()
         {
-            lblAgilite.Text = hero.Agilite.ToString();
-            lblVie.Text = hero.NvVie.ToString();
-            lblAtt.Text = hero.Attaque.ToString();
+            lblAgilite.Text = heroSelectionne.Agilite.ToString();
+            lblVie.Text = heroSelectionne.NvVie.ToString();
+            lblAtt.Text = heroSelectionne.Attaque.ToString();
             
-            if (hero.Arme1 == null)
+            if (heroSelectionne.Arme1 == null)
             {
                 lblMainD.Text = "libre";
             }
             else
             {
-                lblMainD.Text = hero.Arme1.NomArme.ToString();
+                lblMainD.Text = heroSelectionne.Arme1.NomArme.ToString();
             }
-            if (hero.Arme2 == null)
+            if (heroSelectionne.Arme2 == null)
             {
                 lblMainG.Text = "libre";
             }
             else
             {
-                lblMainG.Text = hero.Arme2.NomArme.ToString();
+                lblMainG.Text = heroSelectionne.Arme2.NomArme.ToString();
             }
         }
-        
+        /// <summary>
+        /// Refresh bouton ok lors d'un clic
+        /// </summary>
+        /// <param name="hero">Hero concerne</param>
+        /// <param name="numHero">numéro de l'héro</param>
         private void btnOkClick(Heros hero, int numHero)
         {
             //héro 1
             if (numHero == 1)
             {
                 btnOk1.Enabled = false;
-                btnOk2.Enabled = true;
             }
             //héro 2
             else if (numHero == 2)
             {
                 btnOk2.Enabled = false;
-                btnOk3.Enabled = true;
             }
             else
             {
@@ -246,41 +329,81 @@ namespace P_Heroes
                 btnValider.Enabled = true;
             }
             heroSelectionne = hero;
-            RefreshStats(heroSelectionne);
+            RefreshStats();
         }
         private void ClicArmes(object _sender, EventArgs e)
         {
             Button sender = (Button)_sender;
 
             Arme a = ((PersoSelection)sender.Parent.Parent).RecupererArmes();
-
+            //Mains 1
             if (heroSelectionne.Arme1 == null)
             {
+                //Arme 2 mains
                 if (a.NbMains == 2)
                 {
                     heroSelectionne.Arme1 = a;
                     heroSelectionne.Arme2 = a;
+                    pnlAffichageArmes.Enabled = false;
                 }
                 else
                 {
+                    //Arme une main
                     heroSelectionne.Arme1 = a;
                 }
             }
-            else
+            else if (heroSelectionne.Arme2 == null && a.NbMains == 1)
             {
+                //2ème arme
                 heroSelectionne.Arme2 = a;
+                pnlAffichageArmes.Enabled = false;
             }
-            RefreshStats(heroSelectionne);
+            TraitementStatsClic();
+            RefreshStats();
+        }
+        private void TraitementStatsClic()
+        {
+            if (heroSelectionne.Arme1 != null && heroSelectionne.Arme2 != null && heroSelectionne.Tenue != null)
+            {
+                ItemRefreshImage(heroSelectionne);
+                if (numHeroSelectionne == 1)
+                {
+                    btnOk1.Enabled = true;
+                    //Change les stats de l'héro
+                    heros1.TraitementStats(heroSelectionne.Arme1, heroSelectionne.Arme2, heroSelectionne.Tenue, heros1);
+                    RefreshStats();
+                }
+                else if (numHeroSelectionne == 2)
+                {
+                    btnOk2.Enabled = true;
+                    heros2.TraitementStats(heroSelectionne.Arme1, heroSelectionne.Arme2, heroSelectionne.Tenue, heros2);
+                    RefreshStats();
+                }
+                else
+                {
+                    btnOk3.Enabled = true;
+                    heros3.TraitementStats(heroSelectionne.Arme1, heroSelectionne.Arme2, heroSelectionne.Tenue, heros3);
+                    RefreshStats();
+                }
+            }
         }
         private void ClicTenues(object _sender, EventArgs e)
         {
             Button sender = (Button)_sender;
 
             Tenue t = ((PersoSelection)sender.Parent.Parent).RecupererTenues();
-
+            //Attribut la tenue à l'héro
             heroSelectionne.Tenue = t;
-        }
 
+            if (heroSelectionne.Tenue != null)
+            {
+                pnlAffichageTenues.Enabled = false;
+            }
+            TraitementStatsClic();
+        }
+        /// <summary>
+        /// Affichage des armes et des tenues
+        /// </summary>
         public void AffichageCarteArmeTenue()
         {
             int padx = 6;
@@ -293,9 +416,12 @@ namespace P_Heroes
             {
                 string stats = "";
                 PersoSelection control = new PersoSelection(a, ClicArmes);
+                //image armes
                 control.DefinirMiniature(a.Image);
+                //Affcihage stats
                 stats = "Attaque : " + a.NvAttaque + Environment.NewLine + "Durabilité : " + a.Durabilite + Environment.NewLine + "Mains occupées : " + a.NbMains;
                 control.DefinirStatsArme(stats, a.NomArme);
+                //Position
                 control.Location = new Point(x, y);
                 pnlAffichageArmes.Controls.Add(control);
 
@@ -328,11 +454,77 @@ namespace P_Heroes
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            //Valide les héros
             compagnie.Heros[0] = heros1;
             compagnie.Heros[1] = heros2;
             compagnie.Heros[2] = heros3;
-            form.DefinirCompagnie(compagnie);
+            //Partie combat
+            //form.DefinirCompagnie(compagnie);
             this.Close();
+        }
+
+        private void btnResetHero_Click(object sender, EventArgs e)
+        {
+            ResetHeros();
+            AffichageCarteArmeTenue();
+            RefreshStats();
+            ItemRefreshImage(heroSelectionne);
+        }
+        /// <summary>
+        /// Reset les armes et tenues
+        /// </summary>
+        private void ResetHeros()
+        {
+            //Remets les valeurs par défaults aux héros
+            //hero 1
+            compagnie.Heros[0].Agilite = compagnie.HerosBase[0].Agilite;
+            compagnie.Heros[0].NvVie = compagnie.HerosBase[0].NvVie;
+            compagnie.Heros[0].Attaque = compagnie.HerosBase[0].Attaque;
+            //hero 2
+            compagnie.Heros[1].Agilite = compagnie.HerosBase[1].Agilite;
+            compagnie.Heros[1].NvVie = compagnie.HerosBase[1].NvVie;
+            compagnie.Heros[1].Attaque = compagnie.HerosBase[1].Attaque;
+            //hero 3
+            compagnie.Heros[2].Agilite = compagnie.HerosBase[2].Agilite;
+            compagnie.Heros[2].NvVie = compagnie.HerosBase[2].NvVie;
+            compagnie.Heros[2].Attaque = compagnie.HerosBase[2].Attaque;
+
+            heroSelectionne = compagnie.Heros[0];
+            heros1 = heroSelectionne;
+            heros2 = compagnie.Heros[1];
+            heros3 = compagnie.Heros[2];
+            //Refresh des panels d'affichage d'armes et tenues
+            pnlAffichageArmes.Controls.Clear();
+            pnlAffichageTenues.Controls.Clear();
+            pnlAffichageTenues.Enabled = true;
+            pnlAffichageArmes.Enabled = true;
+
+            //Vide les armes et tenues
+            heros1.Arme1 = null;
+            heros1.Arme2 = null;
+            heros1.Tenue = null;
+            heros2.Arme1 = null;
+            heros2.Arme2 = null;
+            heros2.Tenue = null;
+            heros3.Arme1 = null;
+            heros3.Arme2 = null;
+            heros3.Tenue = null;
+            //Desactive les boutons des héros
+            btnOk1.Enabled = false;
+            btnOk2.Enabled = false;
+            btnOk3.Enabled = false;
+            //Refresh des pbx image item sélectionné
+            pbxArme1Hero1.Image = null;
+            pbxArme2Hero1.Image = null;
+            pbxTenueHero1.Image = null;
+            pbxArme1Hero2.Image = null;
+            pbxTenueHero2.Image = null;
+            pbxArme2Hero2.Image = null;
+            pbxArme1Hero3.Image = null;
+            pbxArme2Hero3.Image = null;
+            pbxTenueHero3.Image = null;
+
+            numHeroSelectionne = 1;
         }
     }
 }

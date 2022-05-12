@@ -27,6 +27,9 @@ namespace P_Heroes
         public Arme()
         {
         }
+        /// <summary>
+        /// Créer les armes
+        /// </summary>
         public void CreeArme(int durabilite, int attaqueMin,int attaqueMax, string nomArme, Image image, int nbMains)
         {
             Durabilite = durabilite;
@@ -37,7 +40,10 @@ namespace P_Heroes
             NomArme = nomArme;
             Image = image;
         }
-
+        /// <summary>
+        /// Degats total d'une arme
+        /// </summary>
+        /// <returns>Le nombre de dégats</returns>
         public int Degats()
         {
             return rnd.Next(this.NvAttaqueMin, this.NvAttaqueMax + 1);

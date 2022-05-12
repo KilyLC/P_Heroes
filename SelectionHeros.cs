@@ -12,7 +12,6 @@ namespace P_Heroes
 {
     public partial class SelectionHeros : Form
     {
-        bool nomCompagniebool = false;
         Compagnie compagnie = new Compagnie();
         List<Heros> listHeros = new List<Heros>();
 
@@ -83,9 +82,17 @@ namespace P_Heroes
         {
             Button sender = (Button)_sender;
 
-            Heros h = ((PersoSelection)sender.Parent.Parent).RecupererHeros();
-
+            Heros h = (Heros)((PersoSelection)sender.Parent.Parent).RecupererHeros();
+            //hero temporaire pour stocker les valeurs par défault
+            Heros temp = new Heros();
+            temp.NvVie = h.NvVie;
+            temp.Agilite = h.Agilite;
+            temp.Attaque = h.Attaque;
+            //ajout vrai hero a la liste
             compagnie.AjoutHeros(h);
+            //ajout hero temporaire a la liste d'héro de base
+            compagnie.HerosBase.Add(temp);
+
             if (compagnie.Heros.Count == 1)
             {
                 pbxHero1.Image = h.ImageHero;
@@ -137,6 +144,7 @@ namespace P_Heroes
         private void btnValider_Click(object sender, EventArgs e)
         {
             compagnie.majNom(tbxNomCampagnie.Text);
+            
             SelectionArmes selectionArmes = new SelectionArmes(_form, compagnie);
             selectionArmes.Show();
             this.Close();

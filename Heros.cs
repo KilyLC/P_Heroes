@@ -12,7 +12,7 @@ using System.Drawing;
 
 namespace P_Heroes
 {
-    public class Heros
+    public class Heros : ICloneable
     {
         private string _nomHeros;
         private Tenue _tenue;
@@ -43,6 +43,7 @@ namespace P_Heroes
         public bool DefenseSpeciale { get => _defenseSpeciale; set => _defenseSpeciale = value; }
         public bool Defense { get => _defense; set => _defense = value; }
 
+        
         public void CreeHero(int nvVie, int agilite, int attaque, string nomHero, Image image, bool vivant, Compagnie compagnie, string capaciteSpeciale)
         {
             Agilite = agilite;
@@ -59,22 +60,8 @@ namespace P_Heroes
         /// <summary>
         /// Traitement de l'héro, ajout tenue, armes
         /// </summary>
-        public Heros TraitementHeros(Arme armeChoisi, Arme armeChoisi2, Tenue tenueChoisi, Heros heros)
+        public Heros TraitementStats(Arme armeChoisi, Arme armeChoisi2, Tenue tenueChoisi, Heros heros)
         {
-            //Assigner les armes choisies à l'héros concerné 
-            if (armeChoisi.NbMains == 1 && armeChoisi2.NbMains == 1)
-            {
-                heros.Arme1 = armeChoisi;
-                heros.Arme2 = armeChoisi2;
-            }
-            else
-            {
-                heros.Arme1 = armeChoisi;
-                heros.Arme2 = armeChoisi;
-            }
-            //Assigner la tenue à l'héros concerné
-            heros.Tenue = tenueChoisi;
-
             //Changement des stats de l'héros en fonction de la tenue et des armes
 
             //Tenues Stat
@@ -123,6 +110,11 @@ namespace P_Heroes
                 degatsTotaux += Convert.ToInt32(degatsTotaux / 4);
             }
             this.NvVie -= degatsTotaux;
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

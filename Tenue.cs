@@ -27,6 +27,9 @@ namespace P_Heroes
         {
             
         }
+        /// <summary>
+        /// Créer la tenue
+        /// </summary>
         public void CreeTenue(string nomTenue, int nvDef, int poids, Image imageTenue)
         {
             this.NomTenue = nomTenue;
