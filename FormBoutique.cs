@@ -198,7 +198,6 @@ namespace P_Heroes
 
             Argent += item.calculPrixVente();
             inventaire.RemoveAt(idx);
-            MessageBox.Show(inventaire.Count.ToString());
 
             // Actualiser inventaire et boutique
             this.Boutique = nouvelleBoutique;
