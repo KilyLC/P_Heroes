@@ -105,6 +105,7 @@ namespace P_Heroes
             else
             {
                 pbxHero3.Image = h.ImageHero;
+                pnlAffichageHero.Enabled = false;
                 ValiderHeros();
             }
         }
@@ -119,6 +120,7 @@ namespace P_Heroes
             pbxHero1.Image = null;
             pbxHero2.Image = null;
             pbxHero3.Image = null;
+            pnlAffichageHero.Enabled = true;
             compagnie.Heros.Clear();
             Reset();
         }
