@@ -459,7 +459,7 @@ namespace P_Heroes
             compagnie.Heros[1] = heros2;
             compagnie.Heros[2] = heros3;
             //Partie combat
-            //form.DefinirCompagnie(compagnie);
+            form.DefinirCompagnie(compagnie);
             this.Close();
         }
 

@@ -152,10 +152,11 @@
             // pbrVieEnnemi
             // 
             this.pbrVieEnnemi.Location = new System.Drawing.Point(594, 212);
+            this.pbrVieEnnemi.Maximum = 1000;
             this.pbrVieEnnemi.Name = "pbrVieEnnemi";
             this.pbrVieEnnemi.Size = new System.Drawing.Size(272, 39);
             this.pbrVieEnnemi.TabIndex = 8;
-            this.pbrVieEnnemi.Value = 100;
+            this.pbrVieEnnemi.Value = 1000;
             this.pbrVieEnnemi.Visible = false;
             // 
             // label1
@@ -175,9 +176,8 @@
             this.lblVieEnnemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVieEnnemi.Location = new System.Drawing.Point(552, 221);
             this.lblVieEnnemi.Name = "lblVieEnnemi";
-            this.lblVieEnnemi.Size = new System.Drawing.Size(36, 20);
+            this.lblVieEnnemi.Size = new System.Drawing.Size(0, 20);
             this.lblVieEnnemi.TabIndex = 11;
-            this.lblVieEnnemi.Text = "100";
             this.lblVieEnnemi.Visible = false;
             // 
             // lblViePerso
@@ -186,9 +186,8 @@
             this.lblViePerso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViePerso.Location = new System.Drawing.Point(480, 221);
             this.lblViePerso.Name = "lblViePerso";
-            this.lblViePerso.Size = new System.Drawing.Size(36, 20);
+            this.lblViePerso.Size = new System.Drawing.Size(0, 20);
             this.lblViePerso.TabIndex = 14;
-            this.lblViePerso.Text = "100";
             this.lblViePerso.Visible = false;
             // 
             // label4
@@ -205,10 +204,11 @@
             // pbrViePerso
             // 
             this.pbrViePerso.Location = new System.Drawing.Point(208, 212);
+            this.pbrViePerso.Maximum = 1000;
             this.pbrViePerso.Name = "pbrViePerso";
             this.pbrViePerso.Size = new System.Drawing.Size(266, 39);
             this.pbrViePerso.TabIndex = 12;
-            this.pbrViePerso.Value = 100;
+            this.pbrViePerso.Value = 1000;
             this.pbrViePerso.Visible = false;
             // 
             // lbl1
@@ -273,6 +273,7 @@
             this.btnCapaciteSpecial.Text = "Capacité spécial";
             this.btnCapaciteSpecial.UseVisualStyleBackColor = true;
             this.btnCapaciteSpecial.Visible = false;
+            this.btnCapaciteSpecial.Click += new System.EventHandler(this.btnCapaciteSpecial_Click);
             // 
             // btnFinTour
             // 

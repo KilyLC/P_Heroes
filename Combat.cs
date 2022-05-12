@@ -256,43 +256,72 @@ namespace P_Heroes
         }
         public Compagnie CreationCompagnieEnnemi()
         {
+            const int NV_VIE = 1000;
+            const int AGILITE_BASE = 30;
+            const int ATTAQUE_BASE = 40;
+            const int AJOUT_ENNEMI2 = 10;
+            const int AJOUT_ENNEMI3 = 10;
             Compagnie compagnieEnnemi = new Compagnie();
-            //compagnieEnnemi.InitListeArmes();
+
             List<Heros> herosEnnemi = new List<Heros>();
             //tenue
             Tenue tenue1 = new Tenue();
             Tenue tenue2 = new Tenue();
             Tenue tenue3 = new Tenue();
+
+            tenue1.CreeTenue("lourde", 30, 35, null);
+            tenue1.CreeTenue("moyenne", 20, 30, null);
+            tenue1.CreeTenue("legere", 10, 15, null);
             //heros
             Heros ennemi1 = new Heros();
             Heros ennemi2 = new Heros();
             Heros ennemi3 = new Heros();
-            //nom hero
-            /*ennemi1.Ennemi1("Ennemi 1");
-            ennemi2.Ennemi2("Ennemi 2");
-            ennemi3.Ennemi3("Ennemi 3");*/
-            //choix tenue
-            /*ennemi1.Tenue = ;
-            ennemi2.Tenue = ;
-            ennemi3.Tenue = ;*/
-            //arme ennemi 1
-            ennemi1.Arme1 = compagnieEnnemi.DicoListeArmes["epee"].arme;
-            ennemi1.Arme2 = compagnieEnnemi.DicoListeArmes["dague"].arme;
-            //arme ennemi 2
-            ennemi2.Arme1 = compagnieEnnemi.DicoListeArmes["arc"].arme;
-            ennemi2.Arme2 = compagnieEnnemi.DicoListeArmes["arc"].arme;
-            //arme ennemi 3
-            ennemi3.Arme1 = compagnieEnnemi.DicoListeArmes["lance"].arme;
-            ennemi3.Arme2 = compagnieEnnemi.DicoListeArmes["bouclier"].arme;
+
+            ennemi1.CreeHero(NV_VIE, AGILITE_BASE, ATTAQUE_BASE, "ennemi 1", null, true, compagnieEnnemi, "regeneration");
+            ennemi2.CreeHero(NV_VIE, AGILITE_BASE + AJOUT_ENNEMI2, ATTAQUE_BASE + AJOUT_ENNEMI2, "ennemi 2", null, true, compagnieEnnemi, "attaque");
+            ennemi3.CreeHero(NV_VIE, AGILITE_BASE + AJOUT_ENNEMI3, ATTAQUE_BASE + AJOUT_ENNEMI3, "ennemi 3", null, true, compagnieEnnemi, "defense");
+            
+            //Creation armes ennemis
+            Arme hache = new Arme();
+            hache.CreeArme(100, 25, 40, "hache", null, 2);
+
+            Arme lance = new Arme();
+            lance.CreeArme(100, 10, 20, "lance", null, 1);
+
+            Arme epee = new Arme();
+            epee.CreeArme(100, 10, 20, "epee", null, 1);
+
+            Arme arc = new Arme();
+            arc.CreeArme(100, 25, 40, "arc", null, 2);
+
+            Arme dague = new Arme();
+            dague.CreeArme(100, 10, 20, "dague", null, 1);
+
+            Arme bouclier = new Arme();
+            bouclier.CreeArme(100, 10, 20, "bouclier", null, 1);
+
+            //arme et tenue  ennemi 1
+            ennemi1.Arme1 = dague;
+            ennemi1.Arme2 = epee;
+            ennemi1.Tenue = tenue2;
+            //arme et tenue ennemi 2
+            ennemi2.Arme1 = arc;
+            ennemi2.Arme2 = arc;
+            ennemi2.Tenue = tenue3;
+            //arme et tenue ennemi 3
+            ennemi3.Arme1 = lance;
+            ennemi3.Arme2 = bouclier;
+            ennemi3.Tenue = tenue1;
+
             //Image ennemi
             ennemi1.ImageHero = Properties.Resources.Orc_Warriors_Armor_Shield;
             ennemi2.ImageHero = Properties.Resources.OrcArcherCuir;
             ennemi3.ImageHero = Properties.Resources.OrcArcherCuir;
 
-            //traitement de l'heros
-           /* ennemi1 = ennemi1.TraitementHeros(ennemi1.Arme1, ennemi1.Arme2, ennemi1.Tenue, ennemi1);
-            ennemi2 = ennemi2.TraitementHeros(ennemi2.Arme1, ennemi1.Arme2, ennemi2.Tenue, ennemi2);
-            ennemi3 = ennemi3.TraitementHeros(ennemi3.Arme1, ennemi1.Arme2, ennemi3.Tenue, ennemi3);*/
+            //Traitement des stats
+            ennemi1.TraitementStats(ennemi1.Arme1, ennemi1.Arme2, ennemi1.Tenue, ennemi1);
+            ennemi2.TraitementStats(ennemi2.Arme1, ennemi2.Arme2, ennemi2.Tenue, ennemi2);
+            ennemi3.TraitementStats(ennemi3.Arme1, ennemi3.Arme2, ennemi3.Tenue, ennemi3);
             //ajout dans la compagnie
             herosEnnemi.Add(ennemi1);
             herosEnnemi.Add(ennemi2);
