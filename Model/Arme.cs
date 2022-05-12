@@ -18,7 +18,7 @@ namespace P_Heroes.Model
             return "Dégâts : "+_degatsMin+" - "+_degatsMax;
         }
 
-        public Arme(string nom, uint prix, Image miniature, string description, int niveau, int durabilite, int degatsMin, int degatsMax)
+        public Arme(string nom, int prix, Image miniature, string description, int niveau, int durabilite, int degatsMin, int degatsMax)
             : base(nom, prix, miniature, description, niveau, durabilite)
         {
             if (degatsMin < 0 || degatsMax < 0 || degatsMin > degatsMax)
