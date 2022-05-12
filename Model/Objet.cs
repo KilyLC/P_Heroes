@@ -20,7 +20,7 @@ namespace P_Heroes.Model
     public abstract class Objet
     {
         private string _nom;
-        private uint _prix;
+        private int _prix;
         private Image _miniature;
         private string _description;
         private RareteObjet _rarete;
@@ -35,22 +35,28 @@ namespace P_Heroes.Model
         const int DURABILITE_MIN = 1;
 
         public string Nom { get => _nom; }
-        public uint Prix { get => _prix; }
+        public int Prix { get => _prix; }
         public Image Miniature { get => _miniature; }
         public string Description { get => _description; }
         internal RareteObjet Rarete { get => _rarete; }
         public int Niveau { get => _niveau; }               // 1 - 10
         public int Durabilite { get => _durabilite; }
 
-        public Objet(string nom, uint prix, Image miniature, string description, int niveau, int durabilite)
+        public Objet(string nom, int prix, Image miniature, string description, int niveau, int durabilite)
         {
+            if (niveau > NIVEAU_MAX || niveau < NIVEAU_MIN)
+                throw new Exception("Niveau d'objet non valide");
+
+            if (prix < 0)
+                throw new Exception("Prix non valide");
+
+            if (durabilite > DURABILITE_MAX || durabilite < DURABILITE_MIN)
+                throw new Exception("Durabilité d'objet non valide");
+
             this._nom = nom;
             this._prix = prix;
             this._miniature = miniature;
             this._description = description;
-
-            if (niveau > NIVEAU_MAX || niveau < NIVEAU_MIN)
-                throw new Exception("Niveau d'objet non valide");
 
             this._niveau = niveau;
 
@@ -61,9 +67,6 @@ namespace P_Heroes.Model
             else if (niveau <= 8) this._rarete = RareteObjet.TresRare;
             else if (niveau <= 10) this._rarete = RareteObjet.Legendaire;
 
-            if (durabilite > DURABILITE_MAX || durabilite < DURABILITE_MIN)
-                throw new Exception("Durabilité d'objet non valide");
-
             this._durabilite = durabilite;
         }
 
@@ -71,7 +74,12 @@ namespace P_Heroes.Model
 
         public virtual int calculPrix()
         {
-            return (int)Math.Ceiling((decimal)((Durabilite / 100) * _prix));
+            return Convert.ToInt32(Durabilite / 100 * _prix);
+        }
+
+        public virtual int calculPrixVente()
+        {
+            return Convert.ToInt32(Durabilite / 100 * _prix * 0.8);
         }
 
         public virtual void utiliser()
