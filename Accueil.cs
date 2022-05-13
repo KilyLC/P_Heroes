@@ -20,7 +20,7 @@ namespace P_Heroes
         public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
 
 
-        public Accueil(P_Heros p_Heros)
+        public Accueil()
         {
             InitializeComponent();
           
@@ -40,9 +40,8 @@ namespace P_Heroes
         {
             EcranChargement ecranChargment = new EcranChargement();
             ecranChargment.Show();
+            this.Close();
         }
-
-
 
         private void hsbVolume_Scroll(object sender, ScrollEventArgs e)
         {
@@ -52,5 +51,6 @@ namespace P_Heroes
             uint newVolumeAllChannels = (((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16));
             waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
         }
+        
     }
 }

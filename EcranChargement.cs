@@ -39,10 +39,9 @@ namespace P_Heroes
 
             }
             tmrChargement.Stop();
-            //SelectionArmes selectionArmes = new SelectionArmes(form);
-            //selectionArmes.Show();
-            SelectionHeros selectionHeros = new SelectionHeros(form);
-            selectionHeros.Show();
+
+            frmSalon frmSalon = new frmSalon(form);
+            frmSalon.Show();
             this.Close();
         }
 

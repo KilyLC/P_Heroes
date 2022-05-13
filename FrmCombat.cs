@@ -28,7 +28,7 @@ namespace P_Heroes
 
         string nomCompagnieJoueur;
         string nomCompagnieEnnemi;
-
+        frmSalon frmSalon = new frmSalon();
         //combat
         Combat combat = new Combat();
 
@@ -36,15 +36,15 @@ namespace P_Heroes
         {
             InitializeComponent();
         }
-        public void DefinirCompagnie(Compagnie compagnie)
+        public void DefinirCompagnie()
         {
-            combat.CompagnieJoueurInit(compagnie);
+            combat.CompagnieJoueurInit(CompagnieActuelle.compagnie);
         }
 
         private void P_Heros_Load(object sender, EventArgs e)
         {
-            EcranChargement ecranChargement = new EcranChargement(this);
-            ecranChargement.Show(this);
+            Accueil accueil = new Accueil();
+            accueil.Show();
             playSound();
         }
         /// <summary>
@@ -125,6 +125,7 @@ namespace P_Heroes
         }
         private void btnCommencer_Click(object sender, EventArgs e)
         {
+            DefinirCompagnie();
             combat.Commencer();
             CommencerAffichage();
 
@@ -165,6 +166,10 @@ namespace P_Heroes
             lblNomEnnemi.Visible = true;
             label3.Visible = true;
             lblNomCompagnieEnnemi.Visible = true;
+
+            pbxPerso1.Image = combat.HeroPrincipalJoueur.ImageHero;
+            pbxPerso2.Image = combat.CompagnieJoueur.Heros[1].ImageHero;
+            pbxPerso3.Image = combat.CompagnieJoueur.Heros[2].ImageHero;
 
             //Joueur
             lblNomCompagnie.Text = nomCompagnieJoueur;
@@ -233,6 +238,8 @@ namespace P_Heroes
                 else if (combat.Perdu())
                 {
                     lbxAffichage.Items.Add("La compagnie " + nomCompagnieJoueur + " a été tuée, vous avez perdu");
+                    
+                    frmSalon.Show();
                 }
             }
             else
@@ -244,6 +251,8 @@ namespace P_Heroes
                 else if (combat.Gagne())
                 {
                     lbxAffichage.Items.Add("La compagnie " + nomCompagnieEnnemi + "a été tuée, vous avez gagné");
+                    
+                    frmSalon.Show();
                 }
             }
         }

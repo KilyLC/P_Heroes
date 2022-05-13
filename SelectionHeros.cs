@@ -146,8 +146,8 @@ namespace P_Heroes
         private void btnValider_Click(object sender, EventArgs e)
         {
             compagnie.majNom(tbxNomCampagnie.Text);
-            
-            SelectionArmes selectionArmes = new SelectionArmes(_form, compagnie);
+            CompagnieActuelle.compagnie = this.compagnie;
+            SelectionArmes selectionArmes = new SelectionArmes(_form);
             selectionArmes.Show();
             this.Close();
         }

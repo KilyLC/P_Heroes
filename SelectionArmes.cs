@@ -14,7 +14,7 @@ namespace P_Heroes
     public partial class SelectionArmes : Form
     {
         //init
-        Compagnie compagnie = null;
+        Compagnie compagnie = CompagnieActuelle.compagnie;
         Heros heros1;
         Heros heros2;
         Heros heros3;
@@ -34,12 +34,9 @@ namespace P_Heroes
         public SelectionArmes(P_Heros form) : this()
         {
             this.form = form;
-        }
 
-        public SelectionArmes(P_Heros form, Compagnie compagnie) : this(form)
-        {
             //Récupere la compagnie
-            this.compagnie = compagnie;
+            //this.compagnie = compagnie;
             //Assigne les héros
             this.heros1 = compagnie.Heros[0];
             this.heros2 = compagnie.Heros[1];
@@ -459,7 +456,6 @@ namespace P_Heroes
             compagnie.Heros[1] = heros2;
             compagnie.Heros[2] = heros3;
             //Partie combat
-            form.DefinirCompagnie(compagnie);
             this.Close();
         }
 
