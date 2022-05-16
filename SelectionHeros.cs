@@ -15,7 +15,7 @@ namespace P_Heroes
         Compagnie compagnie = new Compagnie();
         List<Heros> listHeros = new List<Heros>();
 
-        private P_Heros _form;
+        private FrmCombat _form;
         public SelectionHeros()
         {
             InitializeComponent();
@@ -23,12 +23,12 @@ namespace P_Heroes
             Reset();
         }
 
-        public SelectionHeros(P_Heros form) : this()
+        public SelectionHeros(FrmCombat form) : this()
         {
             this._form = form;
         }
 
-        PersoSelection persoSelection = new PersoSelection();
+        CarteAffichage persoSelection = new CarteAffichage();
 
         public void CreeHeros()
         {
@@ -59,9 +59,9 @@ namespace P_Heroes
             foreach (Heros h in listHeros)
             {
                 string stats = "";
-                PersoSelection control = new PersoSelection(h, ClicHeros);
+                CarteAffichage control = new CarteAffichage(h, ClicHeros);
                 control.DefinirMiniature(h.ImageHero);
-                stats = "Vie : " + h.NvVie + Environment.NewLine + "Agilité : " + h.Agilite + Environment.NewLine + "Attaque : " + h.Attaque;
+                stats = "Vie : " + h.NvVie + Environment.NewLine + "Agilité : " + h.Agilite + Environment.NewLine + "Attaque : " + h.Attaque + Environment.NewLine + "Capacité spéciale : " + h.CapaciteSpecial;
                 control.DefinirStatsHero(stats, h.NomHeros);
                 control.Location = new Point(x, y);
                 pnlAffichageHero.Controls.Add(control);
@@ -82,7 +82,7 @@ namespace P_Heroes
         {
             Button sender = (Button)_sender;
 
-            Heros h = (Heros)((PersoSelection)sender.Parent.Parent).RecupererHeros();
+            Heros h = (Heros)((CarteAffichage)sender.Parent.Parent).RecupererHeros();
             //hero temporaire pour stocker les valeurs par défault
             Heros temp = new Heros();
             temp.NvVie = h.NvVie;
@@ -146,7 +146,8 @@ namespace P_Heroes
         private void btnValider_Click(object sender, EventArgs e)
         {
             compagnie.majNom(tbxNomCampagnie.Text);
-            CompagnieActuelle.compagnie = this.compagnie;
+            CompagnieStocker.compagnieActuelle = this.compagnie;
+            CompagnieStocker.compagniesJoueur.Add(this.compagnie);
             SelectionArmes selectionArmes = new SelectionArmes(_form);
             selectionArmes.Show();
             this.Close();

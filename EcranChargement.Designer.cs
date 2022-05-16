@@ -80,7 +80,7 @@
             this.MinimizeBox = false;
             this.Name = "EcranChargement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EcranChargement";
+            this.Text = "Chargement";
             this.Load += new System.EventHandler(this.EcranChargement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

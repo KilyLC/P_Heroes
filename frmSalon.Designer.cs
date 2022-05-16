@@ -37,10 +37,11 @@
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnCampagne = new System.Windows.Forms.Button();
             this.btnMultiJoueur = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNomCompagnie = new System.Windows.Forms.Label();
             this.pbxHero3 = new System.Windows.Forms.PictureBox();
             this.pbxHero2 = new System.Windows.Forms.PictureBox();
             this.pbxHero1 = new System.Windows.Forms.PictureBox();
+            this.lblNumCompagnie = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero1)).BeginInit();
@@ -55,6 +56,7 @@
             this.btnChoixCompagnie.TabIndex = 0;
             this.btnChoixCompagnie.Text = "Choix de la compagnie";
             this.btnChoixCompagnie.UseVisualStyleBackColor = true;
+            this.btnChoixCompagnie.Click += new System.EventHandler(this.btnChoixCompagnie_Click);
             // 
             // btnCreerCompagnie
             // 
@@ -98,6 +100,7 @@
             // 
             // btnOptions
             // 
+            this.btnOptions.Enabled = false;
             this.btnOptions.Location = new System.Drawing.Point(49, 391);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(159, 32);
@@ -123,6 +126,7 @@
             this.btnCampagne.TabIndex = 7;
             this.btnCampagne.Text = "Campagne";
             this.btnCampagne.UseVisualStyleBackColor = true;
+            this.btnCampagne.Click += new System.EventHandler(this.btnCampagne_Click);
             // 
             // btnMultiJoueur
             // 
@@ -134,14 +138,15 @@
             this.btnMultiJoueur.Text = "Multijoueur";
             this.btnMultiJoueur.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblNomCompagnie
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(669, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "lblNomCompagnie";
+            this.lblNomCompagnie.AutoSize = true;
+            this.lblNomCompagnie.Location = new System.Drawing.Point(669, 37);
+            this.lblNomCompagnie.Name = "lblNomCompagnie";
+            this.lblNomCompagnie.Size = new System.Drawing.Size(92, 13);
+            this.lblNomCompagnie.TabIndex = 12;
+            this.lblNomCompagnie.Text = "lblNomCompagnie";
+            this.lblNomCompagnie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbxHero3
             // 
@@ -170,12 +175,22 @@
             this.pbxHero1.TabIndex = 9;
             this.pbxHero1.TabStop = false;
             // 
+            // lblNumCompagnie
+            // 
+            this.lblNumCompagnie.AutoSize = true;
+            this.lblNumCompagnie.Location = new System.Drawing.Point(214, 82);
+            this.lblNumCompagnie.Name = "lblNumCompagnie";
+            this.lblNumCompagnie.Size = new System.Drawing.Size(30, 13);
+            this.lblNumCompagnie.TabIndex = 13;
+            this.lblNumCompagnie.Text = "0 / 6";
+            // 
             // frmSalon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNumCompagnie);
+            this.Controls.Add(this.lblNomCompagnie);
             this.Controls.Add(this.pbxHero3);
             this.Controls.Add(this.pbxHero2);
             this.Controls.Add(this.pbxHero1);
@@ -190,7 +205,7 @@
             this.Controls.Add(this.btnChoixCompagnie);
             this.Name = "frmSalon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSalon";
+            this.Text = "Salon";
             this.Load += new System.EventHandler(this.frmSalon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero2)).EndInit();
@@ -214,6 +229,7 @@
         private System.Windows.Forms.PictureBox pbxHero1;
         private System.Windows.Forms.PictureBox pbxHero2;
         private System.Windows.Forms.PictureBox pbxHero3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNomCompagnie;
+        private System.Windows.Forms.Label lblNumCompagnie;
     }
 }

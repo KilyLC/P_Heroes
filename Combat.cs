@@ -30,9 +30,7 @@ namespace P_Heroes
         const int PV_REGENERATION = 80;
 
         Random rnd = new Random();
-
-        int nbActionJoueur = 1;
-
+        
         public Combat()
         {
             //init actions ennemi
@@ -60,6 +58,13 @@ namespace P_Heroes
             degatsTotaux = heroAttaquant.Degats() * multiplicateurAttaque;
             heroDefenseur.PerteVie(degatsTotaux);
             heroDefenseur.Defense = false;
+        }
+
+        public void RecupVie()
+        {
+            CompagnieJoueur.Heros[0].NvVie = CompagnieJoueur.HerosBase[0].NvVie;
+            CompagnieJoueur.Heros[1].NvVie = CompagnieJoueur.HerosBase[1].NvVie;
+            CompagnieJoueur.Heros[2].NvVie = CompagnieJoueur.HerosBase[2].NvVie;
         }
 
         public void Defense(Heros hero)

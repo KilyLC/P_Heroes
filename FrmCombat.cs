@@ -16,11 +16,10 @@ using System.IO;
 
 namespace P_Heroes
 {
-    public partial class P_Heros : Form
+    public partial class FrmCombat : Form
     {
         //Initialisation
-        System.Media.SoundPlayer player;
-
+       
         bool attaque = false;
         bool defense = false;
         bool mouvement = false;
@@ -32,35 +31,13 @@ namespace P_Heroes
         //combat
         Combat combat = new Combat();
 
-        public P_Heros()
+        public FrmCombat()
         {
             InitializeComponent();
         }
         public void DefinirCompagnie()
         {
-            combat.CompagnieJoueurInit(CompagnieActuelle.compagnie);
-        }
-
-        private void P_Heros_Load(object sender, EventArgs e)
-        {
-            Accueil accueil = new Accueil();
-            accueil.Show();
-            playSound();
-        }
-        /// <summary>
-        /// Lance la musique
-        /// </summary>
-        private void playSound()
-        {
-            player = new System.Media.SoundPlayer();
-            player.Stream = Properties.Resources.MusicSeigneurAnneaux;
-            player.PlayLooping();
-        }
-
-        private void btnChangement_Click(object sender, EventArgs e)
-        {
-            mouvement = true;
-            btnActionCliquer();
+            combat.CompagnieJoueurInit(CompagnieStocker.compagnieActuelle);
         }
         /// <summary>
         /// Change la vie et le nom selon l'héro
@@ -122,15 +99,6 @@ namespace P_Heroes
                 //Maj label vie
                 lblVieEnnemi.Text = combat.HeroPrincipalEnnemi.NvVie.ToString();
             }
-        }
-        private void btnCommencer_Click(object sender, EventArgs e)
-        {
-            DefinirCompagnie();
-            combat.Commencer();
-            CommencerAffichage();
-
-            nomCompagnieEnnemi = combat.CompagnieEnnemi.NomCompagnie;
-            nomCompagnieJoueur = combat.CompagnieJoueur.NomCompagnie;
         }
         /// <summary>
         /// Init de la fenetre
@@ -195,12 +163,6 @@ namespace P_Heroes
             }
 
         }
-
-        private void btnAttaque_Click(object sender, EventArgs e)
-        {
-            attaque = true;
-            btnActionCliquer();
-        }
         private void TourEnnemiAffichage()
         {
             lbxAction.Items.Add(nomCompagnieEnnemi + " : " + combat.ActionsEnnemi[combat.NumActionEnnemi]);
@@ -221,11 +183,6 @@ namespace P_Heroes
             ActionEnnemi();
 
         }
-        private void btnDefense_Click(object sender, EventArgs e)
-        {
-            defense = true;
-            btnActionCliquer();
-        }
 
         private void VerifNbHeroAffichage(bool joueur)
         {
@@ -238,8 +195,8 @@ namespace P_Heroes
                 else if (combat.Perdu())
                 {
                     lbxAffichage.Items.Add("La compagnie " + nomCompagnieJoueur + " a été tuée, vous avez perdu");
-                    
-                    frmSalon.Show();
+
+                    FinCombat();
                 }
             }
             else
@@ -251,10 +208,16 @@ namespace P_Heroes
                 else if (combat.Gagne())
                 {
                     lbxAffichage.Items.Add("La compagnie " + nomCompagnieEnnemi + "a été tuée, vous avez gagné");
-                    
-                    frmSalon.Show();
+
+                    FinCombat();
                 }
             }
+        }
+        private void FinCombat()
+        {
+            combat.RecupVie();
+            frmSalon.Show();
+            this.Close();
         }
         private void VerifNbCapaciteSpecialRestant(bool joueur)
         {
@@ -419,6 +382,34 @@ namespace P_Heroes
         private void btnCapaciteSpecial_Click(object sender, EventArgs e)
         {
             capaciteSpecial = true;
+            btnActionCliquer();
+        }
+
+        private void btnAttaque_Click(object sender, EventArgs e)
+        {
+            attaque = true;
+            btnActionCliquer();
+        }
+
+        private void btnDefense_Click(object sender, EventArgs e)
+        {
+            defense = true;
+            btnActionCliquer();
+        }
+
+        private void btnCommencer_Click(object sender, EventArgs e)
+        {
+            DefinirCompagnie();
+            combat.Commencer();
+            CommencerAffichage();
+
+            nomCompagnieEnnemi = combat.CompagnieEnnemi.NomCompagnie;
+            nomCompagnieJoueur = combat.CompagnieJoueur.NomCompagnie;
+        }
+
+        private void btnChangement_Click(object sender, EventArgs e)
+        {
+            mouvement = true;
             btnActionCliquer();
         }
     }

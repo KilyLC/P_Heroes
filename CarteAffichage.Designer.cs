@@ -1,6 +1,6 @@
 ﻿namespace P_Heroes
 {
-    partial class PersoSelection
+    partial class CarteAffichage
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.

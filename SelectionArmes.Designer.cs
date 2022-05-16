@@ -393,7 +393,7 @@
             this.MinimizeBox = false;
             this.Name = "SelectionArmes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " Séléction des armes et tenues";
             this.Load += new System.EventHandler(this.SelectionPerso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPerso2)).EndInit();

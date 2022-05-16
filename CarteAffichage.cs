@@ -11,30 +11,30 @@ using P_Heroes.Model;
 
 namespace P_Heroes
 {
-    public partial class PersoSelection : UserControl
+    public partial class CarteAffichage : UserControl
     {
         private EventHandler _handler = null;
         private Heros _heros;
         private Arme _arme;
         private Tenue _tenue;
-        public PersoSelection()
+        public CarteAffichage()
         {
             InitializeComponent();
         }
 
-        public PersoSelection(Heros h, EventHandler handler)
+        public CarteAffichage(Heros h, EventHandler handler)
         {
             this._handler = handler;
             this._heros = h;
             InitializeComponent();
         }
-        public PersoSelection(Arme a, EventHandler handler)
+        public CarteAffichage(Arme a, EventHandler handler)
         {
             this._handler = handler;
             this._arme = a;
             InitializeComponent();
         }
-        public PersoSelection(Tenue t, EventHandler handler)
+        public CarteAffichage(Tenue t, EventHandler handler)
         {
             this._handler = handler;
             this._tenue = t;

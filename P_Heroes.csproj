@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +47,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,16 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accueil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Accueil.Designer.cs">
-      <DependentUpon>Accueil.cs</DependentUpon>
-    </Compile>
     <Compile Include="Arme.cs" />
     <Compile Include="Combat.cs" />
     <Compile Include="Compagnie.cs" />
-    <Compile Include="CompagnieActuelle.cs" />
+    <Compile Include="CompagnieStocker.cs" />
     <Compile Include="DicoValues.cs" />
     <Compile Include="EcranChargement.cs">
       <SubType>Form</SubType>
@@ -63,17 +76,23 @@
     <Compile Include="EcranChargement.Designer.cs">
       <DependentUpon>EcranChargement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCombat.cs">
+    <Compile Include="Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCombat.Designer.cs">
-      <DependentUpon>FrmCombat.cs</DependentUpon>
+    <Compile Include="Accueil.Designer.cs">
+      <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBoutique.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBoutique.Designer.cs">
       <DependentUpon>FormBoutique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCombat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCombat.Designer.cs">
+      <DependentUpon>FrmCombat.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSalon.cs">
       <SubType>Form</SubType>
@@ -90,11 +109,11 @@
       <DependentUpon>FormPlus.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Objet.cs" />
-    <Compile Include="PersoSelection.cs">
+    <Compile Include="CarteAffichage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PersoSelection.Designer.cs">
-      <DependentUpon>PersoSelection.cs</DependentUpon>
+    <Compile Include="CarteAffichage.Designer.cs">
+      <DependentUpon>CarteAffichage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,17 +136,17 @@
       <DependentUpon>ShopItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Tenue.cs" />
-    <EmbeddedResource Include="Accueil.resx">
-      <DependentUpon>Accueil.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EcranChargement.resx">
       <DependentUpon>EcranChargement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCombat.resx">
-      <DependentUpon>FrmCombat.cs</DependentUpon>
+    <EmbeddedResource Include="Accueil.resx">
+      <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBoutique.resx">
       <DependentUpon>FormBoutique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCombat.resx">
+      <DependentUpon>FrmCombat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSalon.resx">
       <DependentUpon>frmSalon.cs</DependentUpon>
@@ -135,8 +154,8 @@
     <EmbeddedResource Include="Model\FormPlus.resx">
       <DependentUpon>FormPlus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersoSelection.resx">
-      <DependentUpon>PersoSelection.cs</DependentUpon>
+    <EmbeddedResource Include="CarteAffichage.resx">
+      <DependentUpon>CarteAffichage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -230,6 +249,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\elrond.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -131,7 +131,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SelectionHeros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "la";
+            this.Text = "Séléction des héros";
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero3)).EndInit();

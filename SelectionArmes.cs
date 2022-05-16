@@ -14,7 +14,7 @@ namespace P_Heroes
     public partial class SelectionArmes : Form
     {
         //init
-        Compagnie compagnie = CompagnieActuelle.compagnie;
+        Compagnie compagnie = CompagnieStocker.compagnieActuelle;
         Heros heros1;
         Heros heros2;
         Heros heros3;
@@ -25,13 +25,13 @@ namespace P_Heroes
 
         int numHeroSelectionne = 1;
 
-        P_Heros form;
+        FrmCombat form;
         public SelectionArmes()
         {
             InitializeComponent();
         }
 
-        public SelectionArmes(P_Heros form) : this()
+        public SelectionArmes(FrmCombat form) : this()
         {
             this.form = form;
 
@@ -332,7 +332,7 @@ namespace P_Heroes
         {
             Button sender = (Button)_sender;
 
-            Arme a = ((PersoSelection)sender.Parent.Parent).RecupererArmes();
+            Arme a = ((CarteAffichage)sender.Parent.Parent).RecupererArmes();
             //Mains 1
             if (heroSelectionne.Arme1 == null)
             {
@@ -388,7 +388,7 @@ namespace P_Heroes
         {
             Button sender = (Button)_sender;
 
-            Tenue t = ((PersoSelection)sender.Parent.Parent).RecupererTenues();
+            Tenue t = ((CarteAffichage)sender.Parent.Parent).RecupererTenues();
             //Attribut la tenue à l'héro
             heroSelectionne.Tenue = t;
 
@@ -412,7 +412,7 @@ namespace P_Heroes
             foreach (Arme a in listeArmes)
             {
                 string stats = "";
-                PersoSelection control = new PersoSelection(a, ClicArmes);
+                CarteAffichage control = new CarteAffichage(a, ClicArmes);
                 //image armes
                 control.DefinirMiniature(a.Image);
                 //Affcihage stats
@@ -438,7 +438,7 @@ namespace P_Heroes
             foreach (Tenue t in listeTenues)
             {
                 string stats = "";
-                PersoSelection control = new PersoSelection(t, ClicTenues);
+                CarteAffichage control = new CarteAffichage(t, ClicTenues);
                 control.DefinirMiniature(t.ImageTenue);
                 stats = "Defense : " + t.NvDefense + Environment.NewLine + "Poids : " + t.Poids;
                 control.DefinirStatsArme(stats, t.NomTenue);
@@ -455,7 +455,9 @@ namespace P_Heroes
             compagnie.Heros[0] = heros1;
             compagnie.Heros[1] = heros2;
             compagnie.Heros[2] = heros3;
-            //Partie combat
+
+            frmSalon frmSalon = new frmSalon();
+            frmSalon.Show();
             this.Close();
         }
 

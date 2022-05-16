@@ -1,16 +1,16 @@
 ﻿namespace P_Heroes
 {
-    partial class Accueil
+    partial class P_Heros
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable nécessaire au concepteur.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Nettoyage des ressources utilisées.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,91 +20,82 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Code généré par le Concepteur Windows Form
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
+        /// le contenu de cette méthode avec l'éditeur de code.
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnQuitter = new System.Windows.Forms.Button();
-            this.btnJouer = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.hsbVolume = new System.Windows.Forms.HScrollBar();
             this.lblNbVolume = new System.Windows.Forms.Label();
+            this.hsbVolume = new System.Windows.Forms.HScrollBar();
+            this.btnJouer = new System.Windows.Forms.Button();
+            this.btnQuitter = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnQuitter
-            // 
-            this.btnQuitter.Location = new System.Drawing.Point(590, 145);
-            this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(205, 128);
-            this.btnQuitter.TabIndex = 2;
-            this.btnQuitter.Text = "Quitter";
-            this.btnQuitter.UseVisualStyleBackColor = true;
-            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
-            // 
-            // btnJouer
-            // 
-            this.btnJouer.Location = new System.Drawing.Point(271, 145);
-            this.btnJouer.Name = "btnJouer";
-            this.btnJouer.Size = new System.Drawing.Size(205, 128);
-            this.btnJouer.TabIndex = 3;
-            this.btnJouer.Text = "Jouer";
-            this.btnJouer.UseVisualStyleBackColor = true;
-            this.btnJouer.Click += new System.EventHandler(this.btnJouer_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(470, 481);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Volume musique";
-            // 
-            // hsbVolume
-            // 
-            this.hsbVolume.LargeChange = 1;
-            this.hsbVolume.Location = new System.Drawing.Point(398, 516);
-            this.hsbVolume.Name = "hsbVolume";
-            this.hsbVolume.Size = new System.Drawing.Size(235, 27);
-            this.hsbVolume.TabIndex = 8;
-            this.hsbVolume.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbVolume_Scroll);
             // 
             // lblNbVolume
             // 
             this.lblNbVolume.AutoSize = true;
-            this.lblNbVolume.Location = new System.Drawing.Point(493, 552);
+            this.lblNbVolume.Location = new System.Drawing.Point(496, 701);
             this.lblNbVolume.Name = "lblNbVolume";
             this.lblNbVolume.Size = new System.Drawing.Size(35, 13);
-            this.lblNbVolume.TabIndex = 9;
+            this.lblNbVolume.TabIndex = 14;
             this.lblNbVolume.Text = "label2";
             // 
-            // Accueil
+            // hsbVolume
+            // 
+            this.hsbVolume.LargeChange = 1;
+            this.hsbVolume.Location = new System.Drawing.Point(401, 665);
+            this.hsbVolume.Name = "hsbVolume";
+            this.hsbVolume.Size = new System.Drawing.Size(235, 27);
+            this.hsbVolume.TabIndex = 13;
+            this.hsbVolume.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbVolume_Scroll);
+            // 
+            // btnJouer
+            // 
+            this.btnJouer.Location = new System.Drawing.Point(274, 294);
+            this.btnJouer.Name = "btnJouer";
+            this.btnJouer.Size = new System.Drawing.Size(205, 128);
+            this.btnJouer.TabIndex = 11;
+            this.btnJouer.Text = "Jouer";
+            this.btnJouer.UseVisualStyleBackColor = true;
+            this.btnJouer.Click += new System.EventHandler(this.btnJouer_Click);
+            // 
+            // btnQuitter
+            // 
+            this.btnQuitter.Location = new System.Drawing.Point(593, 294);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(205, 128);
+            this.btnQuitter.TabIndex = 10;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            // 
+            // P_Heros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
             this.Controls.Add(this.lblNbVolume);
             this.Controls.Add(this.hsbVolume);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnJouer);
             this.Controls.Add(this.btnQuitter);
-            this.Name = "Accueil";
+            this.Name = "P_Heros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
+            this.Load += new System.EventHandler(this.P_Heros_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.Button btnJouer;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.HScrollBar hsbVolume;
+
         private System.Windows.Forms.Label lblNbVolume;
+        private System.Windows.Forms.HScrollBar hsbVolume;
+        private System.Windows.Forms.Button btnJouer;
+        private System.Windows.Forms.Button btnQuitter;
     }
 }
+
