@@ -28,7 +28,7 @@ namespace P_Heroes.Model
         private int _durabilite = 100;
         private int _pasUtilisation = 1;        // Cout de durabilite par utilisation
 
-        const int NIVEAU_MAX = 10;
+        const int NIVEAU_MAX = 50;
         const int NIVEAU_MIN = 1;
 
         const int DURABILITE_MAX = 100;
@@ -39,10 +39,10 @@ namespace P_Heroes.Model
         public Image Miniature { get => _miniature; }
         public string Description { get => _description; }
         internal RareteObjet Rarete { get => _rarete; }
-        public int Niveau { get => _niveau; }               // 1 - 10
+        public int Niveau { get => _niveau; }               // 1 - 50
         public int Durabilite { get => _durabilite; }
 
-        public Objet(string nom, int prix, Image miniature, string description, int niveau, int durabilite)
+        public Objet(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
         {
             if (niveau > NIVEAU_MAX || niveau < NIVEAU_MIN)
                 throw new Exception("Niveau d'objet non valide");
@@ -60,17 +60,36 @@ namespace P_Heroes.Model
 
             this._niveau = niveau;
 
-            // Rareté
-            if (niveau <= 2) this._rarete = RareteObjet.Commun;
-            else if (niveau <= 4) this._rarete = RareteObjet.PeuCommun;
-            else if (niveau <= 6) this._rarete = RareteObjet.Rare;
-            else if (niveau <= 8) this._rarete = RareteObjet.TresRare;
-            else if (niveau <= 10) this._rarete = RareteObjet.Legendaire;
-
+            this._rarete = rarete;
+            
             this._durabilite = durabilite;
         }
 
-        public abstract string statistiquesEnTexte();
+        public virtual string statistiquesEnTexte()
+        {
+            string stats_str = "Rareté : ";
+            switch (this.Rarete)
+            {
+                case RareteObjet.Commun:
+                    stats_str += "commun";
+                    break;
+                case RareteObjet.PeuCommun:
+                    stats_str += "peu commun";
+                    break;
+                case RareteObjet.Rare:
+                    stats_str += "rare";
+                    break;
+                case RareteObjet.TresRare:
+                    stats_str += "très rare";
+                    break;
+                case RareteObjet.Legendaire:
+                    stats_str += "légendaire";
+                    break;
+            }
+            stats_str += "\nNiveau : " + Niveau;
+            stats_str += "\nDurabilité : " + Durabilite;
+            return stats_str;
+        }
 
         public virtual int calculPrix()
         {

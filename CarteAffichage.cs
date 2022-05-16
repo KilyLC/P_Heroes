@@ -21,6 +21,11 @@ namespace P_Heroes
         {
             InitializeComponent();
         }
+        public CarteAffichage(Heros h)
+        {
+            this._heros = h;
+            InitializeComponent();
+        }
 
         public CarteAffichage(Heros h, EventHandler handler)
         {
@@ -54,6 +59,11 @@ namespace P_Heroes
         public void DefinirMiniature(Image miniature)
         {
             pbxImage.Image = miniature;
+        }
+
+        public void SupprimerBtnChoisir()
+        {
+            this.btnValider.Visible = false;
         }
 
         private void btnValider_Click(object sender, EventArgs e)

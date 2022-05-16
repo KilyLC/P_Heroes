@@ -76,7 +76,7 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(799, 18);
+            this.lbl1.Location = new System.Drawing.Point(933, 24);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(40, 20);
             this.lbl1.TabIndex = 23;
@@ -86,7 +86,7 @@
             // 
             this.lblMainD.AutoSize = true;
             this.lblMainD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainD.Location = new System.Drawing.Point(845, 149);
+            this.lblMainD.Location = new System.Drawing.Point(979, 155);
             this.lblMainD.Name = "lblMainD";
             this.lblMainD.Size = new System.Drawing.Size(0, 20);
             this.lblMainD.TabIndex = 24;
@@ -95,7 +95,7 @@
             // 
             this.lblVie.AutoSize = true;
             this.lblVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVie.Location = new System.Drawing.Point(845, 18);
+            this.lblVie.Location = new System.Drawing.Point(979, 24);
             this.lblVie.Name = "lblVie";
             this.lblVie.Size = new System.Drawing.Size(0, 20);
             this.lblVie.TabIndex = 26;
@@ -104,7 +104,7 @@
             // 
             this.lbl5.AutoSize = true;
             this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(731, 120);
+            this.lbl5.Location = new System.Drawing.Point(865, 126);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(108, 20);
             this.lbl5.TabIndex = 27;
@@ -114,7 +114,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(765, 87);
+            this.label6.Location = new System.Drawing.Point(899, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 20);
             this.label6.TabIndex = 28;
@@ -124,7 +124,7 @@
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(770, 55);
+            this.lbl3.Location = new System.Drawing.Point(904, 61);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(60, 20);
             this.lbl3.TabIndex = 31;
@@ -134,7 +134,7 @@
             // 
             this.lblAgilite.AutoSize = true;
             this.lblAgilite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgilite.Location = new System.Drawing.Point(845, 55);
+            this.lblAgilite.Location = new System.Drawing.Point(979, 61);
             this.lblAgilite.Name = "lblAgilite";
             this.lblAgilite.Size = new System.Drawing.Size(0, 20);
             this.lblAgilite.TabIndex = 32;
@@ -143,7 +143,7 @@
             // 
             this.lbl6.AutoSize = true;
             this.lbl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl6.Location = new System.Drawing.Point(744, 149);
+            this.lbl6.Location = new System.Drawing.Point(878, 155);
             this.lbl6.Name = "lbl6";
             this.lbl6.Size = new System.Drawing.Size(95, 20);
             this.lbl6.TabIndex = 35;
@@ -223,7 +223,7 @@
             // 
             this.lblAtt.AutoSize = true;
             this.lblAtt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtt.Location = new System.Drawing.Point(845, 87);
+            this.lblAtt.Location = new System.Drawing.Point(979, 93);
             this.lblAtt.Name = "lblAtt";
             this.lblAtt.Size = new System.Drawing.Size(0, 20);
             this.lblAtt.TabIndex = 42;
@@ -232,7 +232,7 @@
             // 
             this.lblMainG.AutoSize = true;
             this.lblMainG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainG.Location = new System.Drawing.Point(845, 120);
+            this.lblMainG.Location = new System.Drawing.Point(979, 126);
             this.lblMainG.Name = "lblMainG";
             this.lblMainG.Size = new System.Drawing.Size(0, 20);
             this.lblMainG.TabIndex = 43;
@@ -242,13 +242,13 @@
             this.pnlAffichageArmes.AutoScroll = true;
             this.pnlAffichageArmes.Location = new System.Drawing.Point(18, 330);
             this.pnlAffichageArmes.Name = "pnlAffichageArmes";
-            this.pnlAffichageArmes.Size = new System.Drawing.Size(750, 655);
+            this.pnlAffichageArmes.Size = new System.Drawing.Size(785, 655);
             this.pnlAffichageArmes.TabIndex = 44;
             // 
             // pnlAffichageTenues
             // 
             this.pnlAffichageTenues.AutoScroll = true;
-            this.pnlAffichageTenues.Location = new System.Drawing.Point(774, 330);
+            this.pnlAffichageTenues.Location = new System.Drawing.Point(878, 330);
             this.pnlAffichageTenues.Name = "pnlAffichageTenues";
             this.pnlAffichageTenues.Size = new System.Drawing.Size(286, 655);
             this.pnlAffichageTenues.TabIndex = 45;
@@ -359,7 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.ClientSize = new System.Drawing.Size(1207, 1011);
             this.Controls.Add(this.btnResetHero);
             this.Controls.Add(this.pbxArme2Hero3);
             this.Controls.Add(this.pbxArme1Hero3);

@@ -27,6 +27,7 @@ namespace P_Heroes
         public Dictionary<string, DicoValues> DicoListeArmes { get => listeArmes; set => listeArmes = value; }
         public Dictionary<string, DicoValues> DicoListeTenues { get => listeTenues; set => listeTenues = value; }
         public List<Heros> HerosBase { get => _herosBase; set => _herosBase = value; }
+        public Inventaire Inventaire { get; set; }
 
         public Compagnie()
         {

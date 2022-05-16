@@ -88,6 +88,12 @@
     <Compile Include="FormBoutique.Designer.cs">
       <DependentUpon>FormBoutique.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmChoixCompagnie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChoixCompagnie.Designer.cs">
+      <DependentUpon>FrmChoixCompagnie.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCombat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,11 @@
       <DependentUpon>frmSalon.cs</DependentUpon>
     </Compile>
     <Compile Include="Heros.cs" />
+<<<<<<< HEAD
+    <Compile Include="Inventaire.cs" />
+=======
+    <Compile Include="Model\Armure.cs" />
+>>>>>>> d82817ee2a364a8143fc25d958016e4b64efdb79
     <Compile Include="Model\Arme.cs" />
     <Compile Include="Model\FormPlus.cs">
       <SubType>Form</SubType>
@@ -144,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBoutique.resx">
       <DependentUpon>FormBoutique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChoixCompagnie.resx">
+      <DependentUpon>FrmChoixCompagnie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCombat.resx">
       <DependentUpon>FrmCombat.cs</DependentUpon>

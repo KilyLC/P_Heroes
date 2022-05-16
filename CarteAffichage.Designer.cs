@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNomHero = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
             this.lblStat = new System.Windows.Forms.Label();
             this.pbxImage = new System.Windows.Forms.PictureBox();
-            this.lblNomHero = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage)).BeginInit();
             this.SuspendLayout();
@@ -49,9 +49,18 @@
             this.panel1.Size = new System.Drawing.Size(223, 319);
             this.panel1.TabIndex = 0;
             // 
+            // lblNomHero
+            // 
+            this.lblNomHero.AutoSize = true;
+            this.lblNomHero.Location = new System.Drawing.Point(87, 22);
+            this.lblNomHero.Name = "lblNomHero";
+            this.lblNomHero.Size = new System.Drawing.Size(35, 13);
+            this.lblNomHero.TabIndex = 3;
+            this.lblNomHero.Text = "label1";
+            // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(60, 278);
+            this.btnValider.Location = new System.Drawing.Point(54, 278);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(105, 38);
             this.btnValider.TabIndex = 2;
@@ -76,22 +85,13 @@
             this.pbxImage.TabIndex = 0;
             this.pbxImage.TabStop = false;
             // 
-            // lblNomHero
-            // 
-            this.lblNomHero.AutoSize = true;
-            this.lblNomHero.Location = new System.Drawing.Point(87, 22);
-            this.lblNomHero.Name = "lblNomHero";
-            this.lblNomHero.Size = new System.Drawing.Size(35, 13);
-            this.lblNomHero.TabIndex = 3;
-            this.lblNomHero.Text = "label1";
-            // 
-            // PersoSelection
+            // CarteAffichage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.Controls.Add(this.panel1);
-            this.Name = "PersoSelection";
+            this.Name = "CarteAffichage";
             this.Size = new System.Drawing.Size(248, 348);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

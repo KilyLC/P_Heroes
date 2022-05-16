@@ -8,18 +8,19 @@ using System.Drawing;
 
 namespace P_Heroes.Model
 {
-    class Arme : Objet
+    class Armure : Objet
     {
-        private int _degatsMin;
-        private int _degatsMax;
+        private int _protectionMin;
+        private int _protectionMax;
 
         public override string statistiquesEnTexte()
         {
             string stats_str = base.statistiquesEnTexte();
-            return stats_str + "\nDégâts : " + _degatsMin + " - " + _degatsMax;
+
+            return stats_str + "\nProtection : " + _protectionMin + " - " + _protectionMax;
         }
 
-        public Arme(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
+        public Armure(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
             : base(nom, prix, miniature, description, niveau, rarete, durabilite)
         {
             double multiplicateur_rarete = 0;
@@ -42,8 +43,8 @@ namespace P_Heroes.Model
                     break;
             }
             
-            this._degatsMax = (int)Math.Ceiling(niveau * 10 * multiplicateur_rarete);
-            this._degatsMin = Math.Max(this._degatsMax - 10, 0); // Pour l'instant
+            this._protectionMax = (int)Math.Ceiling(niveau * 10 * multiplicateur_rarete);
+            this._protectionMin = Math.Max(this._protectionMax - 10, 0); // Pour l'instant
         }
     }
 }

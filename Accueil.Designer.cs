@@ -32,16 +32,16 @@
             this.hsbVolume = new System.Windows.Forms.HScrollBar();
             this.btnJouer = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNbVolume
             // 
             this.lblNbVolume.AutoSize = true;
-            this.lblNbVolume.Location = new System.Drawing.Point(496, 701);
+            this.lblNbVolume.Location = new System.Drawing.Point(507, 703);
             this.lblNbVolume.Name = "lblNbVolume";
-            this.lblNbVolume.Size = new System.Drawing.Size(35, 13);
+            this.lblNbVolume.Size = new System.Drawing.Size(0, 13);
             this.lblNbVolume.TabIndex = 14;
-            this.lblNbVolume.Text = "label2";
             // 
             // hsbVolume
             // 
@@ -72,11 +72,21 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(507, 639);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(42, 13);
+            this.lbl1.TabIndex = 15;
+            this.lbl1.Text = "Volume";
+            // 
             // P_Heros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lblNbVolume);
             this.Controls.Add(this.hsbVolume);
             this.Controls.Add(this.btnJouer);
@@ -96,6 +106,7 @@
         private System.Windows.Forms.HScrollBar hsbVolume;
         private System.Windows.Forms.Button btnJouer;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Label lbl1;
     }
 }
 

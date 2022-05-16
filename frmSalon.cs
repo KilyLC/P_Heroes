@@ -54,15 +54,67 @@ namespace P_Heroes
                 btnChoixCompagnie.Enabled = true;
             }
         }
+        public void AffichageCarteHero()
+        {
+            int padx = 6;
+            int pady = 6;
+            int x = padx;
+            int y = pady;
+            int counter = 0;
 
+            foreach (Heros h in CompagnieStocker.compagnieActuelle.Heros)
+            {
+                string stats = "";
+                CarteAffichage control = new CarteAffichage(h);
+                control.DefinirMiniature(h.ImageHero);
+                stats = "Vie : " + h.NvVie + Environment.NewLine + "Agilité : " + h.Agilite + Environment.NewLine + "Attaque : " + h.Attaque + Environment.NewLine + "Capacité spéciale : " + h.CapaciteSpecial;
+                control.DefinirStatsHero(stats, h.NomHeros);
+                control.SupprimerBtnChoisir(); 
+                control.Location = new Point(x, y);
+                pnlAffichageHeros.Controls.Add(control);
+
+                counter += 1;
+                if (counter % 3 != 0)
+                {
+                    x += control.Size.Width + padx;
+                }
+                else
+                {
+                    x = padx;
+                    y += control.Size.Height + pady;
+                }
+            }
+        }
         private void RefreshCompagnie()
         {
             if (CompagnieStocker.compagnieActuelle != null)
             {
-                pbxHero1.Image = CompagnieStocker.compagnieActuelle.Heros[0].ImageHero;
-                pbxHero2.Image = CompagnieStocker.compagnieActuelle.Heros[1].ImageHero;
-                pbxHero3.Image = CompagnieStocker.compagnieActuelle.Heros[2].ImageHero;
                 lblNomCompagnie.Text = CompagnieStocker.compagnieActuelle.NomCompagnie;
+                //Hero 1
+                pbxHero1Tenue.Image = CompagnieStocker.compagnieActuelle.Heros[0].Tenue.ImageTenue;
+                pbxHero1Arme1.Image = CompagnieStocker.compagnieActuelle.Heros[0].Arme1.Image;
+                if (CompagnieStocker.compagnieActuelle.Heros[0].Arme1 != CompagnieStocker.compagnieActuelle.Heros[0].Arme2)
+                {
+                    pbxHero1Arme2.Image = CompagnieStocker.compagnieActuelle.Heros[0].Arme2.Image;
+                }
+                //Hero 2
+                pbxHero2Tenue.Image = CompagnieStocker.compagnieActuelle.Heros[1].Tenue.ImageTenue;
+                pbxHero2Arme1.Image = CompagnieStocker.compagnieActuelle.Heros[1].Arme1.Image;
+                if (CompagnieStocker.compagnieActuelle.Heros[1].Arme1 != CompagnieStocker.compagnieActuelle.Heros[1].Arme2)
+                {
+                    pbxHero2Arme2.Image = CompagnieStocker.compagnieActuelle.Heros[1].Arme2.Image;
+                }
+
+                //Hero 3
+                pbxHero3Tenue.Image = CompagnieStocker.compagnieActuelle.Heros[2].Tenue.ImageTenue;
+                pbxHero3Arme1.Image = CompagnieStocker.compagnieActuelle.Heros[2].Arme1.Image;
+                if (CompagnieStocker.compagnieActuelle.Heros[2].Arme1 != CompagnieStocker.compagnieActuelle.Heros[2].Arme2)
+                {
+                    pbxHero3Arme2.Image = CompagnieStocker.compagnieActuelle.Heros[2].Arme2.Image;
+                }
+                
+
+                AffichageCarteHero();
             }
         }
 
@@ -75,6 +127,7 @@ namespace P_Heroes
 
         private void btnChoixCompagnie_Click(object sender, EventArgs e)
         {
+            pnlAffichageHeros.Controls.Clear();
             numCompagnie++;
             if (numCompagnie > CompagnieStocker.compagniesJoueur.Count - 1)
             {

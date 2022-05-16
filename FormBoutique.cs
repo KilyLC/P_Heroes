@@ -30,17 +30,25 @@ namespace P_Heroes
         {
             InitializeComponent();
 
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Epee", 100, Properties.Resources.epee, "Epee de chevalier redoutable", 6, 100, 10, 30));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 100, Properties.Resources.dague, "Dague du maitre", 8, 100, 10, 30));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Epee", 100, Properties.Resources.epee, "Epee de chevalier redoutable", 6, 100, 10, 30));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Epee", 100, Properties.Resources.epee, "Epee de chevalier redoutable", 6, 100, 10, 30));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague usée", 100, Properties.Resources.dague, "Dague du maitre très usée", 2, 100, 1, 15));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 100, Properties.Resources.dague, "Dague du maitre", 8, 100, 10, 30));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 100, Properties.Resources.dague, "Dague du maitre", 8, 100, 10, 30));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 1000, Properties.Resources.dague, "Dague du maitre améliorée", 9, 100, 20, 40));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Epee", 100, Properties.Resources.epee, "Epee de chevalier redoutable", 1, RareteObjet.Commun, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 100, Properties.Resources.dague, "Dague du maitre", 1, RareteObjet.Rare, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Epee", 100, Properties.Resources.epee, "Epee de chevalier redoutable", 1, RareteObjet.PeuCommun, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Epee", 100, Properties.Resources.epee, "Epee de chevalier redoutable", 1, RareteObjet.Commun, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague usée", 100, Properties.Resources.dague, "Dague du maitre très usée", 1, RareteObjet.Commun, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 100, Properties.Resources.dague, "Dague du maitre", 1, RareteObjet.Commun, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 100, Properties.Resources.dague, "Dague du maitre", 1, RareteObjet.Legendaire, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 1000, Properties.Resources.dague, "Dague du maitre améliorée", 1, RareteObjet.Legendaire, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 1000, Properties.Resources.dague, "Dague du maitre améliorée", 1, RareteObjet.TresRare, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 1000, Properties.Resources.dague, "Dague du maitre améliorée", 1, RareteObjet.Rare, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 1000, Properties.Resources.dague, "Dague du maitre améliorée", 1, RareteObjet.PeuCommun, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 1000, Properties.Resources.dague, "Dague du maitre améliorée", 1, RareteObjet.Commun, 100));
 
-            inventaire.Add(new P_Heroes.Model.Arme("Arc de chasse", 50, Properties.Resources.arc, "", 3, 100, 1, 2));
-            inventaire.Add(new P_Heroes.Model.Arme("Bouclier", 20, Properties.Resources.bouclier, "Bouclier commun", 1, 100, 10, 30));
+            nouvelleBoutique.Add(new P_Heroes.Model.Armure("Armure", 100, Properties.Resources.tissu, "Armure de tissu", 1, RareteObjet.Commun, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Armure("Armure", 500, Properties.Resources.cuir, "Armure de cuir", 1, RareteObjet.Rare, 100));
+            nouvelleBoutique.Add(new P_Heroes.Model.Armure("Armure", 1000, Properties.Resources.metal, "Armure de metal", 1, RareteObjet.Legendaire, 100));
+
+            inventaire.Add(new P_Heroes.Model.Arme("Arc de chasse", 50, Properties.Resources.arc, "", 3, RareteObjet.Commun, 100));
+            inventaire.Add(new P_Heroes.Model.Arme("Bouclier", 20, Properties.Resources.bouclier, "Bouclier commun", 1, RareteObjet.Commun, 100));
 
             this.Boutique = nouvelleBoutique;
             this.Inventaire = inventaire;
