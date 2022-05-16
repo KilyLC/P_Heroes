@@ -101,6 +101,7 @@
       <DependentUpon>frmSalon.cs</DependentUpon>
     </Compile>
     <Compile Include="Heros.cs" />
+    <Compile Include="Model\Armure.cs" />
     <Compile Include="Model\Arme.cs" />
     <Compile Include="Model\FormPlus.cs">
       <SubType>Form</SubType>

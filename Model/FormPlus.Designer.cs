@@ -55,9 +55,9 @@
             // 
             // lblStats
             // 
-            this.lblStats.Location = new System.Drawing.Point(12, 191);
+            this.lblStats.Location = new System.Drawing.Point(12, 154);
             this.lblStats.Name = "lblStats";
-            this.lblStats.Size = new System.Drawing.Size(217, 58);
+            this.lblStats.Size = new System.Drawing.Size(217, 95);
             this.lblStats.TabIndex = 2;
             this.lblStats.Text = "Stats";
             // 
@@ -74,7 +74,7 @@
             // lblTitreStats
             // 
             this.lblTitreStats.Font = new System.Drawing.Font("Tempus Sans ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreStats.Location = new System.Drawing.Point(12, 149);
+            this.lblTitreStats.Location = new System.Drawing.Point(12, 112);
             this.lblTitreStats.Name = "lblTitreStats";
             this.lblTitreStats.Size = new System.Drawing.Size(217, 42);
             this.lblTitreStats.TabIndex = 4;
