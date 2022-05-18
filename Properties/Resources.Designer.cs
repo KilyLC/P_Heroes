@@ -93,9 +93,59 @@ namespace P_Heroes.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap batte_cloutee {
+            get {
+                object obj = ResourceManager.GetObject("batte_cloutee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bouclier {
             get {
                 object obj = ResourceManager.GetObject("bouclier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bouteille_cassee {
+            get {
+                object obj = ResourceManager.GetObject("bouteille_cassee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ceinture {
+            get {
+                object obj = ResourceManager.GetObject("ceinture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coussin {
+            get {
+                object obj = ResourceManager.GetObject("coussin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap couteau {
+            get {
+                object obj = ResourceManager.GetObject("couteau", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +203,46 @@ namespace P_Heroes.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap faux {
+            get {
+                object obj = ResourceManager.GetObject("faux", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fleau_darme {
+            get {
+                object obj = ResourceManager.GetObject("fleau_darme", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flechettes {
+            get {
+                object obj = ResourceManager.GetObject("flechettes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fouet {
+            get {
+                object obj = ResourceManager.GetObject("fouet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frodon {
             get {
                 object obj = ResourceManager.GetObject("Frodon", resourceCulture);
@@ -193,6 +283,16 @@ namespace P_Heroes.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lance_pierres {
+            get {
+                object obj = ResourceManager.GetObject("lance_pierres", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Legolas {
             get {
                 object obj = ResourceManager.GetObject("Legolas", resourceCulture);
@@ -222,6 +322,16 @@ namespace P_Heroes.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nunchaku {
+            get {
+                object obj = ResourceManager.GetObject("nunchaku", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Orc_Warriors_Armor_Shield {
             get {
                 object obj = ResourceManager.GetObject("Orc_Warriors_Armor_Shield", resourceCulture);
@@ -242,9 +352,29 @@ namespace P_Heroes.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sabre_laser {
+            get {
+                object obj = ResourceManager.GetObject("sabre_laser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tissu {
             get {
                 object obj = ResourceManager.GetObject("tissu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trident {
+            get {
+                object obj = ResourceManager.GetObject("trident", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

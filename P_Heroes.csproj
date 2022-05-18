@@ -264,5 +264,44 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sabre_laser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fleau_darme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lance_pierres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flechettes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fouet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ceinture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\couteau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coussin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bouteille_cassee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\batte_cloutee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\faux.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nunchaku.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
