@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System;  
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,6 +53,17 @@ namespace P_Heroes
             {
                 btnChoixCompagnie.Enabled = true;
             }
+
+            // Si le nombre de compagnie depasse le max
+            if(CompagnieStocker.compagniesJoueur.Count >= CompagnieStocker.NB_COMPAGNIE_MAX)
+            {
+                btnCreerCompagnie.Enabled = false;
+            }
+            else
+            {
+                btnCreerCompagnie.Enabled = true;
+            }
+            
         }
         public void AffichageCarteHero()
         {
@@ -89,6 +100,12 @@ namespace P_Heroes
         {
             if (CompagnieStocker.compagnieActuelle != null)
             {
+                lblXpCompagnie.Text = CompagnieStocker.compagnieActuelle.Xp.ToString();
+                lblPoCompagnie.Text = CompagnieStocker.compagnieActuelle.Po.ToString();
+                pgbXp.Value = CompagnieStocker.compagnieActuelle.Xp;
+                pgbXp.Maximum = CompagnieStocker.compagnieActuelle.NbXpPalierNiveau;
+                lblNiveauCompagnie.Text = CompagnieStocker.compagnieActuelle.Niveau.ToString();
+                lblXpMax.Text = CompagnieStocker.compagnieActuelle.NbXpPalierNiveau.ToString();
                 lblNomCompagnie.Text = CompagnieStocker.compagnieActuelle.NomCompagnie;
                 //Hero 1
                 pbxHero1Tenue.Image = CompagnieStocker.compagnieActuelle.Heros[0].Tenue.ImageTenue;
@@ -112,7 +129,6 @@ namespace P_Heroes
                 {
                     pbxHero3Arme2.Image = CompagnieStocker.compagnieActuelle.Heros[2].Arme2.Image;
                 }
-                
 
                 AffichageCarteHero();
             }
@@ -134,6 +150,7 @@ namespace P_Heroes
                 numCompagnie = 0;
             }
             int numCompagnieAfficher = numCompagnie + 1;
+
             lblNumCompagnie.Text = numCompagnieAfficher + " / " + CompagnieStocker.NB_COMPAGNIE_MAX;
             CompagnieStocker.compagnieActuelle = CompagnieStocker.compagniesJoueur[numCompagnie];
             RefreshCompagnie();

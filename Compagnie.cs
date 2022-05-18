@@ -18,6 +18,10 @@ namespace P_Heroes
         private List<Heros> _herosBase = new List<Heros>();
         private string _nomCompagnie;
         private int _niveau;
+        private int _po;
+        private int _xp;
+        private int _nbXpPalierNiveau;
+        private int _nivCampagne;
         
         Dictionary<string, DicoValues> listeArmes = new Dictionary<string, DicoValues>();
         Dictionary<string, DicoValues> listeTenues = new Dictionary<string, DicoValues>();
@@ -28,10 +32,17 @@ namespace P_Heroes
         public Dictionary<string, DicoValues> DicoListeTenues { get => listeTenues; set => listeTenues = value; }
         public List<Heros> HerosBase { get => _herosBase; set => _herosBase = value; }
         public Inventaire Inventaire { get; set; }
+        public int Po { get => _po; set => _po = value; }
+        public int Xp { get => _xp; set => _xp = value; }
+        public int NbXpPalierNiveau { get => _nbXpPalierNiveau; set => _nbXpPalierNiveau = value; }
+        public int NivCampagne { get => _nivCampagne; set => _nivCampagne = value; }
 
         public Compagnie()
         {
-            
+            this.NbXpPalierNiveau = 500;
+            this.Po = 0;
+            this.Niveau = 1;
+            this.NivCampagne = 1;
         }
         /// <summary>
         /// Maj du nom de la compagnie

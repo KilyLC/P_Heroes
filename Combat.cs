@@ -19,6 +19,10 @@ namespace P_Heroes
         public int NbCapaciteSpecialJoueur { get; set; } = 3;
         public int NbCapaciteSpecialEnnemi { get; set; } = 3;
         public int NumActionEnnemi { get; set; }
+        public int NbPoCombatGagnerBase { get; set; } = 100;
+        public int NbPoCombatPerduBase { get; set; } = 30;
+        public int NbXpCombatGagneBase { get; set; } = 300;
+        public int NbXpCombatPerduBase { get; set; } = 20;
 
         public List<string> ActionsEnnemi { get; set; } = new List<string>();
         List<string> capaciteSpecialListe = new List<string>();
@@ -28,6 +32,10 @@ namespace P_Heroes
         const int AGILITE_MAX = 100;
 
         const int PV_REGENERATION = 80;
+
+        int pvHero1Base;
+        int pvHero2Base;
+        int pvHero3Base;
 
         Random rnd = new Random();
         
@@ -62,9 +70,12 @@ namespace P_Heroes
 
         public void RecupVie()
         {
-            CompagnieJoueur.Heros[0].NvVie = CompagnieJoueur.HerosBase[0].NvVie;
-            CompagnieJoueur.Heros[1].NvVie = CompagnieJoueur.HerosBase[1].NvVie;
-            CompagnieJoueur.Heros[2].NvVie = CompagnieJoueur.HerosBase[2].NvVie;
+            CompagnieJoueur.Heros[0].NvVie = pvHero1Base;
+            CompagnieJoueur.Heros[1].NvVie = pvHero2Base;
+            CompagnieJoueur.Heros[2].NvVie = pvHero3Base;
+            CompagnieJoueur.Heros[0].Vivant = true;
+            CompagnieJoueur.Heros[1].Vivant = true;
+            CompagnieJoueur.Heros[2].Vivant = true;
         }
 
         public void Defense(Heros hero)
@@ -217,6 +228,10 @@ namespace P_Heroes
             //Victoire
             if (NbHeroRestantEnnemi == 0)
             {
+                CompagnieJoueur.Xp += NbXpCombatGagneBase;
+                CompagnieJoueur.Po += NbPoCombatGagnerBase;
+                CompagnieJoueur.NivCampagne++;
+                VerifNiveau();
                 return true;
             }
             return false;
@@ -226,26 +241,36 @@ namespace P_Heroes
             //Defaite
             if (NbHeroRestantJoueur == 0)
             {
+                CompagnieJoueur.Xp += NbXpCombatPerduBase;
+                CompagnieJoueur.Po += NbPoCombatPerduBase;
+                VerifNiveau();
                 return true;
             }
             return false;
         }
-        public void FinCombat()
-        {
-            if (Gagne())
-            {
-                //Gagne Exp
-                //Gagne argent
-            }
-            else if (Perdu())
-            {
 
+        public void VerifNiveau()
+        {
+            if (CompagnieJoueur.Xp >= CompagnieJoueur.NbXpPalierNiveau)
+            {
+                int xp_diff = CompagnieJoueur.Xp - CompagnieJoueur.NbXpPalierNiveau;
+                //maj palier
+                CompagnieJoueur.NbXpPalierNiveau += CompagnieJoueur.NbXpPalierNiveau;
+                //maj niveau
+                CompagnieJoueur.Niveau++;
+                //maj xp
+                CompagnieJoueur.Xp = xp_diff;
             }
         }
+
         public void Commencer()
         {
             //init compagnie ennemi
             CompagnieEnnemi = CreationCompagnieEnnemi();
+
+            pvHero1Base = CompagnieJoueur.Heros[0].NvVie;
+            pvHero2Base = CompagnieJoueur.Heros[1].NvVie;
+            pvHero3Base = CompagnieJoueur.Heros[2].NvVie;
 
             //Heros principal pour chaque compagnie
             HeroPrincipalJoueur = CompagnieJoueur.Heros[NumHeroPrincipalJoueur - 1];
@@ -261,11 +286,48 @@ namespace P_Heroes
         }
         public Compagnie CreationCompagnieEnnemi()
         {
-            const int NV_VIE = 1000;
+            //Ennemi base
+            const int NV_VIE_BASE = 1000;
             const int AGILITE_BASE = 30;
             const int ATTAQUE_BASE = 40;
             const int AJOUT_ENNEMI2 = 10;
-            const int AJOUT_ENNEMI3 = 10;
+            const int AJOUT_ENNEMI3 = 5;
+            //Modif selon niveau campagne
+            //Agilite, Attaque
+            const int NV_2 = 5;
+            const int NV_3 = 10;
+            const int NV_4 = 15;
+            const int NV_5 = 20;
+            const int NV_6 = 30;
+            const int NV_7 = 40;
+            const int NV_8 = 50;
+            const int NV_9 = 60;
+            const int NV_10 = 100;
+            //Vie
+            const int NV_2_VIE = 50;
+            const int NV_3_VIE = 100;
+            const int NV_4_VIE = 150;
+            const int NV_5_VIE = 200;
+            const int NV_6_VIE = 300;
+            const int NV_7_VIE = 400;
+            const int NV_8_VIE = 500;
+            const int NV_9_VIE = 600;
+            const int NV_10_VIE = 1000;
+
+            //stat ennemi init
+            int agiliteEnnemi1;
+            int vieEnnemi1;
+            int attaqueEnnemi1;
+            int agiliteEnnemi2;
+            int vieEnnemi2;
+            int attaqueEnnemi2;
+            int agiliteEnnemi3;
+            int vieEnnemi3;
+            int attaqueEnnemi3;
+
+            //niveau campagne
+            int nvCampagne = CompagnieJoueur.NivCampagne;
+
             Compagnie compagnieEnnemi = new Compagnie();
 
             List<Heros> herosEnnemi = new List<Heros>();
@@ -282,9 +344,130 @@ namespace P_Heroes
             Heros ennemi2 = new Heros();
             Heros ennemi3 = new Heros();
 
-            ennemi1.CreeHero(NV_VIE, AGILITE_BASE, ATTAQUE_BASE, "ennemi 1", null, true, compagnieEnnemi, "regeneration");
-            ennemi2.CreeHero(NV_VIE, AGILITE_BASE + AJOUT_ENNEMI2, ATTAQUE_BASE + AJOUT_ENNEMI2, "ennemi 2", null, true, compagnieEnnemi, "attaque");
-            ennemi3.CreeHero(NV_VIE, AGILITE_BASE + AJOUT_ENNEMI3, ATTAQUE_BASE + AJOUT_ENNEMI3, "ennemi 3", null, true, compagnieEnnemi, "defense");
+            agiliteEnnemi1 = AGILITE_BASE;
+            agiliteEnnemi2 = AGILITE_BASE + AJOUT_ENNEMI2;
+            agiliteEnnemi3 = AGILITE_BASE + AJOUT_ENNEMI3;
+            vieEnnemi1 = NV_VIE_BASE;
+            vieEnnemi2 = NV_VIE_BASE + AJOUT_ENNEMI2;
+            vieEnnemi3 = NV_VIE_BASE + AJOUT_ENNEMI3;
+            attaqueEnnemi1 = ATTAQUE_BASE;
+            attaqueEnnemi2 = ATTAQUE_BASE + AJOUT_ENNEMI2;
+            attaqueEnnemi3 = ATTAQUE_BASE + AJOUT_ENNEMI3;
+
+            if (nvCampagne == 2)
+            {
+                agiliteEnnemi1 += NV_2;
+                agiliteEnnemi2 += NV_2;
+                agiliteEnnemi3 += NV_2;
+                vieEnnemi1 += NV_2_VIE;
+                vieEnnemi2 += NV_2_VIE;
+                vieEnnemi3 += NV_2_VIE;
+                attaqueEnnemi1 += NV_2;
+                attaqueEnnemi2 += NV_2;
+                attaqueEnnemi3 += NV_2;
+
+            }
+            else if (nvCampagne == 3)
+            {
+                agiliteEnnemi1 += NV_3;
+                agiliteEnnemi2 += NV_3;
+                agiliteEnnemi3 += NV_3;
+                vieEnnemi1 += NV_3_VIE;
+                vieEnnemi2 += NV_3_VIE;
+                vieEnnemi3 += NV_3_VIE;
+                attaqueEnnemi1 += NV_3;
+                attaqueEnnemi2 += NV_3;
+                attaqueEnnemi3 += NV_3;
+            }
+            else if (nvCampagne == 4)
+            {
+                agiliteEnnemi1 += NV_4;
+                agiliteEnnemi2 += NV_4;
+                agiliteEnnemi3 += NV_4;
+                vieEnnemi1 += NV_4_VIE;
+                vieEnnemi2 += NV_4_VIE;
+                vieEnnemi3 += NV_4_VIE;
+                attaqueEnnemi1 += NV_4;
+                attaqueEnnemi2 += NV_4;
+                attaqueEnnemi3 += NV_4;
+            }
+            else if (nvCampagne == 5)
+            {
+                agiliteEnnemi1 += NV_5;
+                agiliteEnnemi2 += NV_5;
+                agiliteEnnemi3 += NV_5;
+                vieEnnemi1 += NV_5_VIE;
+                vieEnnemi2 += NV_5_VIE;
+                vieEnnemi3 += NV_5_VIE;
+                attaqueEnnemi1 += NV_5;
+                attaqueEnnemi2 += NV_5;
+                attaqueEnnemi3 += NV_5;
+            }
+            else if (nvCampagne == 6)
+            {
+                agiliteEnnemi1 += NV_6;
+                agiliteEnnemi2 += NV_6;
+                agiliteEnnemi3 += NV_6;
+                vieEnnemi1 += NV_6_VIE;
+                vieEnnemi2 += NV_6_VIE;
+                vieEnnemi3 += NV_6_VIE;
+                attaqueEnnemi1 += NV_6;
+                attaqueEnnemi2 += NV_6;
+                attaqueEnnemi3 += NV_6;
+            }
+            else if (nvCampagne == 7)
+            {
+                agiliteEnnemi1 += NV_7;
+                agiliteEnnemi2 += NV_7;
+                agiliteEnnemi3 += NV_7;
+                vieEnnemi1 += NV_7_VIE;
+                vieEnnemi2 += NV_7_VIE;
+                vieEnnemi3 += NV_7_VIE;
+                attaqueEnnemi1 += NV_7;
+                attaqueEnnemi2 += NV_7;
+                attaqueEnnemi3 += NV_7;
+            }
+            else if (nvCampagne == 8)
+            {
+                agiliteEnnemi1 += NV_8;
+                agiliteEnnemi2 += NV_8;
+                agiliteEnnemi3 += NV_8;
+                vieEnnemi1 += NV_8_VIE;
+                vieEnnemi2 += NV_8_VIE;
+                vieEnnemi3 += NV_8_VIE;
+                attaqueEnnemi1 += NV_8;
+                attaqueEnnemi2 += NV_8;
+                attaqueEnnemi3 += NV_8;
+            }
+            else if (nvCampagne == 9)
+            {
+                agiliteEnnemi1 += NV_9;
+                agiliteEnnemi2 += NV_9;
+                agiliteEnnemi3 += NV_9;
+                vieEnnemi1 += NV_9_VIE;
+                vieEnnemi2 += NV_9_VIE;
+                vieEnnemi3 += NV_9_VIE;
+                attaqueEnnemi1 += NV_9;
+                attaqueEnnemi2 += NV_9;
+                attaqueEnnemi3 += NV_9;
+            }
+            else if (nvCampagne == 10)
+            {
+                agiliteEnnemi1 += NV_10;
+                agiliteEnnemi2 += NV_10;
+                agiliteEnnemi3 += NV_10;
+                vieEnnemi1 += NV_10_VIE;
+                vieEnnemi2 += NV_10_VIE;
+                vieEnnemi3 += NV_10_VIE;
+                attaqueEnnemi1 += NV_10;
+                attaqueEnnemi2 += NV_10;
+                attaqueEnnemi3 += NV_10;
+            }
+
+
+            ennemi1.CreeHero(vieEnnemi1, agiliteEnnemi1, attaqueEnnemi1, "ennemi 1", null, true, compagnieEnnemi, "regeneration");
+            ennemi2.CreeHero(vieEnnemi2, agiliteEnnemi2, attaqueEnnemi2, "ennemi 2", null, true, compagnieEnnemi, "attaque");
+            ennemi3.CreeHero(vieEnnemi3, agiliteEnnemi3, attaqueEnnemi3, "ennemi 3", null, true, compagnieEnnemi, "defense");
             
             //Creation armes ennemis
             Arme hache = new Arme();
