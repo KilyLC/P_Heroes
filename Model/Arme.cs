@@ -45,5 +45,11 @@ namespace P_Heroes.Model
             this._degatsMax = (int)Math.Ceiling(niveau * 10 * multiplicateur_rarete);
             this._degatsMin = Math.Max(this._degatsMax - 10, 0); // Pour l'instant
         }
+
+        public void DefinirDegats(int min, int max)
+        {
+            this._degatsMin = min;
+            this._degatsMax = max;
+        }
     }
 }

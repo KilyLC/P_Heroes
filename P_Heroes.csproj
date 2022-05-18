@@ -88,12 +88,6 @@
     <Compile Include="FormBoutique.Designer.cs">
       <DependentUpon>FormBoutique.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmChoixCompagnie.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmChoixCompagnie.Designer.cs">
-      <DependentUpon>FrmChoixCompagnie.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmCombat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +101,8 @@
       <DependentUpon>frmSalon.cs</DependentUpon>
     </Compile>
     <Compile Include="Heros.cs" />
-<<<<<<< HEAD
     <Compile Include="Inventaire.cs" />
-=======
     <Compile Include="Model\Armure.cs" />
->>>>>>> d82817ee2a364a8143fc25d958016e4b64efdb79
     <Compile Include="Model\Arme.cs" />
     <Compile Include="Model\FormPlus.cs">
       <SubType>Form</SubType>
@@ -155,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBoutique.resx">
       <DependentUpon>FormBoutique.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmChoixCompagnie.resx">
-      <DependentUpon>FrmChoixCompagnie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCombat.resx">
       <DependentUpon>FrmCombat.cs</DependentUpon>
@@ -275,6 +263,45 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sabre_laser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fleau_darme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lance_pierres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flechettes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fouet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ceinture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\couteau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coussin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bouteille_cassee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\batte_cloutee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\faux.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nunchaku.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

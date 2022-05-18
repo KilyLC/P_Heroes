@@ -107,6 +107,8 @@ namespace P_Heroes
                 pbxHero3.Image = h.ImageHero;
                 pnlAffichageHero.Enabled = false;
                 ValiderHeros();
+
+                tbxNomCampagnie.Focus(); // Focus la textbox de nom
             }
         }
         
