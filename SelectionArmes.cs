@@ -328,6 +328,11 @@ namespace P_Heroes
             heroSelectionne = hero;
             RefreshStats();
         }
+        /// <summary>
+        /// Arme cliquer
+        /// </summary>
+        /// <param name="_sender">object cliquer</param>
+        /// <param name="e">evenement clic</param>
         private void ClicArmes(object _sender, EventArgs e)
         {
             Button sender = (Button)_sender;
@@ -358,6 +363,9 @@ namespace P_Heroes
             TraitementStatsClic();
             RefreshStats();
         }
+        /// <summary>
+        /// Changement des stats après avoir sélectionné les armes et la tenue
+        /// </summary>
         private void TraitementStatsClic()
         {
             if (heroSelectionne.Arme1 != null && heroSelectionne.Arme2 != null && heroSelectionne.Tenue != null)
@@ -384,6 +392,11 @@ namespace P_Heroes
                 }
             }
         }
+        /// <summary>
+        /// Tenue cliquer
+        /// </summary>
+        /// <param name="_sender">object cliquer</param>
+        /// <param name="e">evenement clic</param>
         private void ClicTenues(object _sender, EventArgs e)
         {
             Button sender = (Button)_sender;
@@ -455,10 +468,42 @@ namespace P_Heroes
             compagnie.Heros[0] = heros1;
             compagnie.Heros[1] = heros2;
             compagnie.Heros[2] = heros3;
+            //ajout dans l'inventaire des armes et tenues sélectionné
+            AjoutInventaire();
 
             frmSalon frmSalon = new frmSalon();
             frmSalon.Show();
             this.Close();
+        }
+        /// <summary>
+        /// Ajoute des items dans l'inventaire
+        /// </summary>
+        private void AjoutInventaire()
+        {
+            Inventaire inventaire = new Inventaire();
+            //Armes
+            if (heros1.Arme1 != heros1.Arme2)
+            {
+                inventaire.AjoutArme(heros1.Arme2);
+            }
+            inventaire.AjoutArme(heros1.Arme1);
+
+            if (heros2.Arme1 != heros2.Arme2)
+            {
+                inventaire.AjoutArme(heros2.Arme2);
+            }
+            inventaire.AjoutArme(heros2.Arme1);
+            if (heros3.Arme1 != heros3.Arme2)
+            {
+                inventaire.AjoutArme(heros3.Arme2);
+            }
+            inventaire.AjoutArme(heros3.Arme1);
+            //Tenues
+            inventaire.AjoutTenue(heros1.Tenue);
+            inventaire.AjoutTenue(heros2.Tenue);
+            inventaire.AjoutTenue(heros3.Tenue);
+
+            CompagnieStocker.compagnieActuelle.Inventaire = inventaire;
         }
 
         private void btnResetHero_Click(object sender, EventArgs e)

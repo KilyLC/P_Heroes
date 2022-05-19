@@ -31,7 +31,7 @@
             this.btnChoixCompagnie = new System.Windows.Forms.Button();
             this.btnCreerCompagnie = new System.Windows.Forms.Button();
             this.btnInventaire = new System.Windows.Forms.Button();
-            this.btnRéparation = new System.Windows.Forms.Button();
+            this.btnReparation = new System.Windows.Forms.Button();
             this.btnBoutique = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
@@ -49,6 +49,13 @@
             this.pbxHero1Arme2 = new System.Windows.Forms.PictureBox();
             this.pbxHero1Tenue = new System.Windows.Forms.PictureBox();
             this.pbxHero1Arme1 = new System.Windows.Forms.PictureBox();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lblPoCompagnie = new System.Windows.Forms.Label();
+            this.pgbXp = new System.Windows.Forms.ProgressBar();
+            this.lblXpMax = new System.Windows.Forms.Label();
+            this.lblXpCompagnie = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.lblNiveauCompagnie = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero3Arme2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero3Tenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHero3Arme1)).BeginInit();
@@ -91,15 +98,16 @@
             this.btnInventaire.Text = "Inventaire ";
             this.btnInventaire.UseVisualStyleBackColor = true;
             // 
-            // btnRéparation
+            // btnReparation
             // 
-            this.btnRéparation.Enabled = false;
-            this.btnRéparation.Location = new System.Drawing.Point(49, 237);
-            this.btnRéparation.Name = "btnRéparation";
-            this.btnRéparation.Size = new System.Drawing.Size(159, 32);
-            this.btnRéparation.TabIndex = 3;
-            this.btnRéparation.Text = "Réparation";
-            this.btnRéparation.UseVisualStyleBackColor = true;
+            this.btnReparation.Enabled = false;
+            this.btnReparation.Location = new System.Drawing.Point(49, 237);
+            this.btnReparation.Name = "btnReparation";
+            this.btnReparation.Size = new System.Drawing.Size(159, 32);
+            this.btnReparation.TabIndex = 3;
+            this.btnReparation.Text = "Réparation";
+            this.btnReparation.UseVisualStyleBackColor = true;
+            this.btnReparation.Click += new System.EventHandler(this.btnReparation_Click);
             // 
             // btnBoutique
             // 
@@ -133,6 +141,7 @@
             // 
             // btnCampagne
             // 
+            this.btnCampagne.Enabled = false;
             this.btnCampagne.Location = new System.Drawing.Point(49, 532);
             this.btnCampagne.Name = "btnCampagne";
             this.btnCampagne.Size = new System.Drawing.Size(157, 58);
@@ -154,11 +163,12 @@
             // lblNomCompagnie
             // 
             this.lblNomCompagnie.AutoSize = true;
-            this.lblNomCompagnie.Location = new System.Drawing.Point(602, 72);
+            this.lblNomCompagnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomCompagnie.Location = new System.Drawing.Point(646, 78);
             this.lblNomCompagnie.Name = "lblNomCompagnie";
-            this.lblNomCompagnie.Size = new System.Drawing.Size(92, 13);
+            this.lblNomCompagnie.Size = new System.Drawing.Size(141, 16);
             this.lblNomCompagnie.TabIndex = 12;
-            this.lblNomCompagnie.Text = "lblNomCompagnie";
+            this.lblNomCompagnie.Text = "Nom de la compagnie";
             this.lblNomCompagnie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNumCompagnie
@@ -258,11 +268,84 @@
             this.pbxHero1Arme1.TabIndex = 15;
             this.pbxHero1Arme1.TabStop = false;
             // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.Location = new System.Drawing.Point(886, 72);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(31, 16);
+            this.lbl3.TabIndex = 0;
+            this.lbl3.Text = "Po :";
+            // 
+            // lblPoCompagnie
+            // 
+            this.lblPoCompagnie.AutoSize = true;
+            this.lblPoCompagnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPoCompagnie.Location = new System.Drawing.Point(923, 72);
+            this.lblPoCompagnie.Name = "lblPoCompagnie";
+            this.lblPoCompagnie.Size = new System.Drawing.Size(0, 16);
+            this.lblPoCompagnie.TabIndex = 24;
+            // 
+            // pgbXp
+            // 
+            this.pgbXp.Location = new System.Drawing.Point(324, 72);
+            this.pgbXp.Maximum = 1000;
+            this.pgbXp.Name = "pgbXp";
+            this.pgbXp.Size = new System.Drawing.Size(212, 23);
+            this.pgbXp.TabIndex = 25;
+            // 
+            // lblXpMax
+            // 
+            this.lblXpMax.AutoSize = true;
+            this.lblXpMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXpMax.Location = new System.Drawing.Point(542, 78);
+            this.lblXpMax.Name = "lblXpMax";
+            this.lblXpMax.Size = new System.Drawing.Size(40, 17);
+            this.lblXpMax.TabIndex = 26;
+            this.lblXpMax.Text = "1000";
+            // 
+            // lblXpCompagnie
+            // 
+            this.lblXpCompagnie.AutoSize = true;
+            this.lblXpCompagnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXpCompagnie.Location = new System.Drawing.Point(285, 77);
+            this.lblXpCompagnie.Name = "lblXpCompagnie";
+            this.lblXpCompagnie.Size = new System.Drawing.Size(16, 17);
+            this.lblXpCompagnie.TabIndex = 27;
+            this.lblXpCompagnie.Text = "0";
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.Location = new System.Drawing.Point(362, 52);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(60, 17);
+            this.lbl4.TabIndex = 28;
+            this.lbl4.Text = "Niveau :";
+            // 
+            // lblNiveauCompagnie
+            // 
+            this.lblNiveauCompagnie.AutoSize = true;
+            this.lblNiveauCompagnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNiveauCompagnie.Location = new System.Drawing.Point(428, 52);
+            this.lblNiveauCompagnie.Name = "lblNiveauCompagnie";
+            this.lblNiveauCompagnie.Size = new System.Drawing.Size(0, 17);
+            this.lblNiveauCompagnie.TabIndex = 29;
+            // 
             // frmSalon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lblNiveauCompagnie);
+            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lblXpCompagnie);
+            this.Controls.Add(this.lblXpMax);
+            this.Controls.Add(this.pgbXp);
+            this.Controls.Add(this.lblPoCompagnie);
+            this.Controls.Add(this.lbl3);
             this.Controls.Add(this.pbxHero3Arme2);
             this.Controls.Add(this.pbxHero3Tenue);
             this.Controls.Add(this.pbxHero3Arme1);
@@ -280,7 +363,7 @@
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnBoutique);
-            this.Controls.Add(this.btnRéparation);
+            this.Controls.Add(this.btnReparation);
             this.Controls.Add(this.btnInventaire);
             this.Controls.Add(this.btnCreerCompagnie);
             this.Controls.Add(this.btnChoixCompagnie);
@@ -307,7 +390,7 @@
         private System.Windows.Forms.Button btnChoixCompagnie;
         private System.Windows.Forms.Button btnCreerCompagnie;
         private System.Windows.Forms.Button btnInventaire;
-        private System.Windows.Forms.Button btnRéparation;
+        private System.Windows.Forms.Button btnReparation;
         private System.Windows.Forms.Button btnBoutique;
         private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnQuitter;
@@ -325,5 +408,12 @@
         private System.Windows.Forms.PictureBox pbxHero1Arme2;
         private System.Windows.Forms.PictureBox pbxHero1Tenue;
         private System.Windows.Forms.PictureBox pbxHero1Arme1;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lblPoCompagnie;
+        private System.Windows.Forms.ProgressBar pgbXp;
+        private System.Windows.Forms.Label lblXpMax;
+        private System.Windows.Forms.Label lblXpCompagnie;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label lblNiveauCompagnie;
     }
 }

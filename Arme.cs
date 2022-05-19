@@ -12,6 +12,9 @@ using System.Drawing;
 
 namespace P_Heroes
 {
+    /// <summary>
+    /// Une ar
+    /// </summary>
     public class Arme
     {
         public string NomArme { get; set; }
@@ -24,9 +27,6 @@ namespace P_Heroes
 
         Random rnd = new Random();
         
-        public Arme()
-        {
-        }
         /// <summary>
         /// Créer les armes
         /// </summary>
@@ -41,7 +41,7 @@ namespace P_Heroes
             Image = image;
         }
         /// <summary>
-        /// Degats total d'une arme
+        /// Calcul du nombre de dégat de l'arme de manière aléatoire
         /// </summary>
         /// <returns>Le nombre de dégats</returns>
         public int Degats()

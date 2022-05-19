@@ -22,11 +22,7 @@ namespace P_Heroes
         public int NvDefense { get => _nvDefense; set => _nvDefense = value; }
         public int Poids { get => _poids; set => _poids = value; }
         public Image ImageTenue { get; set; }
-
-        public Tenue()
-        {
-            
-        }
+        
         /// <summary>
         /// Créer la tenue
         /// </summary>

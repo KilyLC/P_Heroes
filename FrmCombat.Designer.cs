@@ -57,6 +57,8 @@
             this.pbxPerso3 = new System.Windows.Forms.PictureBox();
             this.pbxPerso2 = new System.Windows.Forms.PictureBox();
             this.pbxPerso1 = new System.Windows.Forms.PictureBox();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.lblNiveauCampagne = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi1)).BeginInit();
@@ -381,11 +383,33 @@
             this.pbxPerso1.Tag = "hero1";
             this.pbxPerso1.Visible = false;
             // 
+            // lbl6
+            // 
+            this.lbl6.AutoSize = true;
+            this.lbl6.Location = new System.Drawing.Point(430, 13);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(100, 13);
+            this.lbl6.TabIndex = 61;
+            this.lbl6.Text = "Niveau campagne :";
+            this.lbl6.Visible = false;
+            // 
+            // lblNiveauCampagne
+            // 
+            this.lblNiveauCampagne.AutoSize = true;
+            this.lblNiveauCampagne.Location = new System.Drawing.Point(536, 13);
+            this.lblNiveauCampagne.Name = "lblNiveauCampagne";
+            this.lblNiveauCampagne.Size = new System.Drawing.Size(13, 13);
+            this.lblNiveauCampagne.TabIndex = 62;
+            this.lblNiveauCampagne.Text = "1";
+            this.lblNiveauCampagne.Visible = false;
+            // 
             // FrmCombat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 1009);
+            this.Controls.Add(this.lblNiveauCampagne);
+            this.Controls.Add(this.lbl6);
             this.Controls.Add(this.lbl4);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl5);
@@ -460,5 +484,7 @@
         private System.Windows.Forms.Button btnChangement;
         private System.Windows.Forms.Button btnDefense;
         private System.Windows.Forms.Button btnAttaque;
+        private System.Windows.Forms.Label lbl6;
+        private System.Windows.Forms.Label lblNiveauCampagne;
     }
 }

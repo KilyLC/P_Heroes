@@ -106,6 +106,8 @@ namespace P_Heroes
         private void CommencerAffichage()
         {
             //init élément graphique
+            lblNiveauCampagne.Visible = true;
+            lbl6.Visible = true;
             btnCommencer.Enabled = false;
             btnCommencer.Visible = false;
             pbrVieEnnemi.Visible = true;
@@ -135,6 +137,8 @@ namespace P_Heroes
             label3.Visible = true;
             lblNomCompagnieEnnemi.Visible = true;
 
+            lblNiveauCampagne.Text = combat.CompagnieJoueur.NivCampagne.ToString();
+
             pbxPerso1.Image = combat.HeroPrincipalJoueur.ImageHero;
             pbxPerso2.Image = combat.CompagnieJoueur.Heros[1].ImageHero;
             pbxPerso3.Image = combat.CompagnieJoueur.Heros[2].ImageHero;
@@ -163,6 +167,9 @@ namespace P_Heroes
             }
 
         }
+        /// <summary>
+        /// Affichage des actions de l'ennemi et verification des héros
+        /// </summary>
         private void TourEnnemiAffichage()
         {
             lbxAction.Items.Add(nomCompagnieEnnemi + " : " + combat.ActionsEnnemi[combat.NumActionEnnemi]);
@@ -183,7 +190,10 @@ namespace P_Heroes
             ActionEnnemi();
 
         }
-
+        /// <summary>
+        /// Verification lors de la mort d'un héro si il en reste et affichage gagné ou perdu
+        /// </summary>
+        /// <param name="joueur">joueur</param>
         private void VerifNbHeroAffichage(bool joueur)
         {
             if (joueur)
@@ -196,6 +206,8 @@ namespace P_Heroes
                 {
                     lbxAffichage.Items.Add("La compagnie " + nomCompagnieJoueur + " a été tuée, vous avez perdu");
 
+                    string affichagePerdu = "Vous avez gagné " + combat.NbPoCombatPerduBase + " Po et " + combat.NbXpCombatPerduBase + " Xp.";
+                    MessageBox.Show(affichagePerdu);
                     FinCombat();
                 }
             }
@@ -209,16 +221,25 @@ namespace P_Heroes
                 {
                     lbxAffichage.Items.Add("La compagnie " + nomCompagnieEnnemi + "a été tuée, vous avez gagné");
 
+                    string affichageGagne = "Vous avez gagné " + combat.NbPoCombatGagnerBase + " Po et " + combat.NbXpCombatGagneBase + " Xp.";
+                    MessageBox.Show(affichageGagne);
                     FinCombat();
                 }
             }
         }
+        /// <summary>
+        /// Combat terminé
+        /// </summary>
         private void FinCombat()
         {
             combat.RecupVie();
             frmSalon.Show();
             this.Close();
         }
+        /// <summary>
+        /// Verification du nombre de capacite spéciale réstante
+        /// </summary>
+        /// <param name="joueur">action du joueur</param>
         private void VerifNbCapaciteSpecialRestant(bool joueur)
         {
             if (joueur)
@@ -236,7 +257,10 @@ namespace P_Heroes
                 }
             }
         }
-
+        /// <summary>
+        /// Changement de l'héro principal
+        /// </summary>
+        /// <param name="actionJoueur">action du joueur</param>
         private void ChangementHeroAffichage(bool actionJoueur)
         {
             if (actionJoueur)
@@ -288,7 +312,6 @@ namespace P_Heroes
                 }
             }
         }
-
         /// <summary>
         /// Si le joueur fait une action
         /// </summary>
