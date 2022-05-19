@@ -8,19 +8,22 @@ using System.Drawing;
 
 namespace P_Heroes.Model
 {
-    class Armure : Objet
+    public class Tenue : Objet
     {
+        // Champs
         private int _protectionMin;
         private int _protectionMax;
+        private int _poids;
 
-        public override string statistiquesEnTexte()
+        // Redéfinition des stats
+        public override string StatistiquesEnTexte()
         {
-            string stats_str = base.statistiquesEnTexte();
+            string stats_str = base.StatistiquesEnTexte();
 
             return stats_str + "\nProtection : " + _protectionMin + " - " + _protectionMax;
         }
 
-        public Armure(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
+        public Tenue(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite, int poids)
             : base(nom, prix, miniature, description, niveau, rarete, durabilite)
         {
             double multiplicateur_rarete = 0;
@@ -42,9 +45,11 @@ namespace P_Heroes.Model
                     multiplicateur_rarete = 1.0;
                     break;
             }
-            
+            // Calculs de la protection
             this._protectionMax = (int)Math.Ceiling(niveau * 10 * multiplicateur_rarete);
             this._protectionMin = Math.Max(this._protectionMax - 10, 0); // Pour l'instant
+
+            this._poids = poids;
         }
     }
 }

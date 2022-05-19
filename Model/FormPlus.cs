@@ -60,7 +60,7 @@ namespace P_Heroes.Model
 
             // Définir texte
             this.lblDescription.Text = o.Description;
-            this.lblStats.Text = o.statistiquesEnTexte();
+            this.lblStats.Text = o.StatistiquesEnTexte();
         }
     }
 }

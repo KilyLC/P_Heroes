@@ -44,7 +44,7 @@ namespace P_Heroes
             this.lblNiveau.Text = _objet.Niveau.ToString();
             this.pbxMiniature.Image = _objet.Miniature;
             this.lblDescription.Text = _objet.Description;
-            this.lblStatsGauche.Text = _objet.statistiquesEnTexte(); // Stats de l'arme ou armure
+            this.lblStatsGauche.Text = _objet.StatistiquesEnTexte(); // Stats de l'arme ou armure
 
             // Form plus
             this._formPlus = new FormPlus(_objet);

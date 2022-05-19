@@ -8,14 +8,18 @@ using System.Drawing;
 
 namespace P_Heroes.Model
 {
-    class Arme : Objet
+    public class Arme : Objet
     {
+        // Propriétés
         private int _degatsMin;
         private int _degatsMax;
 
-        public override string statistiquesEnTexte()
+        public int Degats { get => this.DegatsAleatoire(); }
+
+        // Redéfinition du texte de stats
+        public override string StatistiquesEnTexte()
         {
-            string stats_str = base.statistiquesEnTexte();
+            string stats_str = base.StatistiquesEnTexte();
             return stats_str + "\nDégâts : " + _degatsMin + " - " + _degatsMax;
         }
 
@@ -41,7 +45,8 @@ namespace P_Heroes.Model
                     multiplicateur_rarete = 1.0;
                     break;
             }
-            
+
+            // Calculs des dégâts
             this._degatsMax = (int)Math.Ceiling(niveau * 10 * multiplicateur_rarete);
             this._degatsMin = Math.Max(this._degatsMax - 10, 0); // Pour l'instant
         }
@@ -50,6 +55,13 @@ namespace P_Heroes.Model
         {
             this._degatsMin = min;
             this._degatsMax = max;
+        }
+
+        // Retourne des dégâts aléatoires entre min et max
+        public int DegatsAleatoire()
+        {
+            Random rnd = new Random();
+            return rnd.Next(_degatsMin, _degatsMax + 1);
         }
     }
 }

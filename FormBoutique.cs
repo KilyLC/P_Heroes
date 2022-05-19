@@ -14,66 +14,70 @@ namespace P_Heroes
 {
     public partial class FormBoutique : Form
     {
+        // Constantes
         private const int PADDING = 8;
+
+        // Champs
         private List<Objet> _boutique = new List<Objet>();
         private List<Objet> _inventaire = new List<Objet>();
+        private P_Heroes.Model.Inventaire _inventaire2 = new P_Heroes.Model.Inventaire();
         private int _argent;
 
+        // Propriétés
         public List<Objet> Boutique { get => _boutique; set { _boutique = value; AfficherBoutique(value, PADDING); } }
-        public List<Objet> Inventaire { get => _inventaire; set { _inventaire = value; AfficherInventaire(value, PADDING); } }
+        public List<Objet> Inventaire { get => _inventaire2.Objets; set { _inventaire2.Objets = value; AfficherInventaire(value, PADDING); } }
         public int Argent { get => _argent; set { _argent = value; AfficherArgent(value); } }
-
-        private List<Objet> nouvelleBoutique = new List<Objet>();
-        private List<Objet> inventaire = new List<Objet>();
 
         public FormBoutique()
         {
             InitializeComponent();
 
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Lance", 500, Properties.Resources.lance, "", 1, RareteObjet.Rare, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Hache", 800, Properties.Resources.hache, "Hache de combat", 1, RareteObjet.TresRare, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Arc de chasse", 200, Properties.Resources.arc, "", 1, RareteObjet.PeuCommun, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Arbalète", 200, Properties.Resources.arbalete, "", 1, RareteObjet.PeuCommun, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Sabre laser", 1000, Properties.Resources.sabre_laser, "Sabre laser d'anakin", 1, RareteObjet.TresRare, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Epee", 500, Properties.Resources.epee, "Epee de chevalier redoutable", 1, RareteObjet.Rare, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague très usée", 100, Properties.Resources.dague, "Dague du maitre très usée", 1, RareteObjet.Commun, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague", 800, Properties.Resources.dague, "Dague du maitre", 1, RareteObjet.TresRare, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Dague aiguisée", 1000, Properties.Resources.dague, "Dague du maitre aiguisée", 1, RareteObjet.Legendaire, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Lance", 500, Properties.Resources.lance, "", 1, RareteObjet.Rare, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Hache", 800, Properties.Resources.hache, "Hache de combat", 1, RareteObjet.TresRare, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Arc de chasse", 200, Properties.Resources.arc, "", 1, RareteObjet.PeuCommun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Arbalète", 200, Properties.Resources.arbalete, "", 1, RareteObjet.PeuCommun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Sabre laser", 1000, Properties.Resources.sabre_laser, "Sabre laser d'anakin", 1, RareteObjet.TresRare, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Epee", 500, Properties.Resources.epee, "Epee de chevalier redoutable", 1, RareteObjet.Rare, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Dague très usée", 100, Properties.Resources.dague, "Dague du maitre très usée", 1, RareteObjet.Commun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Dague", 800, Properties.Resources.dague, "Dague du maitre", 1, RareteObjet.TresRare, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Dague aiguisée", 1000, Properties.Resources.dague, "Dague du maitre aiguisée", 1, RareteObjet.Legendaire, 100));
 
             // Fleau darme
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Fléau d'arme", 700, Properties.Resources.fleau_darme, "Fléau d'arme", 1, RareteObjet.Rare, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Fléau d'arme", 700, Properties.Resources.fleau_darme, "Fléau d'arme", 1, RareteObjet.Rare, 100));
             // Nunchaku
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Nunchaku", 400, Properties.Resources.nunchaku, "Nunchaku traditionnel", 1, RareteObjet.PeuCommun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Nunchaku", 400, Properties.Resources.nunchaku, "Nunchaku traditionnel", 1, RareteObjet.PeuCommun, 100));
             // Fouet
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Fouet", 300, Properties.Resources.fouet, "Fouet western", 1, RareteObjet.PeuCommun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Fouet", 300, Properties.Resources.fouet, "Fouet western", 1, RareteObjet.PeuCommun, 100));
             // Faux
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Faux", 850, Properties.Resources.faux, "Faux de la mort", 1, RareteObjet.TresRare, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Faux", 850, Properties.Resources.faux, "Faux de la mort", 1, RareteObjet.TresRare, 100));
             // batte cloutee
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Batte cloutée", 300, Properties.Resources.batte_cloutee, "Batte cloutée", 1, RareteObjet.PeuCommun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Batte cloutée", 300, Properties.Resources.batte_cloutee, "Batte cloutée", 1, RareteObjet.PeuCommun, 100));
             // Bouteille cassée
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Bouteille cassée", 100, Properties.Resources.bouteille_cassee, "Bouteille de fêteur", 1, RareteObjet.Commun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Bouteille cassée", 100, Properties.Resources.bouteille_cassee, "Bouteille de fêteur", 1, RareteObjet.Commun, 100));
             // Coussin
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Coussin", 100, Properties.Resources.coussin, "Arme pas très efficace...", 1, RareteObjet.Commun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Coussin", 100, Properties.Resources.coussin, "Arme pas très efficace...", 1, RareteObjet.Commun, 100));
             // Trident
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Trident", 700, Properties.Resources.trident, "Trident", 1, RareteObjet.Rare, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Trident", 700, Properties.Resources.trident, "Trident", 1, RareteObjet.Rare, 100));
             // Couteau
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Couteau", 100, Properties.Resources.couteau, "Couteau de cuisine", 1, RareteObjet.Commun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Couteau", 100, Properties.Resources.couteau, "Couteau de cuisine", 1, RareteObjet.Commun, 100));
             // Ceinture
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Ceinture", 100, Properties.Resources.ceinture, "Ceinture 1m", 1, RareteObjet.Commun, 100));
+            _boutique.Add(new P_Heroes.Model.Arme("Ceinture", 100, Properties.Resources.ceinture, "Ceinture 1m", 1, RareteObjet.Commun, 100));
 
-            nouvelleBoutique.Add(new P_Heroes.Model.Armure("Armure", 200, Properties.Resources.tissu, "Armure de tissu", 1, RareteObjet.Commun, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Armure("Armure", 800, Properties.Resources.cuir, "Armure de cuir", 1, RareteObjet.Rare, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Armure("Armure", 2000, Properties.Resources.metal, "Armure de metal", 1, RareteObjet.Legendaire, 100));
-            nouvelleBoutique.Add(new P_Heroes.Model.Arme("Bouclier", 200, Properties.Resources.bouclier, "Bouclier commun", 1, RareteObjet.Commun, 100));
+            _boutique.Add(new P_Heroes.Model.Tenue("Armure", 200, Properties.Resources.tissu, "Armure de tissu", 1, RareteObjet.Commun, 100, 5));
+            _boutique.Add(new P_Heroes.Model.Tenue("Armure", 800, Properties.Resources.cuir, "Armure de cuir", 1, RareteObjet.Rare, 100, 5));
+            _boutique.Add(new P_Heroes.Model.Tenue("Armure", 2000, Properties.Resources.metal, "Armure de metal", 1, RareteObjet.Legendaire, 100, 5));
+            _boutique.Add(new P_Heroes.Model.Arme("Bouclier", 200, Properties.Resources.bouclier, "Bouclier commun", 1, RareteObjet.Commun, 100));
 
-            inventaire.Add(new P_Heroes.Model.Arme("Arc de chasse", 100, Properties.Resources.arc, "", 3, RareteObjet.Commun, 100));
-            inventaire.Add(new P_Heroes.Model.Arme("Bouclier", 200, Properties.Resources.bouclier, "Bouclier commun", 1, RareteObjet.Commun, 100));
+            _inventaire2.Objets.Add(new P_Heroes.Model.Arme("Arc de chasse", 100, Properties.Resources.arc, "", 3, RareteObjet.Commun, 100));
+            _inventaire2.Objets.Add(new P_Heroes.Model.Arme("Bouclier", 200, Properties.Resources.bouclier, "Bouclier commun", 1, RareteObjet.Commun, 100));
 
-            this.Boutique = nouvelleBoutique;
-            this.Inventaire = inventaire;
+            // Met à jour chaque élément
+            this.Boutique = _boutique;
+            this.Inventaire = _inventaire2.Objets;
             this.Argent = 50;
         }
 
+        // Affiche l'argent en haut à gauche
         public void AfficherArgent(int argent)
         {
             this.lblArgent.Text = argent.ToString() + "$";
@@ -95,10 +99,11 @@ namespace P_Heroes
             // Compteur d'objets
             int counter = 0;
 
+            // Affiche 3 items par ligne
             foreach (Objet o in objets)
             {
                 ShopItem shi = new ShopItem(counter, o, OnBuy);
-                shi.DefinirAction("Acheter pour " + o.calculPrix() + "$");
+                shi.DefinirAction("Acheter pour " + o.CalculPrix() + "$");
                 shi.Location = new Point(x, y);
 
                 tpgAcheter.Controls.Add(shi);
@@ -136,10 +141,11 @@ namespace P_Heroes
             else
                 lblInventaireVide.Visible = false;
 
+            // Affiche 3 items par ligne
             foreach (Objet o in objets)
             {
                 ShopItem shi = new ShopItem(counter, o, OnSell);
-                shi.DefinirAction("Vendre pour " + o.calculPrixVente() + "$");
+                shi.DefinirAction("Vendre pour " + o.CalculPrixVente() + "$");
                 shi.Location = new Point(x, y);
 
                 tpgVendre.Controls.Add(shi);
@@ -157,6 +163,7 @@ namespace P_Heroes
             }
         }
 
+        // Enlève tout les contrôles de l'onglet
         private void ViderBoutique()
         {
             /*
@@ -167,6 +174,7 @@ namespace P_Heroes
             tpgAcheter.Controls.Clear();
         }
 
+        // Enlève tout les contrôles de l'onglet
         private void ViderInventaire()
         {
             /*
@@ -177,6 +185,7 @@ namespace P_Heroes
             tpgVendre.Controls.Clear(); // Label détruit
         }
 
+        // Lors d'un clic sur un bouton acheter
         private void OnBuy(object _sender, EventArgs e)
         {
             if (!(_sender is Button))
@@ -186,23 +195,21 @@ namespace P_Heroes
             // Récupérer le user control du bouton cliqué
             // pour pouvoir récupérer l'index du contrôle cliqué dans la liste
             int idx = ((ShopItem)sender.Parent.Parent).Idx;
-            Objet item = nouvelleBoutique[idx];
+            Objet item = _boutique[idx];
             
             // A modifier avec l'argent global du jeu
-            if (Argent >= item.calculPrix())
+            if (Argent >= item.CalculPrix())
             {
-                inventaire.Add(item);
-                Argent -= item.calculPrix();
-
-                // Actualiser inventaire
-                AfficherInventaire(nouvelleBoutique, 8);
+                _inventaire2.Objets.Add(item);
+                Argent -= item.CalculPrix();
 
                 // Actualiser inventaire et boutique
-                this.Boutique = nouvelleBoutique;
-                this.Inventaire = inventaire;
+                this.Boutique = _boutique;
+                this.Inventaire = _inventaire2.Objets;
             }
         }
 
+        // Lors d'un clic sur le bouton vendre
         private void OnSell(object _sender, EventArgs e)
         {
             if (!(_sender is Button))
@@ -213,18 +220,18 @@ namespace P_Heroes
             // Récupérer le user control du bouton cliqué
             // pour pouvoir récupérer l'index du contrôle cliqué dans la liste
             int idx = ((ShopItem)sender.Parent.Parent).Idx;
-            Objet item = inventaire[idx];
+            Objet item = _inventaire2.Objets[idx];
 
             // Confirmation
             if (MessageBox.Show("Confirmation", "Êtes-vous sur de vouloir vendre \"" + item.Nom + "\"?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
-            Argent += item.calculPrixVente();
-            inventaire.RemoveAt(idx);
+            Argent += item.CalculPrixVente();
+            _inventaire2.Objets.RemoveAt(idx);
 
             // Actualiser inventaire et boutique
-            this.Boutique = nouvelleBoutique;
-            this.Inventaire = inventaire;
+            this.Boutique = _boutique;
+            this.Inventaire = _inventaire2.Objets;
         }
     }
 }

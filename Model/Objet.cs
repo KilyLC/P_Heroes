@@ -8,6 +8,7 @@ using System.Drawing;
 
 namespace P_Heroes.Model
 {
+    // Rareté d'un objet
     public enum RareteObjet
     {
         Commun,
@@ -19,6 +20,7 @@ namespace P_Heroes.Model
 
     public abstract class Objet
     {
+        // Champs
         private string _nom;
         private int _prix;
         private Image _miniature;
@@ -28,12 +30,14 @@ namespace P_Heroes.Model
         private int _durabilite = 100;
         private int _pasUtilisation = 1;        // Cout de durabilite par utilisation
 
+        // Constantes
         const int NIVEAU_MAX = 50;
         const int NIVEAU_MIN = 1;
 
         const int DURABILITE_MAX = 100;
         const int DURABILITE_MIN = 1;
 
+        // Propriétés
         public string Nom { get => _nom; }
         public int Prix { get => _prix; }
         public Image Miniature { get => _miniature; }
@@ -41,9 +45,11 @@ namespace P_Heroes.Model
         internal RareteObjet Rarete { get => _rarete; }
         public int Niveau { get => _niveau; }               // 1 - 50
         public int Durabilite { get => _durabilite; }
+        public int PasUtilisation { get => _pasUtilisation; }
 
         public Objet(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
         {
+            // Vérifie bien que les propriétés données soient bien valides
             if (niveau > NIVEAU_MAX || niveau < NIVEAU_MIN)
                 throw new Exception("Niveau d'objet non valide");
 
@@ -65,7 +71,8 @@ namespace P_Heroes.Model
             this._durabilite = durabilite;
         }
 
-        public virtual string statistiquesEnTexte()
+        // Texte selon rareté
+        public virtual string StatistiquesEnTexte()
         {
             string stats_str = "Rareté : ";
             switch (this.Rarete)
@@ -91,19 +98,29 @@ namespace P_Heroes.Model
             return stats_str;
         }
 
-        public virtual int calculPrix()
+        public void DefinirPasUtilisation(int pas)
+        {
+            _pasUtilisation = pas;
+        }
+
+        public virtual int CalculPrix()
         {
             return Convert.ToInt32(Durabilite / 100 * _prix);
         }
 
-        public virtual int calculPrixVente()
+        public virtual int CalculPrixVente()
         {
             return Convert.ToInt32(Durabilite / 100 * _prix * 0.8);
         }
 
-        public virtual void utiliser()
+        // Permet de savoir si l'objet a assez de durabilité pour pouvoir attaquer
+        public virtual bool Utiliser()
         {
+            if (_durabilite <= 0)
+                return false;
+
             _durabilite = _durabilite - _pasUtilisation;
+            return true;
         }
     }
 }

@@ -102,7 +102,7 @@
     </Compile>
     <Compile Include="Heros.cs" />
     <Compile Include="Inventaire.cs" />
-    <Compile Include="Model\Armure.cs" />
+    <Compile Include="Model\Tenue.cs" />
     <Compile Include="Model\Arme.cs" />
     <Compile Include="Model\FormPlus.cs">
       <SubType>Form</SubType>
@@ -110,6 +110,7 @@
     <Compile Include="Model\FormPlus.Designer.cs">
       <DependentUpon>FormPlus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Inventaire.cs" />
     <Compile Include="Model\Objet.cs" />
     <Compile Include="CarteAffichage.cs">
       <SubType>UserControl</SubType>

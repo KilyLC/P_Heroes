@@ -22,6 +22,5 @@ namespace P_Heroes
         {
             this.Tenues.Add(tenue);
         }
-
     }
 }
