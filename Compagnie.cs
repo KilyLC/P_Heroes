@@ -62,23 +62,5 @@ namespace P_Heroes
             }
             return Heros;
         }
-       
-        /// <summary>
-        /// Maj selon arme séléctionné
-        /// </summary>
-        public void SelectionArme(string nomArme)
-        {
-            foreach (var arme in DicoListeArmes)
-            {
-                if (arme.Key == nomArme)
-                {
-                    arme.Value.utiliseeArme = true;
-                }
-                else
-                {
-                    arme.Value.utiliseeArme = false;
-                }
-            }
-        }
     }
 }

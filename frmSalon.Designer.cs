@@ -31,7 +31,7 @@
             this.btnChoixCompagnie = new System.Windows.Forms.Button();
             this.btnCreerCompagnie = new System.Windows.Forms.Button();
             this.btnInventaire = new System.Windows.Forms.Button();
-            this.btnRéparation = new System.Windows.Forms.Button();
+            this.btnReparation = new System.Windows.Forms.Button();
             this.btnBoutique = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
@@ -98,15 +98,16 @@
             this.btnInventaire.Text = "Inventaire ";
             this.btnInventaire.UseVisualStyleBackColor = true;
             // 
-            // btnRéparation
+            // btnReparation
             // 
-            this.btnRéparation.Enabled = false;
-            this.btnRéparation.Location = new System.Drawing.Point(49, 237);
-            this.btnRéparation.Name = "btnRéparation";
-            this.btnRéparation.Size = new System.Drawing.Size(159, 32);
-            this.btnRéparation.TabIndex = 3;
-            this.btnRéparation.Text = "Réparation";
-            this.btnRéparation.UseVisualStyleBackColor = true;
+            this.btnReparation.Enabled = false;
+            this.btnReparation.Location = new System.Drawing.Point(49, 237);
+            this.btnReparation.Name = "btnReparation";
+            this.btnReparation.Size = new System.Drawing.Size(159, 32);
+            this.btnReparation.TabIndex = 3;
+            this.btnReparation.Text = "Réparation";
+            this.btnReparation.UseVisualStyleBackColor = true;
+            this.btnReparation.Click += new System.EventHandler(this.btnReparation_Click);
             // 
             // btnBoutique
             // 
@@ -140,6 +141,7 @@
             // 
             // btnCampagne
             // 
+            this.btnCampagne.Enabled = false;
             this.btnCampagne.Location = new System.Drawing.Point(49, 532);
             this.btnCampagne.Name = "btnCampagne";
             this.btnCampagne.Size = new System.Drawing.Size(157, 58);
@@ -361,7 +363,7 @@
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnBoutique);
-            this.Controls.Add(this.btnRéparation);
+            this.Controls.Add(this.btnReparation);
             this.Controls.Add(this.btnInventaire);
             this.Controls.Add(this.btnCreerCompagnie);
             this.Controls.Add(this.btnChoixCompagnie);
@@ -388,7 +390,7 @@
         private System.Windows.Forms.Button btnChoixCompagnie;
         private System.Windows.Forms.Button btnCreerCompagnie;
         private System.Windows.Forms.Button btnInventaire;
-        private System.Windows.Forms.Button btnRéparation;
+        private System.Windows.Forms.Button btnReparation;
         private System.Windows.Forms.Button btnBoutique;
         private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnQuitter;

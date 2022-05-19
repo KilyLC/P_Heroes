@@ -167,6 +167,9 @@ namespace P_Heroes
             }
 
         }
+        /// <summary>
+        /// Affichage des actions de l'ennemi et verification des héros
+        /// </summary>
         private void TourEnnemiAffichage()
         {
             lbxAction.Items.Add(nomCompagnieEnnemi + " : " + combat.ActionsEnnemi[combat.NumActionEnnemi]);
@@ -187,7 +190,10 @@ namespace P_Heroes
             ActionEnnemi();
 
         }
-
+        /// <summary>
+        /// Verification lors de la mort d'un héro si il en reste et affichage gagné ou perdu
+        /// </summary>
+        /// <param name="joueur">joueur</param>
         private void VerifNbHeroAffichage(bool joueur)
         {
             if (joueur)
@@ -221,12 +227,19 @@ namespace P_Heroes
                 }
             }
         }
+        /// <summary>
+        /// Combat terminé
+        /// </summary>
         private void FinCombat()
         {
             combat.RecupVie();
             frmSalon.Show();
             this.Close();
         }
+        /// <summary>
+        /// Verification du nombre de capacite spéciale réstante
+        /// </summary>
+        /// <param name="joueur">action du joueur</param>
         private void VerifNbCapaciteSpecialRestant(bool joueur)
         {
             if (joueur)
@@ -244,7 +257,10 @@ namespace P_Heroes
                 }
             }
         }
-
+        /// <summary>
+        /// Changement de l'héro principal
+        /// </summary>
+        /// <param name="actionJoueur">action du joueur</param>
         private void ChangementHeroAffichage(bool actionJoueur)
         {
             if (actionJoueur)
@@ -296,7 +312,6 @@ namespace P_Heroes
                 }
             }
         }
-
         /// <summary>
         /// Si le joueur fait une action
         /// </summary>

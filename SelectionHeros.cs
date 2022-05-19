@@ -23,13 +23,11 @@ namespace P_Heroes
             Reset();
         }
 
-        public SelectionHeros(FrmCombat form) : this()
-        {
-            this._form = form;
-        }
-
         CarteAffichage persoSelection = new CarteAffichage();
 
+        /// <summary>
+        /// Créer les héros
+        /// </summary>
         public void CreeHeros()
         {
             Heros heros = new Heros();
@@ -48,6 +46,9 @@ namespace P_Heroes
             heros5.CreeHero(1000, 70, 50, "Elrond", Properties.Resources.elrond, true, compagnie, "defense");
             listHeros.Add(heros5);
         }
+        /// <summary>
+        /// Affiche les carte des héros
+        /// </summary>
         public void AffichageCarteHero()
         {
             int padx = 6;
@@ -78,6 +79,11 @@ namespace P_Heroes
                 }
             }
         }
+        /// <summary>
+        /// Héro choisi
+        /// </summary>
+        /// <param name="_sender">object cliquer</param>
+        /// <param name="e">evenement clic</param>
         private void ClicHeros(object _sender, EventArgs e)
         {
             Button sender = (Button)_sender;
@@ -126,6 +132,9 @@ namespace P_Heroes
             compagnie.Heros.Clear();
             Reset();
         }
+        /// <summary>
+        /// Reset des héros
+        /// </summary>
         public void Reset()
         {
             btnValider.Enabled = false;
@@ -133,6 +142,9 @@ namespace P_Heroes
             pnlAffichageHero.Controls.Clear();
             AffichageCarteHero();
         }
+        /// <summary>
+        /// Validation des héros
+        /// </summary>
         public void ValiderHeros()
         {
             if (tbxNomCampagnie.Text != "" && compagnie.Heros.Count == 3)

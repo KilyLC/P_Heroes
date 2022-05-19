@@ -86,7 +86,7 @@ namespace P_Heroes
 
             ViderBoutique();
 
-            // Padding
+            // Padding 
             int padx = padding;
             int pady = padding;
             // Position

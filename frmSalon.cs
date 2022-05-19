@@ -65,6 +65,9 @@ namespace P_Heroes
             }
             
         }
+        /// <summary>
+        /// Affichage des cartes des héros
+        /// </summary>
         public void AffichageCarteHero()
         {
             int padx = 6;
@@ -77,11 +80,16 @@ namespace P_Heroes
             {
                 string stats = "";
                 CarteAffichage control = new CarteAffichage(h);
+                //Image
                 control.DefinirMiniature(h.ImageHero);
+                //stats
                 stats = "Vie : " + h.NvVie + Environment.NewLine + "Agilité : " + h.Agilite + Environment.NewLine + "Attaque : " + h.Attaque + Environment.NewLine + "Capacité spéciale : " + h.CapaciteSpecial;
                 control.DefinirStatsHero(stats, h.NomHeros);
+                //supprime le bouton choisir
                 control.SupprimerBtnChoisir(); 
+                //Position
                 control.Location = new Point(x, y);
+                //Ajoute le control dans le panel
                 pnlAffichageHeros.Controls.Add(control);
 
                 counter += 1;
@@ -96,16 +104,25 @@ namespace P_Heroes
                 }
             }
         }
+        /// <summary>
+        /// Affiche toutes les informations de la compagnie actuelle
+        /// </summary>
         private void RefreshCompagnie()
         {
             if (CompagnieStocker.compagnieActuelle != null)
             {
+                //Active les boutons
+                btnReparation.Enabled = true;
+                btnInventaire.Enabled = true;
+                btnCampagne.Enabled = true;
+                //Xp, vie et argent
                 lblXpCompagnie.Text = CompagnieStocker.compagnieActuelle.Xp.ToString();
                 lblPoCompagnie.Text = CompagnieStocker.compagnieActuelle.Po.ToString();
                 pgbXp.Value = CompagnieStocker.compagnieActuelle.Xp;
                 pgbXp.Maximum = CompagnieStocker.compagnieActuelle.NbXpPalierNiveau;
                 lblNiveauCompagnie.Text = CompagnieStocker.compagnieActuelle.Niveau.ToString();
                 lblXpMax.Text = CompagnieStocker.compagnieActuelle.NbXpPalierNiveau.ToString();
+                //Nom de la compagnie
                 lblNomCompagnie.Text = CompagnieStocker.compagnieActuelle.NomCompagnie;
                 //Hero 1
                 pbxHero1Tenue.Image = CompagnieStocker.compagnieActuelle.Heros[0].Tenue.ImageTenue;
@@ -136,6 +153,7 @@ namespace P_Heroes
 
         private void btnCampagne_Click(object sender, EventArgs e)
         {
+            //Combat
             FrmCombat frmCombat = new FrmCombat();
             frmCombat.Show();
             this.Close();
@@ -143,17 +161,28 @@ namespace P_Heroes
 
         private void btnChoixCompagnie_Click(object sender, EventArgs e)
         {
+            //Vie le panel
             pnlAffichageHeros.Controls.Clear();
             numCompagnie++;
+            //Si le num de la compagnie dépasse le nombre de compagnie du joueur
             if (numCompagnie > CompagnieStocker.compagniesJoueur.Count - 1)
             {
                 numCompagnie = 0;
             }
             int numCompagnieAfficher = numCompagnie + 1;
-
+            //Affichage du numéro de la compagnie
             lblNumCompagnie.Text = numCompagnieAfficher + " / " + CompagnieStocker.NB_COMPAGNIE_MAX;
+            //Changement de la compagnie actuelle
             CompagnieStocker.compagnieActuelle = CompagnieStocker.compagniesJoueur[numCompagnie];
+            //Refresh
             RefreshCompagnie();
+        }
+
+        private void btnReparation_Click(object sender, EventArgs e)
+        {
+            //Réparation
+            ReparationArmes reparationArmes = new ReparationArmes();
+            reparationArmes.Show();
         }
     }
 }

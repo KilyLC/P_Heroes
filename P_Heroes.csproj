@@ -119,6 +119,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReparationArmes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReparationArmes.Designer.cs">
+      <DependentUpon>ReparationArmes.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectionArmes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReparationArmes.resx">
+      <DependentUpon>ReparationArmes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectionArmes.resx">
       <DependentUpon>SelectionArmes.cs</DependentUpon>
     </EmbeddedResource>

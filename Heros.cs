@@ -12,7 +12,7 @@ using System.Drawing;
 
 namespace P_Heroes
 {
-    public class Heros : ICloneable
+    public class Heros
     {
         private string _nomHeros;
         private Tenue _tenue;
@@ -43,7 +43,9 @@ namespace P_Heroes
         public bool DefenseSpeciale { get => _defenseSpeciale; set => _defenseSpeciale = value; }
         public bool Defense { get => _defense; set => _defense = value; }
 
-        
+        /// <summary>
+        /// Créer un héros
+        /// </summary>
         public void CreeHero(int nvVie, int agilite, int attaque, string nomHero, Image image, bool vivant, Compagnie compagnie, string capaciteSpeciale)
         {
             Agilite = agilite;
@@ -85,6 +87,10 @@ namespace P_Heroes
             }
             return heros;
         }
+        /// <summary>
+        /// Calcul des dégats totals de l'héros en prenant compte des armes
+        /// </summary>
+        /// <returns>Niveau d'attaque de l'héro</returns>
         public int Degats()
         {
             int attaqueHero = 0;
@@ -99,6 +105,10 @@ namespace P_Heroes
             }
             return attaqueHero;
         }
+        /// <summary>
+        /// Calcul des dégats totaux subis
+        /// </summary>
+        /// <param name="degatsTotaux">degats sans modification</param>
         public void PerteVie(int degatsTotaux)
         {
             if (this.Defense)
@@ -110,11 +120,6 @@ namespace P_Heroes
                 degatsTotaux += Convert.ToInt32(degatsTotaux / 4);
             }
             this.NvVie -= degatsTotaux;
-        }
-
-        public object Clone()
-        {
-            return this.MemberwiseClone();
         }
     }
 }

@@ -47,7 +47,11 @@ namespace P_Heroes
             ActionsEnnemi.Add("Mouvement");
             ActionsEnnemi.Add("Capacite Speciale");
         }
-
+        /// <summary>
+        /// Permet d'attaquer l'ennemi et de se faire attaquer
+        /// </summary>
+        /// <param name="heroAttaquant">l'héro qui attaque</param>
+        /// <param name="heroDefenseur">l'héro qui défend</param>
         public void Attaque(Heros heroAttaquant, Heros heroDefenseur)
         {
             int degatsTotaux = 0;
@@ -67,7 +71,9 @@ namespace P_Heroes
             heroDefenseur.PerteVie(degatsTotaux);
             heroDefenseur.Defense = false;
         }
-
+        /// <summary>
+        /// Rénitialise la vie des héros
+        /// </summary>
         public void RecupVie()
         {
             CompagnieJoueur.Heros[0].NvVie = pvHero1Base;
@@ -77,11 +83,18 @@ namespace P_Heroes
             CompagnieJoueur.Heros[1].Vivant = true;
             CompagnieJoueur.Heros[2].Vivant = true;
         }
-
+        /// <summary>
+        /// Action de defense de l'héro
+        /// </summary>
+        /// <param name="hero">l'héro qui fait l'action</param>
         public void Defense(Heros hero)
         {
             hero.Defense = true;
         }
+        /// <summary>
+        /// Permet de changer de personnage pendant le combat
+        /// </summary>
+        /// <param name="actionJoueur">action du joueur</param>
         public void Mouvement(bool actionJoueur)
         {
             if (actionJoueur)
@@ -103,7 +116,10 @@ namespace P_Heroes
                 }
             }
         }
-
+        /// <summary>
+        /// Change l'héro principal
+        /// </summary>
+        /// <param name="joueur">action du joueur</param>
         public void ChangementHero(bool joueur)
         {
             if (joueur)
@@ -120,8 +136,12 @@ namespace P_Heroes
                 numHeroVerif();
                 HeroPrincipalEnnemi = CompagnieEnnemi.Heros[NumHeroPrincipalEnnemi - 1];
             }
-
         }
+        /// <summary>
+        /// Action de capacite spécial
+        /// </summary>
+        /// <param name="heroAction">Hero qui fait l'action</param>
+        /// <param name="heroSubi">Hero qui subi</param>
         public void CapaciteSpecial(Heros heroAction, Heros heroSubi)
         {
             if (HeroPrincipalJoueur == heroAction)
@@ -154,10 +174,9 @@ namespace P_Heroes
                 }
             }
         }
-        public void FinDeTour()
-        {
-            TourEnnemi();
-        }
+        /// <summary>
+        /// Verification du numéro de l'héros principal
+        /// </summary>
         public void numHeroVerif()
         {
             if (NumHeroPrincipalJoueur > NB_HEROS_MAX)
@@ -169,6 +188,9 @@ namespace P_Heroes
                 NumHeroPrincipalEnnemi = 1;
             }
         }
+        /// <summary>
+        /// Tour de l'ennemi de façon aléatoire
+        /// </summary>
         public void TourEnnemi()
         {
             if (ActionsEnnemi.Count == 2)
@@ -199,8 +221,11 @@ namespace P_Heroes
             {
                 CapaciteSpecial(HeroPrincipalEnnemi, HeroPrincipalJoueur);
             }
-
         }
+        /// <summary>
+        /// Mort d'un héro
+        /// </summary>
+        /// <param name="heroMort">L'héro qui est mort</param>
         public void HeroMort(Heros heroMort)
         {
             if (heroMort == HeroPrincipalJoueur)
@@ -222,7 +247,10 @@ namespace P_Heroes
             heroMort.Vivant = false;
             heroMort.NvVie = 0;
         }
-
+        /// <summary>
+        /// Combat gagné
+        /// </summary>
+        /// <returns>Vrai ou faux</returns>
         public bool Gagne()
         {
             //Victoire
@@ -236,6 +264,10 @@ namespace P_Heroes
             }
             return false;
         }
+        /// <summary>
+        /// combat perdu
+        /// </summary>
+        /// <returns>Vrai ou faux</returns>
         public bool Perdu()
         {
             //Defaite
@@ -248,7 +280,9 @@ namespace P_Heroes
             }
             return false;
         }
-
+        /// <summary>
+        /// Verification du niveau de la compagnie après avoir reçu des XP
+        /// </summary>
         public void VerifNiveau()
         {
             if (CompagnieJoueur.Xp >= CompagnieJoueur.NbXpPalierNiveau)
@@ -262,7 +296,9 @@ namespace P_Heroes
                 CompagnieJoueur.Xp = xp_diff;
             }
         }
-
+        /// <summary>
+        /// Commencement du combat
+        /// </summary>
         public void Commencer()
         {
             //init compagnie ennemi
@@ -280,10 +316,18 @@ namespace P_Heroes
             capaciteSpecialListe.Add("attaque");
             capaciteSpecialListe.Add("regeneration");
         }
+        /// <summary>
+        /// Initialisation de la compagnie du joueur
+        /// </summary>
+        /// <param name="compagnie">Compagnie du joueur</param>
         public void CompagnieJoueurInit(Compagnie compagnie)
         {
             CompagnieJoueur = compagnie;
         }
+        /// <summary>
+        /// Création de la compagnie de l'ennemi
+        /// </summary>
+        /// <returns>La compagnie ennemie</returns>
         public Compagnie CreationCompagnieEnnemi()
         {
             //Ennemi base
