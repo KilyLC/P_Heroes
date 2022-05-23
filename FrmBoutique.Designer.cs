@@ -1,6 +1,6 @@
 ﻿namespace P_Heroes
 {
-    partial class FormBoutique
+    partial class FrmBoutique
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@
             this.tctrlBoutique = new System.Windows.Forms.TabControl();
             this.tpgAcheter = new System.Windows.Forms.TabPage();
             this.tpgVendre = new System.Windows.Forms.TabPage();
-            this.lblArgent = new System.Windows.Forms.Label();
             this.lblInventaireVide = new System.Windows.Forms.Label();
+            this.lblArgent = new System.Windows.Forms.Label();
             this.tctrlBoutique.SuspendLayout();
             this.tpgVendre.SuspendLayout();
             this.SuspendLayout();
@@ -70,17 +70,6 @@
             this.tpgVendre.Text = "Vendre";
             this.tpgVendre.UseVisualStyleBackColor = true;
             // 
-            // lblArgent
-            // 
-            this.lblArgent.AutoSize = true;
-            this.lblArgent.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArgent.ForeColor = System.Drawing.Color.White;
-            this.lblArgent.Location = new System.Drawing.Point(12, 2);
-            this.lblArgent.Name = "lblArgent";
-            this.lblArgent.Size = new System.Drawing.Size(107, 26);
-            this.lblArgent.TabIndex = 0;
-            this.lblArgent.Text = "Argent";
-            // 
             // lblInventaireVide
             // 
             this.lblInventaireVide.AutoSize = true;
@@ -92,7 +81,18 @@
             this.lblInventaireVide.Text = "Votre inventaire est vide !";
             this.lblInventaireVide.Visible = false;
             // 
-            // FormBoutique
+            // lblArgent
+            // 
+            this.lblArgent.AutoSize = true;
+            this.lblArgent.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArgent.ForeColor = System.Drawing.Color.White;
+            this.lblArgent.Location = new System.Drawing.Point(12, 2);
+            this.lblArgent.Name = "lblArgent";
+            this.lblArgent.Size = new System.Drawing.Size(107, 26);
+            this.lblArgent.TabIndex = 0;
+            this.lblArgent.Text = "Argent";
+            // 
+            // FrmBoutique
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,8 +100,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblArgent);
             this.Controls.Add(this.tctrlBoutique);
-            this.Name = "FormBoutique";
-            this.Text = "FormBoutique";
+            this.Name = "FrmBoutique";
+            this.Text = "Boutique";
             this.tctrlBoutique.ResumeLayout(false);
             this.tpgVendre.ResumeLayout(false);
             this.tpgVendre.PerformLayout();

@@ -1,6 +1,6 @@
 ﻿namespace P_Heroes.Model
 {
-    partial class FormPlus
+    partial class FrmPlus
     {
         /// <summary>
         /// Required designer variable.

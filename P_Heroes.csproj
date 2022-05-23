@@ -82,11 +82,11 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBoutique.cs">
+    <Compile Include="FrmBoutique.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBoutique.Designer.cs">
-      <DependentUpon>FormBoutique.cs</DependentUpon>
+    <Compile Include="FrmBoutique.Designer.cs">
+      <DependentUpon>FrmBoutique.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCombat.cs">
       <SubType>Form</SubType>
@@ -102,13 +102,25 @@
     </Compile>
     <Compile Include="Heros.cs" />
     <Compile Include="Inventaire.cs" />
-    <Compile Include="Model\Tenue.cs" />
-    <Compile Include="Model\Arme.cs" />
-    <Compile Include="Model\FormPlus.cs">
+    <Compile Include="Model\FrmInventaire.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Model\FormPlus.Designer.cs">
-      <DependentUpon>FormPlus.cs</DependentUpon>
+    <Compile Include="Model\FrmInventaire.Designer.cs">
+      <DependentUpon>FrmInventaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ObjetInventaire.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\ObjetInventaire.Designer.cs">
+      <DependentUpon>ObjetInventaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tenue.cs" />
+    <Compile Include="Model\Arme.cs" />
+    <Compile Include="Model\FrmPlus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmPlus.Designer.cs">
+      <DependentUpon>FrmPlus.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Inventaire.cs" />
     <Compile Include="Model\Objet.cs" />
@@ -151,8 +163,8 @@
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBoutique.resx">
-      <DependentUpon>FormBoutique.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBoutique.resx">
+      <DependentUpon>FrmBoutique.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCombat.resx">
       <DependentUpon>FrmCombat.cs</DependentUpon>
@@ -160,11 +172,17 @@
     <EmbeddedResource Include="frmSalon.resx">
       <DependentUpon>frmSalon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\FormPlus.resx">
-      <DependentUpon>FormPlus.cs</DependentUpon>
+    <EmbeddedResource Include="Model\FrmPlus.resx">
+      <DependentUpon>FrmPlus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CarteAffichage.resx">
       <DependentUpon>CarteAffichage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmInventaire.resx">
+      <DependentUpon>FrmInventaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\ObjetInventaire.resx">
+      <DependentUpon>ObjetInventaire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

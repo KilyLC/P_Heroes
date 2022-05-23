@@ -33,7 +33,7 @@ namespace P_Heroes
         private void btnBoutique_Click(object sender, EventArgs e)
         {
             //boutique
-            FormBoutique formBoutique = new FormBoutique();
+            FrmBoutique formBoutique = new FrmBoutique();
             formBoutique.Show();
         }
 
@@ -183,6 +183,12 @@ namespace P_Heroes
             //Réparation
             ReparationArmes reparationArmes = new ReparationArmes();
             reparationArmes.Show();
+        }
+
+        private void btnInventaire_Click(object sender, EventArgs e)
+        {
+            Model.FrmInventaire inventaire = new Model.FrmInventaire();
+            inventaire.Show();
         }
     }
 }

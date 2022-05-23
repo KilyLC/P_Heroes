@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace P_Heroes.Model
 {
-    public partial class FormPlus : Form
+    public partial class FrmPlus : Form
     {
-        public FormPlus()
+        public FrmPlus()
         {
             InitializeComponent();
         }
          
-        public FormPlus(Objet o) : this()
+        public FrmPlus(Objet o) : this()
         {
             MiseAJour(o);
         }

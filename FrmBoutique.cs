@@ -12,7 +12,7 @@ using P_Heroes.Model;
 
 namespace P_Heroes
 {
-    public partial class FormBoutique : Form
+    public partial class FrmBoutique : Form
     {
         // Constantes
         private const int PADDING = 8;
@@ -28,7 +28,7 @@ namespace P_Heroes
         public List<Objet> Inventaire { get => _inventaire2.Objets; set { _inventaire2.Objets = value; AfficherInventaire(value, PADDING); } }
         public int Argent { get => _argent; set { _argent = value; AfficherArgent(value); } }
 
-        public FormBoutique()
+        public FrmBoutique()
         {
             InitializeComponent();
 
