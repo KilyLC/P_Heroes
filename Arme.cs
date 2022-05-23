@@ -24,13 +24,14 @@ namespace P_Heroes
         public int Durabilite { get; set; }
         public int NbMains { get; set; }
         public Image Image { get; set; }
+        public int Prix { get; set; }
 
         Random rnd = new Random();
         
         /// <summary>
         /// Créer les armes
         /// </summary>
-        public void CreeArme(int durabilite, int attaqueMin,int attaqueMax, string nomArme, Image image, int nbMains)
+        public void CreeArme(int durabilite, int attaqueMin, int attaqueMax, string nomArme, Image image, int nbMains, int prix)
         {
             Durabilite = durabilite;
             NvAttaqueMin = attaqueMin;
@@ -39,6 +40,7 @@ namespace P_Heroes
             NbMains= nbMains;
             NomArme = nomArme;
             Image = image;
+            Prix = prix;
         }
         /// <summary>
         /// Calcul du nombre de dégat de l'arme de manière aléatoire

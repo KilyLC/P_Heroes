@@ -57,6 +57,13 @@ namespace P_Heroes
             int degatsTotaux = 0;
             int multiplicateurAttaque = 1;
             int nbRandom = rnd.Next(0, AGILITE_MAX + 1);
+
+            heroAttaquant.Arme1.Durabilite--;
+            //baisse durabilite
+            if (heroAttaquant.Arme1 != heroAttaquant.Arme2)
+            {
+                heroAttaquant.Arme2.Durabilite--;
+            }
             //esquive
             if (heroDefenseur.Agilite > nbRandom)
             {
@@ -515,23 +522,20 @@ namespace P_Heroes
             
             //Creation armes ennemis
             Arme hache = new Arme();
-            hache.CreeArme(100, 25, 40, "hache", null, 2);
+            hache.CreeArme(100, 25, 40, "hache", null, 2, 200);
 
             Arme lance = new Arme();
-            lance.CreeArme(100, 10, 20, "lance", null, 1);
+            lance.CreeArme(100, 10, 20, "lance", null, 1, 100);
 
             Arme epee = new Arme();
-            epee.CreeArme(100, 10, 20, "epee", null, 1);
+            epee.CreeArme(100, 10, 20, "epee", null, 1, 100);
 
             Arme arc = new Arme();
-            arc.CreeArme(100, 25, 40, "arc", null, 2);
+            arc.CreeArme(100, 25, 40, "arc", null, 2, 200);
 
             Arme dague = new Arme();
-            dague.CreeArme(100, 10, 20, "dague", null, 1);
-
-            Arme bouclier = new Arme();
-            bouclier.CreeArme(100, 10, 20, "bouclier", null, 1);
-
+            dague.CreeArme(100, 10, 20, "dague", null, 1, 100);
+            
             //arme et tenue  ennemi 1
             ennemi1.Arme1 = dague;
             ennemi1.Arme2 = epee;
@@ -541,8 +545,8 @@ namespace P_Heroes
             ennemi2.Arme2 = arc;
             ennemi2.Tenue = tenue3;
             //arme et tenue ennemi 3
-            ennemi3.Arme1 = lance;
-            ennemi3.Arme2 = bouclier;
+            ennemi3.Arme1 = hache;
+            ennemi3.Arme2 = hache;
             ennemi3.Tenue = tenue1;
 
             //Image ennemi

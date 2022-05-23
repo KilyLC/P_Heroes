@@ -125,6 +125,7 @@
     <Compile Include="ReparationArmes.Designer.cs">
       <DependentUpon>ReparationArmes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reparer.cs" />
     <Compile Include="SelectionArmes.cs">
       <SubType>Form</SubType>
     </Compile>

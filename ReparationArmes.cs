@@ -12,15 +12,14 @@ namespace P_Heroes
 {
     public partial class ReparationArmes : Form
     {
-        const int DURABILITE_MAX = 100;
-        List<Arme> armeSelect = new List<Arme>();
-        int prixTotal;
         //affichage pbx position
         int padx = 6;
-        int pady = 6;
         int x = 6;
-        int y = 6;
         int counterArme = 0;
+
+        bool validationArgent;
+        
+        Reparer reparer;
         public ReparationArmes()
         {
             InitializeComponent();
@@ -28,7 +27,9 @@ namespace P_Heroes
 
         private void ReparationArmes_Load(object sender, EventArgs e)
         {
+            reparer = new Reparer();
             RefreshAffichage();
+            
         }
         /// <summary>
         /// Arme cliquer
@@ -37,11 +38,25 @@ namespace P_Heroes
         /// <param name="e">evenement</param>
         private void ClicArmes(object _sender, EventArgs e)
         {
+            btnReset.Enabled = true;
+
             Button sender = (Button)_sender;
 
             Arme a = ((CarteAffichage)sender.Parent.Parent).RecupererArmes();
 
             PbxArmeSelectionne(a);
+
+            reparer.AjoutListeArmeSelectionne(a);
+            validationArgent = reparer.VerifArgent();
+            lblPrixTotal.Text = reparer.PrixTotal.ToString();
+            if (validationArgent)
+            {
+                btnReparer.Enabled = true;
+            }
+            else
+            {
+                btnReparer.Enabled = false;
+            }
         }
         /// <summary>
         /// Créer automatiquement des pictubox pour les armes sélectionnés
@@ -49,6 +64,7 @@ namespace P_Heroes
         /// <param name="arme"></param>
         private void PbxArmeSelectionne(Arme arme)
         {
+            int y = 15;
             PictureBox pbx = new PictureBox();
             pbx.Image = arme.Image;
             pbx.SizeMode = PictureBoxSizeMode.Zoom;
@@ -56,36 +72,15 @@ namespace P_Heroes
             pbx.Location = new Point(x, y);
 
             gbxArmeSelect.Controls.Add(pbx);
-
+           
             counterArme += 1;
-            if (counterArme % 3 != 0)
+            if (counterArme % 5 != 0)
             {
-                x += gbxArmeSelect.Size.Width + padx;
-            }
-            else
-            {
-                x = padx;
-                y += gbxArmeSelect.Size.Height + pady;
+                x += pbx.Width + padx;
             }
         }
-        /// <summary>
-        /// Ajoute l'arme à la liste des armes sélectionnés
-        /// </summary>
-        /// <param name="a"></param>
-        private void AjoutListeArmeSelectionne(Arme a)
-        {
-            armeSelect.Add(a);
-        }
-        /*/// <summary>
-        /// Calcul du prix total des armes sélectionnés
-        /// </summary>
-        private void CalculPrix()
-        {
-            foreach (Arme a in armeSelect)
-            {
-
-            }
-        } */
+        
+        
         /// <summary>
         /// Affichage des cartes armes
         /// </summary>
@@ -99,8 +94,7 @@ namespace P_Heroes
 
             foreach (Arme a in CompagnieStocker.compagnieActuelle.Inventaire.Armes)
             {
-                a.Durabilite = 30;
-                if (a.Durabilite == DURABILITE_MAX)
+                if (a.Durabilite == reparer.DurabiliteMax)
                 {
                     continue;
                 }
@@ -135,23 +129,31 @@ namespace P_Heroes
         /// </summary>
         private void RefreshAffichage()
         {
-            prixTotal = 0;
+            padx = 6;
+            x = 6;
             btnReparer.Enabled = false;
             btnReset.Enabled = false;
+            //Vide le panel
             pnlAffichageArmes.Controls.Clear();
-            armeSelect.Clear();
             gbxArmeSelect.Controls.Clear();          
-            lblPrixTotal.Text = prixTotal.ToString();
+            lblPrixTotal.Text = reparer.PrixTotal.ToString();
             AffichageCartesArmes();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
+            reparer.Reset();
             RefreshAffichage();
         }
 
         private void btnReparer_Click(object sender, EventArgs e)
         {
-
+            reparer.ReparerArmes();
+            Refresh();
+            frmSalon frmSalon = new frmSalon();
+            frmSalon.Show();
+            this.Close();
         }
+
+        
     }
 }

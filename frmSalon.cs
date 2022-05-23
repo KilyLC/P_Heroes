@@ -183,6 +183,7 @@ namespace P_Heroes
             //Réparation
             ReparationArmes reparationArmes = new ReparationArmes();
             reparationArmes.Show();
+            this.Close();
         }
     }
 }

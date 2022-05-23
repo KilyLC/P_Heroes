@@ -82,40 +82,34 @@ namespace P_Heroes
         public void CreeArme()
         {
             Arme hache = new Arme();
-            hache.CreeArme(100, 25, 40, "hache", Properties.Resources.hache, 2);
+            hache.CreeArme(100, 25, 40, "hache", Properties.Resources.hache, 2, 200);
             listeArmes.Add(hache);
             DicoValues values = new DicoValues(hache, false);
             compagnie.DicoListeArmes["hache"] = values;
 
             Arme lance = new Arme();
-            lance.CreeArme(100, 10, 20, "lance", Properties.Resources.lance, 1);
+            lance.CreeArme(100, 10, 20, "lance", Properties.Resources.lance, 1, 100);
             listeArmes.Add(lance);
             values = new DicoValues(lance, false);
             compagnie.DicoListeArmes["lance"] = values;
 
             Arme epee = new Arme();
-            epee.CreeArme(100, 10, 20, "epee", Properties.Resources.epee, 1);
+            epee.CreeArme(100, 10, 20, "epee", Properties.Resources.epee, 1, 100);
             listeArmes.Add(epee);
             values = new DicoValues(epee, false);
             compagnie.DicoListeArmes["epee"] = values;
 
             Arme arc = new Arme();
-            arc.CreeArme(100, 25, 40, "arc", Properties.Resources.arc, 2);
+            arc.CreeArme(100, 25, 40, "arc", Properties.Resources.arc, 2, 200);
             listeArmes.Add(arc);
             values = new DicoValues(arc, false);
             compagnie.DicoListeArmes["arc"] = values;
 
             Arme dague = new Arme();
-            dague.CreeArme(100, 10, 20, "dague", Properties.Resources.dague, 1);
+            dague.CreeArme(100, 10, 20, "dague", Properties.Resources.dague, 1, 100);
             listeArmes.Add(dague);
             values = new DicoValues(dague, false);
             compagnie.DicoListeArmes["dague"] = values;
-
-            Arme bouclier = new Arme();
-            bouclier.CreeArme(100, 10, 20, "bouclier", Properties.Resources.bouclier, 1);
-            listeArmes.Add(bouclier);
-            values = new DicoValues(bouclier, false);
-            compagnie.DicoListeArmes["bouclier"] = values;
         }
         /// <summary>
         /// Affichage des images des héros sélectionné
