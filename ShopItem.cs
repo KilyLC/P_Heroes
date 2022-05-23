@@ -16,7 +16,7 @@ namespace P_Heroes
         private Objet _objet;
         public Objet Objet { get => _objet; set { _objet = value; MiseAJour(); } }
         private EventHandler _callback = null; // Fonction de callback lors d'un clic sur l'action
-        private FormPlus _formPlus;
+        private FrmPlus _formPlus;
 
         public int Idx = -1; // Index du contrôle sur la form parent (pour enlever l'item de la liste)
 
@@ -44,10 +44,10 @@ namespace P_Heroes
             this.lblNiveau.Text = _objet.Niveau.ToString();
             this.pbxMiniature.Image = _objet.Miniature;
             this.lblDescription.Text = _objet.Description;
-            this.lblStatsGauche.Text = _objet.statistiquesEnTexte(); // Stats de l'arme ou armure
+            this.lblStatsGauche.Text = _objet.StatistiquesEnTexte(); // Stats de l'arme ou armure
 
             // Form plus
-            this._formPlus = new FormPlus(_objet);
+            this._formPlus = new FrmPlus(_objet);
 
             // Rareté
             Color border_color = Color.White;

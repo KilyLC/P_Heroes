@@ -90,13 +90,13 @@
             // 
             // btnInventaire
             // 
-            this.btnInventaire.Enabled = false;
             this.btnInventaire.Location = new System.Drawing.Point(49, 199);
             this.btnInventaire.Name = "btnInventaire";
             this.btnInventaire.Size = new System.Drawing.Size(159, 32);
             this.btnInventaire.TabIndex = 2;
             this.btnInventaire.Text = "Inventaire ";
             this.btnInventaire.UseVisualStyleBackColor = true;
+            this.btnInventaire.Click += new System.EventHandler(this.btnInventaire_Click);
             // 
             // btnReparation
             // 
