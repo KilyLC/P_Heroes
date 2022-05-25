@@ -18,7 +18,7 @@ namespace P_Heroes.Model
         Legendaire
     }
 
-    public abstract class Objet
+    public abstract class ObjetBoutique
     {
         // Champs
         private string _nom;
@@ -47,7 +47,7 @@ namespace P_Heroes.Model
         public int Durabilite { get => _durabilite; }
         public int PasUtilisation { get => _pasUtilisation; }
 
-        public Objet(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
+        public ObjetBoutique(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
         {
             // Vérifie bien que les propriétés données soient bien valides
             if (niveau > NIVEAU_MAX || niveau < NIVEAU_MIN)

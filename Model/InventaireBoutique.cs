@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace P_Heroes.Model
 {
-    public class Inventaire
+    public class InventaireBoutique
     {
-        private List<Objet> _objets;
+        private List<ObjetBoutique> _objets;
         private int _argent;
         public int Argent { get => _argent; }
-        public List<Objet> Objets { get => _objets; set => _objets = value; }
+        public List<ObjetBoutique> Objets { get => _objets; set => _objets = value; }
 
-        public Inventaire()
+        public InventaireBoutique()
         {
-            this._objets = new List<Objet>();
+            this._objets = new List<ObjetBoutique>();
         }
         
         private void AjoutArgent(int montant)

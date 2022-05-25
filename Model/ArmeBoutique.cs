@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace P_Heroes.Model
 {
-    public class Arme : Objet
+    public class ArmeBoutique : ObjetBoutique
     {
         // Propriétés
         private int _degatsMin;
@@ -23,7 +23,7 @@ namespace P_Heroes.Model
             return stats_str + "\nDégâts : " + _degatsMin + " - " + _degatsMax;
         }
 
-        public Arme(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
+        public ArmeBoutique(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
             : base(nom, prix, miniature, description, niveau, rarete, durabilite)
         {
             double multiplicateur_rarete = 0;

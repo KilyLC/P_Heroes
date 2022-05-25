@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace P_Heroes.Model
 {
-    public class Tenue : Objet
+    public class TenueBoutique : ObjetBoutique
     {
         // Champs
         private int _protectionMin;
@@ -23,7 +23,7 @@ namespace P_Heroes.Model
             return stats_str + "\nProtection : " + _protectionMin + " - " + _protectionMax;
         }
 
-        public Tenue(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite, int poids)
+        public TenueBoutique(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite, int poids)
             : base(nom, prix, miniature, description, niveau, rarete, durabilite)
         {
             double multiplicateur_rarete = 0;

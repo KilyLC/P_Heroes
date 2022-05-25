@@ -114,16 +114,16 @@
     <Compile Include="Model\ObjetInventaire.Designer.cs">
       <DependentUpon>ObjetInventaire.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Tenue.cs" />
-    <Compile Include="Model\Arme.cs" />
+    <Compile Include="Model\TenueBoutique.cs" />
+    <Compile Include="Model\ArmeBoutique.cs" />
     <Compile Include="Model\FrmPlus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\FrmPlus.Designer.cs">
       <DependentUpon>FrmPlus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Inventaire.cs" />
-    <Compile Include="Model\Objet.cs" />
+    <Compile Include="Model\InventaireBoutique.cs" />
+    <Compile Include="Model\ObjetBoutique.cs" />
     <Compile Include="CarteAffichage.cs">
       <SubType>UserControl</SubType>
     </Compile>
