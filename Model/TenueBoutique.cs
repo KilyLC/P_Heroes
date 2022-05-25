@@ -15,12 +15,16 @@ namespace P_Heroes.Model
         private int _protectionMax;
         private int _poids;
 
+        public int ProtectionMin { get => _protectionMin; }
+        public int ProtectionMax { get => _protectionMax; }
+        public int Poids { get => _poids; }
+
         // Redéfinition des stats
         public override string StatistiquesEnTexte()
         {
             string stats_str = base.StatistiquesEnTexte();
 
-            return stats_str + "\nProtection : " + _protectionMin + " - " + _protectionMax;
+            return stats_str + "\nProtection : " + _protectionMin + " - " + ProtectionMax;
         }
 
         public TenueBoutique(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite, int poids)
@@ -47,7 +51,7 @@ namespace P_Heroes.Model
             }
             // Calculs de la protection
             this._protectionMax = (int)Math.Ceiling(niveau * 10 * multiplicateur_rarete);
-            this._protectionMin = Math.Max(this._protectionMax - 10, 0); // Pour l'instant
+            this._protectionMin = Math.Max(this.ProtectionMax - 10, 0); // Pour l'instant
 
             this._poids = poids;
         }

@@ -13,6 +13,8 @@ namespace P_Heroes
     {
         private List<Arme> _armes;
         private List<Tenue> _tenues;
+        private int _argent;
+        public int Argent { get => _argent; }
         public List<Arme> Armes { get => _armes; set => _armes = value; }
         public List<Tenue> Tenues { get => _tenues; set => _tenues = value; }
 
@@ -20,6 +22,8 @@ namespace P_Heroes
         {
             Armes = new List<Arme>();
             Tenues = new List<Tenue>();
+
+            _argent = 0;
         }
         /// <summary>
         /// Ajoute l'arme à l'inventaire
@@ -36,6 +40,16 @@ namespace P_Heroes
         public void AjoutTenue(Tenue tenue)
         {
             this.Tenues.Add(tenue);
+        }
+
+        public void AjoutArgent(int montant)
+        {
+            _argent += montant;
+        }
+
+        public void RetraitArgent(int montant)
+        {
+            _argent = Math.Max(_argent - montant, 0);
         }
     }
 }

@@ -13,19 +13,29 @@ namespace P_Heroes.Model
         // Propriétés
         private int _degatsMin;
         private int _degatsMax;
+        private int _nbMains;
 
         public int Degats { get => this.DegatsAleatoire(); }
+        public int NbMains { get => _nbMains; }
+        public int DegatsMin { get => _degatsMin; set => _degatsMin = value; }
+        public int DegatsMax { get => _degatsMax; set => _degatsMax = value; }
 
         // Redéfinition du texte de stats
         public override string StatistiquesEnTexte()
         {
             string stats_str = base.StatistiquesEnTexte();
-            return stats_str + "\nDégâts : " + _degatsMin + " - " + _degatsMax;
+            stats_str = stats_str + "\nDégâts : " + _degatsMin + " - " + _degatsMax;
+            return stats_str + "\nMains prises : " + NbMains;
         }
 
-        public ArmeBoutique(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite)
+        public ArmeBoutique(string nom, int prix, Image miniature, string description, int niveau, RareteObjet rarete, int durabilite, int nbMains)
             : base(nom, prix, miniature, description, niveau, rarete, durabilite)
         {
+            if (nbMains > 2 || nbMains < 1)
+                throw new Exception("Nombre de mains pour arme non valide !");
+
+            this._nbMains = nbMains;
+
             double multiplicateur_rarete = 0;
             switch (rarete)
             {

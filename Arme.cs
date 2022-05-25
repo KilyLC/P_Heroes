@@ -24,6 +24,9 @@ namespace P_Heroes
         public int Durabilite { get; set; }
         public int NbMains { get; set; }
         public Image Image { get; set; }
+        public string Description { get; set; }
+        public int Niveau { get; set; }
+        public Model.RareteObjet Rarete { get; set; }
         public int Prix { get; set; }
 
         Random rnd = new Random();
@@ -51,5 +54,9 @@ namespace P_Heroes
             return rnd.Next(this.NvAttaqueMin, this.NvAttaqueMax + 1);
         }
 
+        public Model.ArmeBoutique ConvertirEnArmeBoutique()
+        {
+            return new Model.ArmeBoutique(NomArme, Prix, Image, Description, 1, Rarete, 100, NbMains);
+        }
     }
 }
