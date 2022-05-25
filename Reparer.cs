@@ -43,6 +43,9 @@ namespace P_Heroes
             ArmeSelect.Add(a);
             CalculPrix();
         }
+        /// <summary>
+        /// Rénitialise les armes et le prix
+        /// </summary>
         public void Reset()
         {
             PrixTotal = 0;
