@@ -162,6 +162,7 @@ namespace P_Heroes
             compagnie.majNom(tbxNomCampagnie.Text);
             CompagnieStocker.compagnieActuelle = this.compagnie;
             CompagnieStocker.compagniesJoueur.Add(this.compagnie);
+
             SelectionArmes selectionArmes = new SelectionArmes(_form);
             selectionArmes.Show();
             this.Close();

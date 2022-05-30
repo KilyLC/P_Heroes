@@ -118,6 +118,7 @@ namespace P_Heroes
                 btnReparation.Enabled = true;
                 btnInventaire.Enabled = true;
                 btnCampagne.Enabled = true;
+                btnBoutique.Enabled = true;
                 //Xp, vie et argent
                 lblXpCompagnie.Text = CompagnieStocker.compagnieActuelle.Xp.ToString();
                 lblPoCompagnie.Text = CompagnieStocker.compagnieActuelle.Po.ToString();

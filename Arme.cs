@@ -12,9 +12,6 @@ using System.Drawing;
 
 namespace P_Heroes
 {
-    /// <summary>
-    /// Une ar
-    /// </summary>
     public class Arme
     {
         public string NomArme { get; set; }
@@ -51,9 +48,9 @@ namespace P_Heroes
         /// <returns>Le nombre de dégats</returns>
         public int Degats()
         {
-            return rnd.Next(this.NvAttaqueMin, this.NvAttaqueMax + 1);
+            return rnd.Next(this.NvAttaqueMin, this.NvAttaqueMax + 1);  
         }
-
+         
         public Model.ArmeBoutique ConvertirEnArmeBoutique()
         {
             return new Model.ArmeBoutique(NomArme, Prix, Image, Description, 1, Rarete, 100, NbMains);
