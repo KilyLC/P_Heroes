@@ -51,14 +51,14 @@
             this.btnChangement = new System.Windows.Forms.Button();
             this.btnDefense = new System.Windows.Forms.Button();
             this.btnAttaque = new System.Windows.Forms.Button();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.lblNiveauCampagne = new System.Windows.Forms.Label();
             this.pbxEnnemi2 = new System.Windows.Forms.PictureBox();
             this.pbxEnnemi3 = new System.Windows.Forms.PictureBox();
             this.pbxEnnemi1 = new System.Windows.Forms.PictureBox();
             this.pbxPerso3 = new System.Windows.Forms.PictureBox();
             this.pbxPerso2 = new System.Windows.Forms.PictureBox();
             this.pbxPerso1 = new System.Windows.Forms.PictureBox();
-            this.lbl6 = new System.Windows.Forms.Label();
-            this.lblNiveauCampagne = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEnnemi1)).BeginInit();
@@ -314,6 +314,26 @@
             this.btnAttaque.Visible = false;
             this.btnAttaque.Click += new System.EventHandler(this.btnAttaque_Click);
             // 
+            // lbl6
+            // 
+            this.lbl6.AutoSize = true;
+            this.lbl6.Location = new System.Drawing.Point(430, 13);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(100, 13);
+            this.lbl6.TabIndex = 61;
+            this.lbl6.Text = "Niveau campagne :";
+            this.lbl6.Visible = false;
+            // 
+            // lblNiveauCampagne
+            // 
+            this.lblNiveauCampagne.AutoSize = true;
+            this.lblNiveauCampagne.Location = new System.Drawing.Point(536, 13);
+            this.lblNiveauCampagne.Name = "lblNiveauCampagne";
+            this.lblNiveauCampagne.Size = new System.Drawing.Size(13, 13);
+            this.lblNiveauCampagne.TabIndex = 62;
+            this.lblNiveauCampagne.Text = "1";
+            this.lblNiveauCampagne.Visible = false;
+            // 
             // pbxEnnemi2
             // 
             this.pbxEnnemi2.Image = global::P_Heroes.Properties.Resources.OrcArcherCuir;
@@ -327,7 +347,7 @@
             // 
             // pbxEnnemi3
             // 
-            this.pbxEnnemi3.Image = global::P_Heroes.Properties.Resources.OrcArcherCuir;
+            this.pbxEnnemi3.Image = global::P_Heroes.Properties.Resources.OrcTissuDagues1;
             this.pbxEnnemi3.Location = new System.Drawing.Point(795, 486);
             this.pbxEnnemi3.Name = "pbxEnnemi3";
             this.pbxEnnemi3.Size = new System.Drawing.Size(179, 156);
@@ -382,26 +402,6 @@
             this.pbxPerso1.TabStop = false;
             this.pbxPerso1.Tag = "hero1";
             this.pbxPerso1.Visible = false;
-            // 
-            // lbl6
-            // 
-            this.lbl6.AutoSize = true;
-            this.lbl6.Location = new System.Drawing.Point(430, 13);
-            this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(100, 13);
-            this.lbl6.TabIndex = 61;
-            this.lbl6.Text = "Niveau campagne :";
-            this.lbl6.Visible = false;
-            // 
-            // lblNiveauCampagne
-            // 
-            this.lblNiveauCampagne.AutoSize = true;
-            this.lblNiveauCampagne.Location = new System.Drawing.Point(536, 13);
-            this.lblNiveauCampagne.Name = "lblNiveauCampagne";
-            this.lblNiveauCampagne.Size = new System.Drawing.Size(13, 13);
-            this.lblNiveauCampagne.TabIndex = 62;
-            this.lblNiveauCampagne.Text = "1";
-            this.lblNiveauCampagne.Visible = false;
             // 
             // FrmCombat
             // 

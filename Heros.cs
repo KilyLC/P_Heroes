@@ -96,12 +96,12 @@ namespace P_Heroes
             int attaqueHero = 0;
             if (Arme1 != Arme2)
             {
-                attaqueHero += Attaque + Arme1.Degats();
-                attaqueHero += Attaque + Arme2.Degats();
+                attaqueHero += Attaque + Arme1.NvAttaque;
+                attaqueHero += Attaque + Arme2.NvAttaque;
             }
             else
             {
-                attaqueHero += Attaque + Arme1.Degats();
+                attaqueHero += Attaque + Arme1.NvAttaque;
             }
             return attaqueHero;
         }

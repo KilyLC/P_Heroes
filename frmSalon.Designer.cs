@@ -33,7 +33,6 @@
             this.btnInventaire = new System.Windows.Forms.Button();
             this.btnReparation = new System.Windows.Forms.Button();
             this.btnBoutique = new System.Windows.Forms.Button();
-            this.btnOptions = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnCampagne = new System.Windows.Forms.Button();
             this.btnMultiJoueur = new System.Windows.Forms.Button();
@@ -90,6 +89,7 @@
             // 
             // btnInventaire
             // 
+            this.btnInventaire.Enabled = false;
             this.btnInventaire.Location = new System.Drawing.Point(49, 199);
             this.btnInventaire.Name = "btnInventaire";
             this.btnInventaire.Size = new System.Drawing.Size(159, 32);
@@ -111,6 +111,7 @@
             // 
             // btnBoutique
             // 
+            this.btnBoutique.Enabled = false;
             this.btnBoutique.Location = new System.Drawing.Point(49, 275);
             this.btnBoutique.Name = "btnBoutique";
             this.btnBoutique.Size = new System.Drawing.Size(159, 32);
@@ -118,16 +119,6 @@
             this.btnBoutique.Text = "Boutique";
             this.btnBoutique.UseVisualStyleBackColor = true;
             this.btnBoutique.Click += new System.EventHandler(this.btnBoutique_Click);
-            // 
-            // btnOptions
-            // 
-            this.btnOptions.Enabled = false;
-            this.btnOptions.Location = new System.Drawing.Point(49, 391);
-            this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(159, 32);
-            this.btnOptions.TabIndex = 5;
-            this.btnOptions.Text = "Options";
-            this.btnOptions.UseVisualStyleBackColor = true;
             // 
             // btnQuitter
             // 
@@ -361,7 +352,6 @@
             this.Controls.Add(this.btnMultiJoueur);
             this.Controls.Add(this.btnCampagne);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnBoutique);
             this.Controls.Add(this.btnReparation);
             this.Controls.Add(this.btnInventaire);
@@ -392,7 +382,6 @@
         private System.Windows.Forms.Button btnInventaire;
         private System.Windows.Forms.Button btnReparation;
         private System.Windows.Forms.Button btnBoutique;
-        private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnCampagne;
         private System.Windows.Forms.Button btnMultiJoueur;

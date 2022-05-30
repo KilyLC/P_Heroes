@@ -388,8 +388,8 @@ namespace P_Heroes
             Tenue tenue3 = new Tenue();
 
             tenue1.CreeTenue("lourde", 30, 35, null);
-            tenue1.CreeTenue("moyenne", 20, 30, null);
-            tenue1.CreeTenue("legere", 10, 15, null);
+            tenue2.CreeTenue("moyenne", 20, 30, null);
+            tenue3.CreeTenue("legere", 10, 15, null);
             //heros
             Heros ennemi1 = new Heros();
             Heros ennemi2 = new Heros();
@@ -552,7 +552,7 @@ namespace P_Heroes
             //Image ennemi
             ennemi1.ImageHero = Properties.Resources.Orc_Warriors_Armor_Shield;
             ennemi2.ImageHero = Properties.Resources.OrcArcherCuir;
-            ennemi3.ImageHero = Properties.Resources.OrcArcherCuir;
+            ennemi3.ImageHero = Properties.Resources.OrcTissuDagues;
 
             //Traitement des stats
             ennemi1.TraitementStats(ennemi1.Arme1, ennemi1.Arme2, ennemi1.Tenue, ennemi1);
