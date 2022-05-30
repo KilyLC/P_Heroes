@@ -75,7 +75,7 @@ namespace P_Heroes
          
         public Model.ArmeBoutique ConvertirEnArmeBoutique()
         {
-            return new Model.ArmeBoutique(NomArme, Prix, Image, Description, 1, Rarete, 100, NbMains);
+            return new Model.ArmeBoutique(NomArme, Prix, Image, Description, Niveau, Rarete, Durabilite, NbMains);
         }
     }
 }
