@@ -216,7 +216,7 @@ namespace P_Heroes
                 if (item is ArmeBoutique)
                 {
                     Arme a = new Arme();
-                    a.CreeArme(item.Durabilite, ((ArmeBoutique)item).DegatsMin, ((ArmeBoutique)item).DegatsMax, item.Nom, item.Miniature, ((ArmeBoutique)item).NbMains, item.Prix);
+                    a.CreeArme(item.Durabilite, ((ArmeBoutique)item).DegatsMin, ((ArmeBoutique)item).DegatsMax, item.Nom, item.Miniature, ((ArmeBoutique)item).NbMains, item.Prix, item.Niveau, item.Rarete);
                     CompagnieCourante.Inventaire.Armes.Add(a);
                 }
                 else if (item is TenueBoutique)

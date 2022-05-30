@@ -111,6 +111,11 @@ namespace P_Heroes.Model
             int counter = 0;
             foreach (ObjetBoutique o in objets)
             {
+                if (o.Nom == "Arbalète")
+                {
+                    int a = 1;
+                }
+
                 ObjetInventaire minia = new ObjetInventaire(o); // Créer une nouvelle miniature d'objet
                 minia.DefinirEventHandler(OnItemClick); // Fonction callback
                 minia.Idx = counter;

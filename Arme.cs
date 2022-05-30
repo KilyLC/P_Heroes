@@ -17,6 +17,9 @@ namespace P_Heroes
     /// </summary>
     public class Arme
     {
+        private int _niveau = 1;
+        private Model.RareteObjet _rarete = Model.RareteObjet.Commun;
+
         public string NomArme { get; set; }
         public int NvAttaque { get; set; }
         public int NvAttaqueMax { get; set; }
@@ -25,8 +28,8 @@ namespace P_Heroes
         public int NbMains { get; set; }
         public Image Image { get; set; }
         public string Description { get; set; }
-        public int Niveau { get; set; }
-        public Model.RareteObjet Rarete { get; set; }
+        public int Niveau { get => _niveau; set => _niveau = value; }
+        public Model.RareteObjet Rarete { get => _rarete; set => _rarete = value; }
         public int Prix { get; set; }
 
         Random rnd = new Random();
@@ -45,6 +48,25 @@ namespace P_Heroes
             Image = image;
             Prix = prix;
         }
+
+        /// <summary>
+        /// Créer les armes
+        /// </summary>
+        public void CreeArme(int durabilite, int attaqueMin, int attaqueMax, string nomArme, Image image, int nbMains, int prix, int niveau, Model.RareteObjet rarete)
+        {
+            Durabilite = durabilite;
+            NvAttaqueMin = attaqueMin;
+            NvAttaqueMax = attaqueMax;
+            NvAttaque = Degats();
+            NbMains = nbMains;
+            NomArme = nomArme;
+            Image = image;
+            Prix = prix;
+
+            _niveau = niveau;
+            _rarete = rarete;
+        }
+
         /// <summary>
         /// Calcul du nombre de dégat de l'arme de manière aléatoire
         /// </summary>
