@@ -118,100 +118,106 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="epee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\epee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OrcArcherCuir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\OrcArcherCuir.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tissu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\tissu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cuir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\cuir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hache" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\hache.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Legolas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\Hero1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fleau_darme" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fleau_darme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aragorn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\Hero2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\arc.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="elrond" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elrond.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MusicSeigneurAnneaux" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\MusicSeigneurAnneaux.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="sabre_laser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sabre_laser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\arc.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="metal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\metal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gimli" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\Hero3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\lance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arbalete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\arbalete.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dague" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\dague.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bouclier" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\bouclier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EcranChargement" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\EcranChargement.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Orc_Warriors_Armor_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Ressources\Orc_Warriors_Armor_Shield.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frodon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frodon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lance_pierres" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lance_pierres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="flechettes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flechettes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fouet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fouet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ceinture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ceinture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="couteau" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\couteau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trident" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trident.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="coussin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coussin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bouteille_cassee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bouteille_cassee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="batte_cloutee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\batte_cloutee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fleau_darme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fleau_darme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="faux" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\faux.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Orc_Warriors_Armor_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\Orc_Warriors_Armor_Shield.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tissu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\tissu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MusicSeigneurAnneaux" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\MusicSeigneurAnneaux.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Frodon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frodon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Legolas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\Hero1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bouteille_cassee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bouteille_cassee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EcranChargement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\EcranChargement.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aragorn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\Hero2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrcArcherCuir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\OrcArcherCuir.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arbalete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\arbalete.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="metal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\metal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="batte_cloutee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\batte_cloutee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cuir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\cuir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrcTissuDagues" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrcTissuDagues.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\lance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ceinture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ceinture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gimli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\Hero3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lance_pierres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lance_pierres.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sabre_laser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sabre_laser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fouet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fouet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bouclier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\bouclier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="couteau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\couteau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nunchaku" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nunchaku.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="epee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\epee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trident" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trident.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dague" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\dague.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hache" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\hache.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coussin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coussin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OrcTissuDagues1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrcTissuDagues.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

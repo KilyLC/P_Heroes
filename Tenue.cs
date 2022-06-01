@@ -22,7 +22,13 @@ namespace P_Heroes
         public int NvDefense { get => _nvDefense; set => _nvDefense = value; }
         public int Poids { get => _poids; set => _poids = value; }
         public Image ImageTenue { get; set; }
-        
+
+        public int Prix { get; set; }
+        public int Niveau { get; set; }
+        public string Description { get; set; }
+        public Model.RareteObjet Rarete { get; set; }
+        public int Durabilite { get; set; }
+
         /// <summary>
         /// Créer la tenue
         /// </summary>
@@ -32,6 +38,11 @@ namespace P_Heroes
             this.NvDefense = nvDef;
             this.Poids = poids;
             this.ImageTenue = imageTenue;
+        }
+
+        public Model.TenueBoutique ConvertirEnTenueBoutique()
+        {
+            return new Model.TenueBoutique(NomTenue, Prix, ImageTenue, Description, 1, Rarete, 100, Poids);
         }
     }
 }

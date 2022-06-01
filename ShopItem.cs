@@ -13,8 +13,8 @@ namespace P_Heroes
 {
     public partial class ShopItem : UserControl
     {
-        private Objet _objet;
-        public Objet Objet { get => _objet; set { _objet = value; MiseAJour(); } }
+        private ObjetBoutique _objet;
+        public ObjetBoutique Objet { get => _objet; set { _objet = value; MiseAJour(); } }
         private EventHandler _callback = null; // Fonction de callback lors d'un clic sur l'action
         private FrmPlus _formPlus;
 
@@ -26,12 +26,12 @@ namespace P_Heroes
             Idx = idx;
         }
 
-        public ShopItem(int idx, Objet o) : this(idx)
+        public ShopItem(int idx, ObjetBoutique o) : this(idx)
         {
             this.Objet = o;
         }
 
-        public ShopItem(int idx, Objet o, EventHandler callback) : this(idx, o)
+        public ShopItem(int idx, ObjetBoutique o, EventHandler callback) : this(idx, o)
         {
             this._callback = callback;
         }

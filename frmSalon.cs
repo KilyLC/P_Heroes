@@ -32,8 +32,11 @@ namespace P_Heroes
 
         private void btnBoutique_Click(object sender, EventArgs e)
         {
+            if (CompagnieStocker.compagnieActuelle == null)
+                return;
+
             //boutique
-            FrmBoutique formBoutique = new FrmBoutique();
+            FrmBoutique formBoutique = new FrmBoutique(CompagnieStocker.compagnieActuelle);
             formBoutique.Show();
         }
 
@@ -116,6 +119,7 @@ namespace P_Heroes
                 btnInventaire.Enabled = true;
                 btnBoutique.Enabled = true;
                 btnCampagne.Enabled = true;
+                btnBoutique.Enabled = true;
 
                 //Xp, vie et argent
                 lblXpCompagnie.Text = CompagnieStocker.compagnieActuelle.Xp.ToString();
@@ -189,7 +193,10 @@ namespace P_Heroes
 
         private void btnInventaire_Click(object sender, EventArgs e)
         {
-            Model.FrmInventaire inventaire = new Model.FrmInventaire();
+            if (CompagnieStocker.compagnieActuelle == null)
+                return;
+
+            Model.FrmInventaire inventaire = new Model.FrmInventaire(CompagnieStocker.compagnieActuelle.Inventaire);
             inventaire.Show();
         }
     }

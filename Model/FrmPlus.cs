@@ -17,12 +17,12 @@ namespace P_Heroes.Model
             InitializeComponent();
         }
          
-        public FrmPlus(Objet o) : this()
+        public FrmPlus(ObjetBoutique o) : this()
         {
             MiseAJour(o);
         }
 
-        public void MiseAJour(Objet o)
+        public void MiseAJour(ObjetBoutique o)
         {
             this.pbxMiniature.Image = o.Miniature;
             this.Text = o.Nom;

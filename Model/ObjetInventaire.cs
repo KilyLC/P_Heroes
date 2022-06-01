@@ -20,7 +20,7 @@ namespace P_Heroes.Model
             InitializeComponent();
         }
 
-        public ObjetInventaire(Objet o) : this()
+        public ObjetInventaire(ObjetBoutique o) : this()
         {
             AfficherMiniature(o.Miniature);
             AfficherRarete(o.Rarete);
