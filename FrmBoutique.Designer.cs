@@ -101,6 +101,7 @@
             this.Controls.Add(this.lblArgent);
             this.Controls.Add(this.tctrlBoutique);
             this.Name = "FrmBoutique";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Boutique";
             this.tctrlBoutique.ResumeLayout(false);
             this.tpgVendre.ResumeLayout(false);

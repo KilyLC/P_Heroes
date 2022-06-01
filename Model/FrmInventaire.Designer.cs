@@ -30,18 +30,18 @@
         {
             this.pnlItems = new System.Windows.Forms.Panel();
             this.pnlSelec = new System.Windows.Forms.Panel();
-            this.pnlRarete = new System.Windows.Forms.Panel();
-            this.lblNomSelec = new System.Windows.Forms.Label();
-            this.lblDescriptionSelec = new System.Windows.Forms.Label();
-            this.lblStatsSelec = new System.Windows.Forms.Label();
-            this.btnEquiper1 = new System.Windows.Forms.Button();
-            this.btnEquiper2 = new System.Windows.Forms.Button();
-            this.btnEquiper3 = new System.Windows.Forms.Button();
-            this.btnDesequiper = new System.Windows.Forms.Button();
-            this.btnVendre = new System.Windows.Forms.Button();
-            this.lblItems = new System.Windows.Forms.Label();
             this.lblNiveauSelec = new System.Windows.Forms.Label();
             this.pbxObjetSelec = new System.Windows.Forms.PictureBox();
+            this.pnlRarete = new System.Windows.Forms.Panel();
+            this.btnVendre = new System.Windows.Forms.Button();
+            this.btnDesequiper = new System.Windows.Forms.Button();
+            this.btnEquiper3 = new System.Windows.Forms.Button();
+            this.btnEquiper2 = new System.Windows.Forms.Button();
+            this.btnEquiper1 = new System.Windows.Forms.Button();
+            this.lblStatsSelec = new System.Windows.Forms.Label();
+            this.lblDescriptionSelec = new System.Windows.Forms.Label();
+            this.lblNomSelec = new System.Windows.Forms.Label();
+            this.lblItems = new System.Windows.Forms.Label();
             this.pbxHeros3Tenue = new System.Windows.Forms.PictureBox();
             this.pbxHeros3Arme2 = new System.Windows.Forms.PictureBox();
             this.pbxHeros3Arme1 = new System.Windows.Forms.PictureBox();
@@ -98,97 +98,6 @@
             this.pnlSelec.Size = new System.Drawing.Size(384, 544);
             this.pnlSelec.TabIndex = 13;
             // 
-            // pnlRarete
-            // 
-            this.pnlRarete.BackColor = System.Drawing.Color.Gold;
-            this.pnlRarete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlRarete.Location = new System.Drawing.Point(15, 103);
-            this.pnlRarete.Name = "pnlRarete";
-            this.pnlRarete.Size = new System.Drawing.Size(100, 10);
-            this.pnlRarete.TabIndex = 1;
-            // 
-            // lblNomSelec
-            // 
-            this.lblNomSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomSelec.Location = new System.Drawing.Point(121, 13);
-            this.lblNomSelec.Name = "lblNomSelec";
-            this.lblNomSelec.Size = new System.Drawing.Size(248, 110);
-            this.lblNomSelec.TabIndex = 2;
-            this.lblNomSelec.Text = "label1";
-            // 
-            // lblDescriptionSelec
-            // 
-            this.lblDescriptionSelec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDescriptionSelec.Location = new System.Drawing.Point(12, 126);
-            this.lblDescriptionSelec.Name = "lblDescriptionSelec";
-            this.lblDescriptionSelec.Size = new System.Drawing.Size(357, 102);
-            this.lblDescriptionSelec.TabIndex = 3;
-            this.lblDescriptionSelec.Text = "label1";
-            // 
-            // lblStatsSelec
-            // 
-            this.lblStatsSelec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStatsSelec.Location = new System.Drawing.Point(12, 262);
-            this.lblStatsSelec.Name = "lblStatsSelec";
-            this.lblStatsSelec.Size = new System.Drawing.Size(357, 102);
-            this.lblStatsSelec.TabIndex = 4;
-            this.lblStatsSelec.Text = "label1";
-            // 
-            // btnEquiper1
-            // 
-            this.btnEquiper1.Location = new System.Drawing.Point(38, 501);
-            this.btnEquiper1.Name = "btnEquiper1";
-            this.btnEquiper1.Size = new System.Drawing.Size(88, 23);
-            this.btnEquiper1.TabIndex = 5;
-            this.btnEquiper1.Text = "Equiper pour 1";
-            this.btnEquiper1.UseVisualStyleBackColor = true;
-            // 
-            // btnEquiper2
-            // 
-            this.btnEquiper2.Location = new System.Drawing.Point(149, 501);
-            this.btnEquiper2.Name = "btnEquiper2";
-            this.btnEquiper2.Size = new System.Drawing.Size(88, 23);
-            this.btnEquiper2.TabIndex = 6;
-            this.btnEquiper2.Text = "Equiper pour 2";
-            this.btnEquiper2.UseVisualStyleBackColor = true;
-            // 
-            // btnEquiper3
-            // 
-            this.btnEquiper3.Location = new System.Drawing.Point(258, 501);
-            this.btnEquiper3.Name = "btnEquiper3";
-            this.btnEquiper3.Size = new System.Drawing.Size(88, 23);
-            this.btnEquiper3.TabIndex = 7;
-            this.btnEquiper3.Text = "Equiper pour 3";
-            this.btnEquiper3.UseVisualStyleBackColor = true;
-            // 
-            // btnDesequiper
-            // 
-            this.btnDesequiper.Location = new System.Drawing.Point(38, 472);
-            this.btnDesequiper.Name = "btnDesequiper";
-            this.btnDesequiper.Size = new System.Drawing.Size(308, 23);
-            this.btnDesequiper.TabIndex = 8;
-            this.btnDesequiper.Text = "Déséquiper";
-            this.btnDesequiper.UseVisualStyleBackColor = true;
-            // 
-            // btnVendre
-            // 
-            this.btnVendre.Location = new System.Drawing.Point(38, 443);
-            this.btnVendre.Name = "btnVendre";
-            this.btnVendre.Size = new System.Drawing.Size(308, 23);
-            this.btnVendre.TabIndex = 9;
-            this.btnVendre.Text = "Vendre objet (prix)";
-            this.btnVendre.UseVisualStyleBackColor = true;
-            // 
-            // lblItems
-            // 
-            this.lblItems.AutoSize = true;
-            this.lblItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItems.Location = new System.Drawing.Point(12, 240);
-            this.lblItems.Name = "lblItems";
-            this.lblItems.Size = new System.Drawing.Size(45, 13);
-            this.lblItems.TabIndex = 14;
-            this.lblItems.Text = "Items :";
-            // 
             // lblNiveauSelec
             // 
             this.lblNiveauSelec.BackColor = System.Drawing.Color.MistyRose;
@@ -211,6 +120,97 @@
             this.pbxObjetSelec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxObjetSelec.TabIndex = 10;
             this.pbxObjetSelec.TabStop = false;
+            // 
+            // pnlRarete
+            // 
+            this.pnlRarete.BackColor = System.Drawing.Color.Gold;
+            this.pnlRarete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlRarete.Location = new System.Drawing.Point(15, 103);
+            this.pnlRarete.Name = "pnlRarete";
+            this.pnlRarete.Size = new System.Drawing.Size(100, 10);
+            this.pnlRarete.TabIndex = 1;
+            // 
+            // btnVendre
+            // 
+            this.btnVendre.Location = new System.Drawing.Point(38, 443);
+            this.btnVendre.Name = "btnVendre";
+            this.btnVendre.Size = new System.Drawing.Size(308, 23);
+            this.btnVendre.TabIndex = 9;
+            this.btnVendre.Text = "Vendre objet (prix)";
+            this.btnVendre.UseVisualStyleBackColor = true;
+            // 
+            // btnDesequiper
+            // 
+            this.btnDesequiper.Location = new System.Drawing.Point(38, 472);
+            this.btnDesequiper.Name = "btnDesequiper";
+            this.btnDesequiper.Size = new System.Drawing.Size(308, 23);
+            this.btnDesequiper.TabIndex = 8;
+            this.btnDesequiper.Text = "Déséquiper";
+            this.btnDesequiper.UseVisualStyleBackColor = true;
+            // 
+            // btnEquiper3
+            // 
+            this.btnEquiper3.Location = new System.Drawing.Point(258, 501);
+            this.btnEquiper3.Name = "btnEquiper3";
+            this.btnEquiper3.Size = new System.Drawing.Size(88, 23);
+            this.btnEquiper3.TabIndex = 7;
+            this.btnEquiper3.Text = "Equiper pour 3";
+            this.btnEquiper3.UseVisualStyleBackColor = true;
+            // 
+            // btnEquiper2
+            // 
+            this.btnEquiper2.Location = new System.Drawing.Point(149, 501);
+            this.btnEquiper2.Name = "btnEquiper2";
+            this.btnEquiper2.Size = new System.Drawing.Size(88, 23);
+            this.btnEquiper2.TabIndex = 6;
+            this.btnEquiper2.Text = "Equiper pour 2";
+            this.btnEquiper2.UseVisualStyleBackColor = true;
+            // 
+            // btnEquiper1
+            // 
+            this.btnEquiper1.Location = new System.Drawing.Point(38, 501);
+            this.btnEquiper1.Name = "btnEquiper1";
+            this.btnEquiper1.Size = new System.Drawing.Size(88, 23);
+            this.btnEquiper1.TabIndex = 5;
+            this.btnEquiper1.Text = "Equiper pour 1";
+            this.btnEquiper1.UseVisualStyleBackColor = true;
+            // 
+            // lblStatsSelec
+            // 
+            this.lblStatsSelec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStatsSelec.Location = new System.Drawing.Point(12, 262);
+            this.lblStatsSelec.Name = "lblStatsSelec";
+            this.lblStatsSelec.Size = new System.Drawing.Size(357, 102);
+            this.lblStatsSelec.TabIndex = 4;
+            this.lblStatsSelec.Text = "label1";
+            // 
+            // lblDescriptionSelec
+            // 
+            this.lblDescriptionSelec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDescriptionSelec.Location = new System.Drawing.Point(12, 126);
+            this.lblDescriptionSelec.Name = "lblDescriptionSelec";
+            this.lblDescriptionSelec.Size = new System.Drawing.Size(357, 102);
+            this.lblDescriptionSelec.TabIndex = 3;
+            this.lblDescriptionSelec.Text = "label1";
+            // 
+            // lblNomSelec
+            // 
+            this.lblNomSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomSelec.Location = new System.Drawing.Point(121, 13);
+            this.lblNomSelec.Name = "lblNomSelec";
+            this.lblNomSelec.Size = new System.Drawing.Size(248, 110);
+            this.lblNomSelec.TabIndex = 2;
+            this.lblNomSelec.Text = "label1";
+            // 
+            // lblItems
+            // 
+            this.lblItems.AutoSize = true;
+            this.lblItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItems.Location = new System.Drawing.Point(12, 240);
+            this.lblItems.Name = "lblItems";
+            this.lblItems.Size = new System.Drawing.Size(45, 13);
+            this.lblItems.TabIndex = 14;
+            this.lblItems.Text = "Items :";
             // 
             // pbxHeros3Tenue
             // 
@@ -341,6 +341,7 @@
             this.Controls.Add(this.pbxHeros2);
             this.Controls.Add(this.pbxHeros1);
             this.Name = "FrmInventaire";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInventaire";
             this.pnlSelec.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxObjetSelec)).EndInit();

@@ -105,6 +105,7 @@
             this.Controls.Add(this.btnReparer);
             this.Controls.Add(this.pnlAffichageArmes);
             this.Name = "ReparationArmes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReparationArmes";
             this.Load += new System.EventHandler(this.ReparationArmes_Load);
             this.ResumeLayout(false);

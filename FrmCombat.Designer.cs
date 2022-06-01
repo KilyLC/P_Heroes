@@ -270,11 +270,11 @@
             // pbrVieEnnemi
             // 
             this.pbrVieEnnemi.Location = new System.Drawing.Point(580, 223);
-            this.pbrVieEnnemi.Maximum = 1000;
+            this.pbrVieEnnemi.Maximum = 500;
             this.pbrVieEnnemi.Name = "pbrVieEnnemi";
             this.pbrVieEnnemi.Size = new System.Drawing.Size(272, 39);
             this.pbrVieEnnemi.TabIndex = 39;
-            this.pbrVieEnnemi.Value = 1000;
+            this.pbrVieEnnemi.Value = 500;
             this.pbrVieEnnemi.Visible = false;
             // 
             // btnChangement
