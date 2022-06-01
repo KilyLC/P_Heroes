@@ -38,6 +38,7 @@ namespace P_Heroes
         public void DefinirCompagnie()
         {
             combat.CompagnieJoueurInit(CompagnieStocker.compagnieActuelle);
+            nomCompagnieJoueur = CompagnieStocker.compagnieActuelle.NomCompagnie;
         }
         /// <summary>
         /// Change la vie et le nom selon l'héro
@@ -424,6 +425,8 @@ namespace P_Heroes
         {
             DefinirCompagnie();
             combat.Commencer();
+
+            nomCompagnieEnnemi = combat.CompagnieEnnemi.NomCompagnie;
             CommencerAffichage();
 
             nomCompagnieEnnemi = combat.CompagnieEnnemi.NomCompagnie;

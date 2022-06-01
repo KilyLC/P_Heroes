@@ -33,10 +33,8 @@
             this.btnInventaire = new System.Windows.Forms.Button();
             this.btnReparation = new System.Windows.Forms.Button();
             this.btnBoutique = new System.Windows.Forms.Button();
-            this.btnOptions = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnCampagne = new System.Windows.Forms.Button();
-            this.btnMultiJoueur = new System.Windows.Forms.Button();
             this.lblNomCompagnie = new System.Windows.Forms.Label();
             this.lblNumCompagnie = new System.Windows.Forms.Label();
             this.pnlAffichageHeros = new System.Windows.Forms.Panel();
@@ -90,6 +88,7 @@
             // 
             // btnInventaire
             // 
+            this.btnInventaire.Enabled = false;
             this.btnInventaire.Location = new System.Drawing.Point(49, 199);
             this.btnInventaire.Name = "btnInventaire";
             this.btnInventaire.Size = new System.Drawing.Size(159, 32);
@@ -111,6 +110,7 @@
             // 
             // btnBoutique
             // 
+            this.btnBoutique.Enabled = false;
             this.btnBoutique.Location = new System.Drawing.Point(49, 275);
             this.btnBoutique.Name = "btnBoutique";
             this.btnBoutique.Size = new System.Drawing.Size(159, 32);
@@ -119,19 +119,9 @@
             this.btnBoutique.UseVisualStyleBackColor = true;
             this.btnBoutique.Click += new System.EventHandler(this.btnBoutique_Click);
             // 
-            // btnOptions
-            // 
-            this.btnOptions.Enabled = false;
-            this.btnOptions.Location = new System.Drawing.Point(49, 391);
-            this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(159, 32);
-            this.btnOptions.TabIndex = 5;
-            this.btnOptions.Text = "Options";
-            this.btnOptions.UseVisualStyleBackColor = true;
-            // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(49, 440);
+            this.btnQuitter.Location = new System.Drawing.Point(49, 622);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(159, 32);
             this.btnQuitter.TabIndex = 6;
@@ -142,23 +132,13 @@
             // btnCampagne
             // 
             this.btnCampagne.Enabled = false;
-            this.btnCampagne.Location = new System.Drawing.Point(49, 532);
+            this.btnCampagne.Location = new System.Drawing.Point(49, 443);
             this.btnCampagne.Name = "btnCampagne";
-            this.btnCampagne.Size = new System.Drawing.Size(157, 58);
+            this.btnCampagne.Size = new System.Drawing.Size(159, 58);
             this.btnCampagne.TabIndex = 7;
             this.btnCampagne.Text = "Campagne";
             this.btnCampagne.UseVisualStyleBackColor = true;
             this.btnCampagne.Click += new System.EventHandler(this.btnCampagne_Click);
-            // 
-            // btnMultiJoueur
-            // 
-            this.btnMultiJoueur.Enabled = false;
-            this.btnMultiJoueur.Location = new System.Drawing.Point(49, 596);
-            this.btnMultiJoueur.Name = "btnMultiJoueur";
-            this.btnMultiJoueur.Size = new System.Drawing.Size(157, 58);
-            this.btnMultiJoueur.TabIndex = 8;
-            this.btnMultiJoueur.Text = "Multijoueur";
-            this.btnMultiJoueur.UseVisualStyleBackColor = true;
             // 
             // lblNomCompagnie
             // 
@@ -272,7 +252,7 @@
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(886, 72);
+            this.lbl3.Location = new System.Drawing.Point(889, 77);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(31, 16);
             this.lbl3.TabIndex = 0;
@@ -282,7 +262,7 @@
             // 
             this.lblPoCompagnie.AutoSize = true;
             this.lblPoCompagnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoCompagnie.Location = new System.Drawing.Point(923, 72);
+            this.lblPoCompagnie.Location = new System.Drawing.Point(926, 77);
             this.lblPoCompagnie.Name = "lblPoCompagnie";
             this.lblPoCompagnie.Size = new System.Drawing.Size(0, 16);
             this.lblPoCompagnie.TabIndex = 24;
@@ -301,9 +281,9 @@
             this.lblXpMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXpMax.Location = new System.Drawing.Point(542, 78);
             this.lblXpMax.Name = "lblXpMax";
-            this.lblXpMax.Size = new System.Drawing.Size(40, 17);
+            this.lblXpMax.Size = new System.Drawing.Size(32, 17);
             this.lblXpMax.TabIndex = 26;
-            this.lblXpMax.Text = "1000";
+            this.lblXpMax.Text = "500";
             // 
             // lblXpCompagnie
             // 
@@ -358,10 +338,8 @@
             this.Controls.Add(this.pnlAffichageHeros);
             this.Controls.Add(this.lblNumCompagnie);
             this.Controls.Add(this.lblNomCompagnie);
-            this.Controls.Add(this.btnMultiJoueur);
             this.Controls.Add(this.btnCampagne);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnBoutique);
             this.Controls.Add(this.btnReparation);
             this.Controls.Add(this.btnInventaire);
@@ -392,10 +370,8 @@
         private System.Windows.Forms.Button btnInventaire;
         private System.Windows.Forms.Button btnReparation;
         private System.Windows.Forms.Button btnBoutique;
-        private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnCampagne;
-        private System.Windows.Forms.Button btnMultiJoueur;
         private System.Windows.Forms.Label lblNomCompagnie;
         private System.Windows.Forms.Label lblNumCompagnie;
         private System.Windows.Forms.Panel pnlAffichageHeros;

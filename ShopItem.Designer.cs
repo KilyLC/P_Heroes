@@ -62,7 +62,7 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.Location = new System.Drawing.Point(117, 189);
+            this.lblDescription.Location = new System.Drawing.Point(142, 184);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(91, 62);
             this.lblDescription.TabIndex = 2;

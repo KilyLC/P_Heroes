@@ -52,11 +52,11 @@
             // lblNomHero
             // 
             this.lblNomHero.AutoSize = true;
-            this.lblNomHero.Location = new System.Drawing.Point(87, 22);
+            this.lblNomHero.Location = new System.Drawing.Point(94, 22);
             this.lblNomHero.Name = "lblNomHero";
-            this.lblNomHero.Size = new System.Drawing.Size(35, 13);
+            this.lblNomHero.Size = new System.Drawing.Size(27, 13);
             this.lblNomHero.TabIndex = 3;
-            this.lblNomHero.Text = "label1";
+            this.lblNomHero.Text = "nom";
             // 
             // btnValider
             // 
@@ -74,7 +74,7 @@
             this.lblStat.Name = "lblStat";
             this.lblStat.Size = new System.Drawing.Size(196, 68);
             this.lblStat.TabIndex = 1;
-            this.lblStat.Text = "label1";
+            this.lblStat.Text = "stats";
             // 
             // pbxImage
             // 

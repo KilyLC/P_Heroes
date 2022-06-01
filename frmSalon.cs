@@ -47,7 +47,7 @@ namespace P_Heroes
 
         private void frmSalon_Load(object sender, EventArgs e)
         {
-            lblNumCompagnie.Text = "1" + " / " + CompagnieStocker.NB_COMPAGNIE_MAX;
+            lblNumCompagnie.Text = "1 / " + CompagnieStocker.NB_COMPAGNIE_MAX;
             RefreshCompagnie();
             if (CompagnieStocker.compagniesJoueur.Count > 1)
             {
@@ -114,7 +114,9 @@ namespace P_Heroes
                 //Active les boutons
                 btnReparation.Enabled = true;
                 btnInventaire.Enabled = true;
+                btnBoutique.Enabled = true;
                 btnCampagne.Enabled = true;
+
                 //Xp, vie et argent
                 lblXpCompagnie.Text = CompagnieStocker.compagnieActuelle.Xp.ToString();
                 lblPoCompagnie.Text = CompagnieStocker.compagnieActuelle.Po.ToString();
@@ -146,7 +148,6 @@ namespace P_Heroes
                 {
                     pbxHero3Arme2.Image = CompagnieStocker.compagnieActuelle.Heros[2].Arme2.Image;
                 }
-
                 AffichageCarteHero();
             }
         }

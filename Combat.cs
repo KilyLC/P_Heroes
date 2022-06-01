@@ -21,7 +21,7 @@ namespace P_Heroes
         public int NumActionEnnemi { get; set; }
         public int NbPoCombatGagnerBase { get; set; } = 100;
         public int NbPoCombatPerduBase { get; set; } = 30;
-        public int NbXpCombatGagneBase { get; set; } = 300;
+        public int NbXpCombatGagneBase { get; set; } = 600;
         public int NbXpCombatPerduBase { get; set; } = 20;
 
         public List<string> ActionsEnnemi { get; set; } = new List<string>();
@@ -338,7 +338,7 @@ namespace P_Heroes
         public Compagnie CreationCompagnieEnnemi()
         {
             //Ennemi base
-            const int NV_VIE_BASE = 1000;
+            const int NV_VIE_BASE = 500;
             const int AGILITE_BASE = 30;
             const int ATTAQUE_BASE = 40;
             const int AJOUT_ENNEMI2 = 10;
