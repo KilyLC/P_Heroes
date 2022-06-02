@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P_Heroes.Model
+namespace P_Heroes
 {
     public partial class FrmPlus : Form
     {

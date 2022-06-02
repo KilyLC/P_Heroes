@@ -196,7 +196,7 @@ namespace P_Heroes
             if (CompagnieStocker.compagnieActuelle == null)
                 return;
 
-            Model.FrmInventaire inventaire = new Model.FrmInventaire(CompagnieStocker.compagnieActuelle.Inventaire);
+            FrmInventaire inventaire = new FrmInventaire(CompagnieStocker.compagnieActuelle.Inventaire);
             inventaire.Show();
         }
     }

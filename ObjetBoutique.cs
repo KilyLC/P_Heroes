@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using System.Drawing;
 
-namespace P_Heroes.Model
+namespace P_Heroes
 {
     // Rareté d'un objet
     public enum RareteObjet
