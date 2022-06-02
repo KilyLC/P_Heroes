@@ -26,7 +26,7 @@ namespace P_Heroes
         public int Prix { get; set; }
         public int Niveau { get; set; }
         public string Description { get; set; }
-        public Model.RareteObjet Rarete { get; set; }
+        public RareteObjet Rarete { get; set; }
         public int Durabilite { get; set; }
 
         /// <summary>
@@ -40,9 +40,9 @@ namespace P_Heroes
             this.ImageTenue = imageTenue;
         }
 
-        public Model.TenueBoutique ConvertirEnTenueBoutique()
+        public TenueBoutique ConvertirEnTenueBoutique()
         {
-            return new Model.TenueBoutique(NomTenue, Prix, ImageTenue, Description, 1, Rarete, 100, Poids);
+            return new TenueBoutique(NomTenue, Prix, ImageTenue, Description, 1, Rarete, 100, Poids);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace P_Heroes.Model
+﻿namespace P_Heroes
 {
     partial class FrmPlus
     {

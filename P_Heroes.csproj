@@ -102,28 +102,28 @@
     </Compile>
     <Compile Include="Heros.cs" />
     <Compile Include="Inventaire.cs" />
-    <Compile Include="Model\FrmInventaire.cs">
+    <Compile Include="FrmInventaire.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Model\FrmInventaire.Designer.cs">
+    <Compile Include="FrmInventaire.Designer.cs">
       <DependentUpon>FrmInventaire.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ObjetInventaire.cs">
+    <Compile Include="ObjetInventaire.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Model\ObjetInventaire.Designer.cs">
+    <Compile Include="ObjetInventaire.Designer.cs">
       <DependentUpon>ObjetInventaire.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\TenueBoutique.cs" />
-    <Compile Include="Model\ArmeBoutique.cs" />
-    <Compile Include="Model\FrmPlus.cs">
+    <Compile Include="TenueBoutique.cs" />
+    <Compile Include="ArmeBoutique.cs" />
+    <Compile Include="FrmPlus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Model\FrmPlus.Designer.cs">
+    <Compile Include="FrmPlus.Designer.cs">
       <DependentUpon>FrmPlus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\InventaireBoutique.cs" />
-    <Compile Include="Model\ObjetBoutique.cs" />
+    <Compile Include="InventaireBoutique.cs" />
+    <Compile Include="ObjetBoutique.cs" />
     <Compile Include="CarteAffichage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,16 +178,16 @@
     <EmbeddedResource Include="frmSalon.resx">
       <DependentUpon>frmSalon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\FrmPlus.resx">
+    <EmbeddedResource Include="FrmPlus.resx">
       <DependentUpon>FrmPlus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CarteAffichage.resx">
       <DependentUpon>CarteAffichage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\FrmInventaire.resx">
+    <EmbeddedResource Include="FrmInventaire.resx">
       <DependentUpon>FrmInventaire.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\ObjetInventaire.resx">
+    <EmbeddedResource Include="ObjetInventaire.resx">
       <DependentUpon>ObjetInventaire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -343,6 +343,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\OrcTissuDagues.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
