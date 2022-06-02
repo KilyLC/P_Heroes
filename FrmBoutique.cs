@@ -93,7 +93,7 @@ namespace P_Heroes
         // Affiche l'argent en haut à gauche
         public void AfficherArgent(int argent)
         {
-            this.lblArgent.Text = argent.ToString() + "Po";
+            this.lblArgent.Text = argent.ToString() + " Po";
         }
 
         private void AfficherBoutique(List<ObjetBoutique> objets, int padding)

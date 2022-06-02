@@ -342,7 +342,7 @@
             this.Controls.Add(this.pbxHeros1);
             this.Name = "FrmInventaire";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmInventaire";
+            this.Text = "Inventaire";
             this.pnlSelec.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxObjetSelec)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHeros3Tenue)).EndInit();
